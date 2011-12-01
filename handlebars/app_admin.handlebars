@@ -1,0 +1,16 @@
+<tr>
+  <td><a href='/index.html?tool={{ id }}'><img src="{{ logo_url }}" style="height: 20px;"/> {{ name }}</a></td>
+  <td>{{ id }}</td>
+  <td><a href="{{ submitter_url }}">{{ submitter_name }}</a></td>
+  <td>{{ added }}</td>
+  <td>{{ uses }}</td>
+  <td>
+    {{#if avg_rating}}
+      {{round avg_rating}}
+    {{/if}}
+  </td>
+  <td>
+    {{ comments_count }}
+  </td>
+  <td><div class="description span4">{{description}}</div></td>
+</tr>

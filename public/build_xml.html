@@ -1,0 +1,342 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>XML Config Builder</title>
+    <link href="/data/lti_apps.atom" type="application/atom+xml" rel="alternate" title="App Feed" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/common.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      footer {
+        border-top: 1px solid #e5e5e5;
+        margin-top: 40px;
+      }
+      .tally {
+        font-size: 10px;
+        white-space: nowrap;
+      }
+      .tally img {
+        min-width: 20px;
+        border: 1px solid #ddd;
+      }
+    </style>
+    <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/bootstrap/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/bootstrap/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/bootstrap/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/bootstrap/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <div class="container" id="content">
+    <div class="hero-unit">
+      <h1>XML Config Builder</h1>
+      
+      <p>
+        Helping you build LTI XML configs, one step at a time.
+      </p>
+    </div>
+    <div id="contents">
+      <h2>Introduction</h2>
+      <p>
+      LTI configuration is powerful and flexible, but not necessarily easy to set up.
+      Rather than asking everyone to rebuild configurations from scratch, here's a little
+      tool for quickly building LTI configurations. My advice is to check some 
+      boxes and stuff until you figure it out. Most of the options should
+      be clear if you're familiar with LTI and the 
+      <a href="https://canvas.instructure.com/doc/api/file.tools_intro.html">Canvas extensions</a>.
+      </p>
+      <h2>Options</h2>
+      <form id="form" class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for="name">Name</label>
+          <div class="controls">
+            <input type="text" id="name" placeholder="App Name" name="name"/>
+          </div>      
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="id">ID</label>
+          <div class="controls">
+            <input type="text" id="id" placeholder="unique_tool_id" name="id"/>
+            <span class="help-inline">used to track app stats across accounts, make sure it's unique</span>
+          </div>      
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="description">Description</label>
+          <div class="controls">
+            <input type="text" id="description" placeholder="short description" name="description" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="launch_url">LTI Launch URL</label>
+          <div class="controls">
+            <input type="text" id="launch_url" placeholder="https recommended" name="launch_url" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="icon_url">Icon URL</label>
+          <div class="controls">
+            <input type="text" id="icon_url" placeholder="16x16 px long-term https (gif | png | jpg) (NO ICO)" name="icon_url" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group" id="custom_fields">
+          <label class="control-label">Custom Fields</label>
+          <div class="controls">
+            <div class="input-append">
+              <div class="fields">
+                <div class="field" style="display: none;">
+                  <input type="text" class="key" placeholder="key name"/>
+                  <input type="text" class="value" placeholder="value"/>
+                  <button class="btn delete_field" type='button'>Delete</button>
+                </div>
+              </div>
+              <button type='button' class="btn add_field">Add Field</button>
+            </div>
+          </div>      
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="privacy_level">Launch Privacy</label>
+          <div class="controls">
+            <select name="privacy_level" id="privacy_level">
+              <option value="anonymous">Anonymous</option>
+              <option value="name_only">Name Only</option>
+              <option value="public">Public</option>
+            </select>
+          </div>      
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="domain">Domain</label>
+          <div class="controls">
+            <input type="text" id="domain" placeholder="my.domain.com" name="domain"/>
+          </div>      
+        </div>
+        <div class="control-group" id="extensions">
+          <label class="control-label">Extensions</label>
+          <div class="controls">
+            <label class="checkbox">
+              <input type="checkbox" value="1" name="editor_button" class="extension_option"/>
+              Editor Button
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" value="1" name="resource_selection" class="extension_option" />
+              Link Selection
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" value="1" name="homework_submission" class="extension_option" />
+              Homework Submission
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" value="1" name="course_navigation" class="extension_option"/>
+              Course Navigation
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" value="1" name="account_navigation" class='extension_option'/>
+              Account Navigation
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" value="1" name="user_navigation" class='extension_option'/>
+              User Navigation
+            </label>
+          </div>      
+        </div>
+        <div class="control-group editor_button">
+          <h3>Editor Button Settings</h3>
+          <label class="control-label" for="editor_button_launch_url">LTI Launch URL</label>
+          <div class="controls">
+            <input type="text" id="editor_button_launch_url" placeholder="blank to inherit" name="editor_button_launch_url" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group editor_button">
+          <label class="control-label" for="editor_button_link_text">Link Text</label>
+          <div class="controls">
+            <input type="text" id="editor_button_link_text" placeholder="blank to inherit" name="editor_button_link_text" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group editor_button">
+          <label class="control-label" for="editor_button_icon_url">Icon URL</label>
+          <div class="controls">
+            <input type="text" id="editor_button_icon_url" placeholder="blank to inherit" name="editor_button_icon_url" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group editor_button">
+          <label class="control-label" for="editor_button_width">Dialog Width</label>
+          <div class="controls">
+            <div class="input-append">
+              <input type="text" id="editor_button_width" class="span1" name="editor_button_width"/>
+              <span class="add-on">px</span>
+            </div>
+          </div>      
+        </div>
+        <div class="control-group editor_button">
+          <label class="control-label" for="editor_button_height">Dialog Height</label>
+          <div class="controls">
+            <div class="input-append">
+              <input type="text" id="editor_button_height" class="span1" name="editor_button_height"/>
+              <span class="add-on">px</span>
+            </div>
+          </div>      
+        </div>
+        <div class="control-group resource_selection">
+          <h3>Link Selection Settings</h3>
+          <label class="control-label" for="resource_selection_launch_url">LTI Launch URL</label>
+          <div class="controls">
+            <input type="text" id="resource_selection_launch_url" placeholder="blank to inherit" name="resource_selection_launch_url" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group resource_selection">
+          <label class="control-label" for="resource_selection_link_text">Link Text</label>
+          <div class="controls">
+            <input type="text" id="resource_selection_link_text" placeholder="blank to inherit" name="resource_selection_link_text" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group resource_selection">
+          <label class="control-label" for="resource_selection_icon_url">Icon URL</label>
+          <div class="controls">
+            <input type="text" id="resource_selection_icon_url" placeholder="blank to inherit" name="resource_selection_icon_url" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group resource_selection">
+          <label class="control-label" for="resource_selection_width">Dialog Width</label>
+          <div class="controls">
+            <div class="input-append">
+              <input type="text" id="resource_selection_width" class="span1" name="resource_selection_width"/>
+              <span class="add-on">px</span>
+            </div>
+          </div>      
+        </div>
+        <div class="control-group resource_selection">
+          <label class="control-label" for="resource_selection_height">Dialog Height</label>
+          <div class="controls">
+            <div class="input-append">
+              <input type="text" id="resource_selection_height" class="span1" name="resource_selection_height"/>
+              <span class="add-on">px</span>
+            </div>
+          </div>      
+        </div>
+        <div class="control-group homework_submission">
+          <h3>Homework Submission Settings</h3>
+          <label class="control-label" for="homework_submission_launch_url">LTI Launch URL</label>
+          <div class="controls">
+            <input type="text" id="homework_submission_launch_url" placeholder="blank to inherit" name="homework_submission_launch_url" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group homework_submission">
+          <label class="control-label" for="homework_submission_link_text">Link Text</label>
+          <div class="controls">
+            <input type="text" id="homework_submission_link_text" placeholder="blank to inherit" name="homework_submission_link_text" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group homework_submission">
+          <label class="control-label" for="homework_submission_icon_url">Icon URL</label>
+          <div class="controls">
+            <input type="text" id="homework_submission_icon_url" placeholder="blank to inherit" name="homework_submission_icon_url" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group homework_submission">
+          <label class="control-label" for="homework_submission_width">Dialog Width</label>
+          <div class="controls">
+            <div class="input-append">
+              <input type="text" id="homework_submission_width" class="span1" name="homework_submission_width"/>
+              <span class="add-on">px</span>
+            </div>
+          </div>      
+        </div>
+        <div class="control-group homework_submission">
+          <label class="control-label" for="homework_submission_height">Dialog Height</label>
+          <div class="controls">
+            <div class="input-append">
+              <input type="text" id="homework_submission_height" class="span1" name="homework_submission_height"/>
+              <span class="add-on">px</span>
+            </div>
+          </div>      
+        </div>
+        <div class="control-group course_navigation">
+          <h3>Course Navigation Settings</h3>
+          <label class="control-label" for="course_navigation_launch_url">LTI Launch URL</label>
+          <div class="controls">
+            <input type="text" id="course_navigation_launch_url" placeholder="blank to inherit" name="course_navigation_launch_url" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group course_navigation">
+          <label class="control-label" for="course_navigation_link_text">Link Text</label>
+          <div class="controls">
+            <input type="text" id="course_navigation_link_text" placeholder="blank to inherit" name="course_navigation_link_text" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group course_navigation">
+          <label class="control-label" for="course_navigation_visibility">Visibility</label>
+          <div class="controls">
+            <select name="course_navigation_visibility" id="course_navigation_visibility">
+              <option value="public">Public</option>
+              <option value="members">Members Only</option>
+              <option value="admins">Admins Only</option>
+            </select>
+          </div>      
+        </div>
+        <div class="control-group course_navigation">
+          <label class="control-label" for="course_navigation_default">Default</label>
+          <div class="controls">
+            <select name="course_navigation_default" id="course_navigation_default">
+              <option value="enabled">Enabled</option>
+              <option value="disabled">Disabled</option>
+            </select>
+          </div>      
+        </div>
+        <div class="control-group account_navigation">
+          <h3>Account Navigation Settings</h3>
+          Note: Account navigation will appear in the account where it is installed and any sub-account.<br/>
+          <label class="control-label" for="account_navigation_launch_url">LTI Launch URL</label>
+          <div class="controls">
+            <input type="text" id="account_navigation_launch_url" placeholder="blank to inherit" name="account_navigation_launch_url" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group account_navigation">
+          <label class="control-label" for="account_navigation_link_text">Link Text</label>
+          <div class="controls">
+            <input type="text" id="account_navigation_link_text" placeholder="blank to inherit" name="account_navigation_link_text" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group user_navigation">
+          <h3>User Navigation Settings</h3>
+          Note: User navigation will only appear if installed at the root account level.<br/>
+          <label class="control-label" for="user_navigation_launch_url">LTI Launch URL</label>
+          <div class="controls">
+            <input type="text" id="user_navigation_launch_url" placeholder="blank to inherit" name="user_navigation_launch_url" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group user_navigation">
+          <label class="control-label" for="user_navigation_link_text">Link Text</label>
+          <div class="controls">
+            <input type="text" id="user_navigation_link_text" placeholder="blank to inherit" name="user_navigation_link_text" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group">
+          <button class='btn' type='submit' id="build">Generate XML</button>
+        </div>
+      </form>
+      <h2>XML Output</h2>
+      <div>
+        <textarea id="xml" class="span12" rows="12" disabled="true"></textarea>
+      </div>
+    </div>
+  </div>
+  <script src="jquery.min.js"></script>
+  <script src="/analytics.js"></script>
+  <script src="bootstrap-tooltip.js"></script>
+  <script src="/jquery.store.js"></script>
+  <script src="/common.js"></script>
+  <script src="/build_xml.js"></script>
+  <script src="bootstrap-dropdown.js"></script>
+  </body>
+</html>

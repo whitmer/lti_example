@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/bootstrap/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/bootstrap/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/bootstrap/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/bootstrap/ico/apple-touch-icon-57-precomposed.png">
+<style>
+body {
+  font-family: Arial;
+}
+h1 {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+button {
+  vertical-align: top;
+}
+#preview {
+  margin: -5px 10px 0;
+}
+.details {
+  margin-top: -5px;
+  font-size: 12px;
+  line-height: 14px;
+  margin-bottom: 10px;
+}
+#search {
+  padding-left: 10px;
+}
+</style>
+</head>
+<body>
+<div id="header" style="display: none;">
+  <img id="header_img" src="logo.png" style="padding-right: 10px; width: 70px; vertical-align: middle; float: left;"/>
+  <h1>
+  Embed Twitter results:
+  </h1>
+  <div class="details">
+  Paste embed codes for tweets or <a href="https://twitter.com/settings/widgets" target="_blank">widgets</a> 
+  <br/>(set widget height to 300 and add <span id="host">lti-examples.heroku.com</span> to the domains list)
+  </div>
+  <form id="search" class='form-inline'>
+  <textarea title="embed code" id="embed_code" style="width: 300px; height: 50px;"></textarea>
+  <button type="submit" class='btn'>Preview</button>
+  <button type="submit" class='btn btn-primary' id="add">Add</button>
+  </form>
+</div>
+<div id="preview">
+</div>
+
+<script src="/jquery.min.js"></script>
+<script charset="utf-8" src="https://widgets.twimg.com/j/2/widget.js"></script>
+<script src="twitter.js"></script>
+<script>var lti = {tool_id: "twitter"};</script>
+<script src="/analytics.js"></script>
+<script src="/lti.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,351 @@
+<div class="span9 offset1">
+<form class="form-horizontal" action="/api/v1/apps{{#if id}}/{{id}}{{/if}}" method="POST" id="app_settings">
+  {{#if id }}
+    <input type="hidden" name="_method" value="PUT"/>
+  {{/if}}
+  <fieldset>
+    {{#if id }}
+      <legend>App Settings</legend>
+    {{else }}
+      <h2>Submitting an App</h2>
+      <p>If you've built an LTI App or are ready to submit your data collection to be processed into
+      an LTI app, please the use form below to provide us with the information we need to test and
+      then add your app to the directory.
+      </p>
+    {{/if}}
+    <div class="control-group">
+      <label class="control-label" for="name">Name</label>
+      <div class="controls">
+        <input type="text" id="name" placeholder="App Name" name="name" value="{{ name }}"/>
+      </div>      
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="id">ID</label>
+      <div class="controls">
+        <input type="text" id="id" placeholder="unique_tool_id" name="id" value="{{ id }}"/>
+      </div>      
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="description">Description</label>
+      <div class="controls">
+        <textarea name="description" rows="4" class="span6" placeholder="100 words or less, go easy on the marketspeak please">{{ description }}</textarea>
+      </div>      
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="short_description">Short Description</label>
+      <div class="controls">
+        <input type="text" id="short_description" placeholder="optional" name="short_description" value="{{ short_description }}" class="span6"/>
+      </div>      
+    </div>
+    {{#if admin }}
+      <div class="control-group">
+        <label class="control-label" for="uses">Uses</label>
+        <div class="controls">
+          <input type="text" id="uses" placeholder="###" name="uses" value="{{ uses }}" class="span2"/>
+        </div>      
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="added">Added</label>
+        <div class="controls">
+          <input type="text" id="added" placeholder="iso8601 utc timestamp" name="added" value="{{ added }}" class="span2"/>
+        </div>      
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <label>
+            <input type="checkbox" name="pending" value="1" {{#if pending}}checked{{/if}} />
+            App Pending Review
+          </label>
+        </div>      
+      </div>
+    {{/if }}
+    <div class="control-group">
+      <div class="controls">
+        <label>
+          <input type="checkbox" name="beta" value="1" {{#if beta}}checked{{/if}} />
+          This App is in Beta/Alpha
+        </label>
+      </div>      
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="logo_url">Logo URL</label>
+      <div class="controls">
+        <input type="text" id="logo_url" placeholder="72x72 px long-term https (gif | png | jpg)" name="logo_url" value="{{ logo_url }}" class="span6"/>
+      </div>      
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="banner_url">Banner URL</label>
+      <div class="controls">
+        <input type="text" id="banner_url" placeholder="240x125 px long-term https (gif | png | jpg)" name="banner_url" value="{{ banner_url }}" class="span6"/>
+      </div>      
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="icon_url">Icon URL</label>
+      <div class="controls">
+        <input type="text" id="icon_url" placeholder="16x16 px long-term https (gif | png | jpg) (NO ICO)" name="icon_url" value="{{ icon_url }}" class="span6"/>
+      </div>      
+    </div>
+    <div class="control-group">
+      <label class="control-label">Categories</label>
+      <div class="controls">
+        {{#each all_categories}}
+          <label class="checkbox">
+            <input type="checkbox" value="{{ this }}" name="categories[]" {{checked_if_included this val=../categories}}/>
+            {{ this }}
+          </label>
+        {{/each}}
+      </div>      
+    </div>
+    <div class="control-group">
+      <label class="control-label">Grade Levels</label>
+      <div class="controls">
+        {{#each all_levels}}
+          <label class="checkbox">
+            <input type="checkbox" value="{{ this }}" name="levels[]" {{checked_if_included this val=../levels}}/>
+            {{ this }}
+          </label>
+        {{/each}}
+      </div>      
+    </div>
+    <div class="control-group" id="extensions">
+      <label class="control-label">Extensions Used</label>
+      <div class="controls">
+        {{#each all_extensions}}
+          <label class="checkbox">
+            <input type="checkbox" value="{{ this }}" name="extensions[]" {{checked_if_included this val=../extensions}}/>
+            {{ this }}
+          </label>
+        {{/each}}
+      </div>      
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="app_type">Configuration Type</label>
+      <div class="controls">
+        <select name="app_type" id="app_type">
+          <option value="by_hand">Help Me Build My Configuration</option>
+          <option {{#if_eql app_type val="custom"}}selected{{/if_eql}} value="custom">I already have an XML Config URL</option>
+          {{#if admin }}
+          <option {{#if_eql app_type val="open_launch"}}selected{{/if_eql}} value="open_launch">Open Access App</option>
+          {{/if}}
+          <option {{#if_eql app_type val="data"}}selected{{/if_eql}} value="data">Data App</option>
+        </select>
+      </div>      
+    </div>
+    <div class="control-group app_type custom by_hand">
+      <div class="controls">
+        <label>
+          <input type="checkbox" name="any_key" value="1" {{#if any_key}}checked{{/if}} />
+          Any key and secret will work for this app
+        </label>
+      </div>      
+    </div>
+    <div class="control-group app_type custom">
+      <label class="control-label" for="config_url">XML Configuration URL</label>
+      <div class="controls">
+        <input type="text" id="config_url" placeholder="https recommended" name="config_url" value="{{ config_url }}" class="span6"/>
+        <br/><a href="/build_xml.html">try out the XML config builder</a>
+      </div>      
+    </div>
+    <div class="control-group app_type by_hand">
+      <label class="control-label" for="launch_url">LTI Launch URL</label>
+      <div class="controls">
+        <input type="text" id="launch_url" placeholder="https recommended" name="launch_url" value="{{ launch_url }}" class="span6"/>
+      </div>      
+    </div>
+    <div class="control-group app_type by_hand">
+      <label class="control-label" for="domain">Domain</label>
+      <div class="controls">
+        <input type="text" id="domain" placeholder="my.domain.com" name="domain" value="{{ domain }}"/>
+      </div>      
+    </div>
+    <div class="control-group app_type by_hand">
+      <label class="control-label" for="privacy_level">Launch Privacy</label>
+      <div class="controls">
+        <select name="privacy_level" id="privacy_level">
+          <option {{#if_eql privacy_level val="anonymous"}}selected{{/if_eql}} value="anonymous">Anonymous</option>
+          <option {{#if_eql privacy_level val="name_only"}}selected{{/if_eql}} value="name_only">Name Only</option>
+          <option {{#if_eql privacy_level val="public"}}selected{{/if_eql}} value="public">Public</option>
+        </select>
+      </div>      
+    </div>
+    <div class="control-group app_type by_hand open_launch dialog">
+      <label class="control-label" for="width">Dialog Width</label>
+      <div class="controls">
+        <div class="input-append">
+          <input type="text" id="width" class="span1" name="width" value="{{ width }}"/>
+          <span class="add-on">px</span>
+        </div>
+      </div>      
+    </div>
+    <div class="control-group app_type by_hand open_launch dialog">
+      <label class="control-label" for="height">Dialog Height</label>
+      <div class="controls">
+        <div class="input-append">
+          <input type="text" id="height" class="span1" name="height" value="{{ height }}"/>
+          <span class="add-on">px</span>
+        </div>
+      </div>      
+    </div>
+    <div class="control-group app_type by_hand" id="custom_fields">
+      <label class="control-label">Custom Fields</label>
+      <div class="controls">
+        <div class="input-append">
+          <div class="fields">
+            {{#each_in_hash custom_fields}}
+              {{> custom_field }}
+            {{/each_in_hash}}
+          </div>
+          <button type='button' class="btn add_field">Add Field</button>
+        </div>
+      </div>      
+    </div>
+    <div class="control-group app_type by_hand custom open_launch" id="config_options">
+      <label class="control-label">XML Config Parameters
+        <div><a href="/xml_config_params.html" target="_blank">What is this?</a></div>
+      </label>
+      <div class="controls">
+        <div class="input-append">
+          <table {{#unless config_options}}style="display: none;"{{/unless}}>
+            <thead>
+              <tr>
+                <td>Name</td>
+                <td>Prompt</td>
+                <td>Req'd</td>
+                <td>Type</td>
+                <td>Value</td>
+                <td>&nbsp;</td>
+              </tr>
+            </thead>
+            <tbody class="fields">
+              {{#each config_options}}
+                {{> config_option }}
+              {{/each}}
+            </tbody>
+          </table>
+          <button type='button' class="btn add_field">Add Field</button>
+        </div>
+      </div>      
+    </div>
+    <div class="control-group app_type by_hand custom" id="config_urls">
+      <label class="control-label">Multiple Config URLs</label>
+      <div class="controls">
+        <div class="input-append">
+          <div class="fields">
+            {{#each config_urls }}
+              {{> config_url }}
+            {{/each}}
+          </div>
+          <button type='button' class="btn add_field">Add Field</button>
+        </div>
+      </div>      
+    </div>
+    <div class="control-group app_type by_hand open_launch config_options">
+      <label class="control-label" for="variable_name">Variable Name</label>
+      <div class="controls">
+        <input type="text" id="variable_name" placeholder="substitute config parameters" name="variable_name" value="{{ variable_name }}"/>
+      </div>      
+    </div>
+    <div class="control-group app_type by_hand open_launch config_options">
+      <label class="control-label" for="variable_description">Variable Description</label>
+      <div class="controls">
+        <input type="text" id="variable_description" placeholder="substitute config parameters" name="variable_description" value="{{ variable_description }}"/>
+      </div>      
+    </div>
+    <div class="control-group app_type by_hand course_nav">
+      <label class="control-label" for="course_nav_link_text">Course Nav Link Text</label>
+      <div class="controls">
+        <input type="text" id="course_nav_link_text" placeholder="blank to use app name" name="course_nav_link_text" value="{{ course_nav_link_text }}"/>
+      </div>      
+    </div>
+    <div class="control-group app_type by_hand account_nav">
+      <label class="control-label" for="account_nav_link_text">Account Nav Link Text</label>
+      <div class="controls">
+        <input type="text" id="account_nav_link_text" placeholder="blank to use app name" name="account_nav_link_text" value="{{ account_nav_link_text }}"/>
+      </div>      
+    </div>
+    <div class="control-group app_type by_hand user_nav">
+      <label class="control-label" for="user_nav_link_text">User Nav Link Text</label>
+      <div class="controls">
+        <input type="text" id="user_nav_link_text" placeholder="blank to use app name" name="user_nav_link_text" value="{{ user_nav_link_text }}"/>
+      </div>      
+    </div>
+    <div class="control-group app_type data">
+      <label class="control-label" for="data_url">Data Source URL</label>
+      <div class="controls">
+        <input type="text" id="data_url" placeholder="must return CORS json result" name="data_url" value="{{ data_url }}"/>
+        &nbsp;&nbsp;
+        <a href="/build_json.html" target="_blank">what's a Data App?</a>
+      </div>      
+    </div>
+    <div class="control-group app_type data">
+      <label class="control-label" for="description">Data App JSON</label>
+      <div class="controls">
+        <textarea name="data_json" rows="4" class="span6" placeholder="not required if Data Source URL provided. If more than 500 records use data URL">{{ data_json }}</textarea>
+      </div>      
+    </div>
+    <div class="control-group app_type open_launch data">
+      <div class="controls">
+        <label>
+          <input type="checkbox" name="exclude_from_public_collections" value="1" {{#if exclude_from_public_collections}}checked{{/if}} />        
+          Exclude from Public Collections App
+        <label>
+      </div>      
+    </div>
+    <div class="control-group app_type open_launch">
+      <div class="controls">
+        <label>
+          <input type="checkbox" name="no_launch" value="1" {{#if no_launch}}checked{{/if}}/>        
+          App can only be launched from selection dialogs (not standard LTI)
+        <label>
+      </div>      
+    </div>
+    <div class="control-group app_type open_launch by_hand custom">
+      <label class="control-label" for="preview_url">Preview URL</label>
+      <div class="controls">
+        <input type="text" id="preview_url" placeholder="youtube/vimeo or other iframe URL showing your app" name="preview[url]" value="{{ preview.url }}" class="span6"/>
+      </div>      
+    </div>
+    <div class="control-group app_type open_launch by_hand custom preview">
+      <label class="control-label" for="preview_height">Preview Height</label>
+      <div class="controls">
+        <div class="input-append">
+          <input type="text" id="preview_height" class="span1" name="preview[height]" value="{{ preview.height }}"/>
+          <span class="add-on">px</span>
+        </div>
+      </div>      
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="author_name">App Author</label>
+      <div class="controls">
+        <input type="text" id="author_name" placeholder="name or company" name="author_name" value="{{ author_name }}" class="span6"/>
+      </div>      
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="support_link">Support Link/Email</label>
+      <div class="controls">
+        <input type="text" id="support_link" placeholder="http or mailto" name="support_link" value="{{ support_link }}" class="span6"/>
+      </div>      
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="ims_link">IMS Certification URL</label>
+      <div class="controls">
+        <input type="text" id="ims_link" placeholder="strongly recommended" name="ims_link" value="{{ ims_link }}" class="span6"/>
+        <br/><a href="http://www.imsglobal.org/cc/alltools.cfm">paste the link listed here</a>
+      </div>      
+    </div>
+    <div class="control-group app_type by_hand custom">
+      <label class="control-label" for="test_instructions">Testing Instructions</label>
+      <div class="controls">
+        <textarea id="test_instructions" name="test_instructions" rows="4" class="span6">{{ test_instructions }}</textarea><br/>
+        Please provide directions on how we can test the app, including any
+        keys, secrets, and test-specific URLs needed for the test environment.
+      </div>      
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <button class='btn btn-primary' type="submit">{{#if id}}Update{{else}}Submit{{/if}} App</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+</div>

@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>XML Config Builder</title>
+    <link href="/data/lti_apps.atom" type="application/atom+xml" rel="alternate" title="App Feed" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/common.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      footer {
+        border-top: 1px solid #e5e5e5;
+        margin-top: 40px;
+      }
+      .tally {
+        font-size: 10px;
+        white-space: nowrap;
+      }
+      .tally img {
+        min-width: 20px;
+        border: 1px solid #ddd;
+      }
+    </style>
+    <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/bootstrap/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/bootstrap/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/bootstrap/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/bootstrap/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <div class="container" id="content">
+    <div class="hero-unit">
+      <h1>XML Outcome Config Builder</h1>
+      
+      <p>
+        Helping you build LTI Outcome XMLs, one step at a time.
+      </p>
+    </div>
+    <div id="contents">
+      <h2>Introduction</h2>
+      <p>
+      LTI lets you pass grades back to the learning platform using the
+      <a href='https://canvas.instructure.com/doc/api/file.assignment_tools.html'>outcomes service</a>.
+      It's nice, but nobody likes mucking around with trying to figure out XML, so here's
+      a helper page to get you started so you can see what the XML should look like. Side note: I
+      have no idea what <code>imsx_messageIdentifier</code> is or does, so I'm just using
+      a value from the IMS documentation.
+      </p>
+      <h2>Options</h2>
+      <form id="form" class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for="sourced_id">sourcedId</label>
+          <div class="controls">
+            <input type="text" id="sourced_id" placeholder="" name="sourced_id"/>
+          </div>      
+        </div>
+        <div class="control-group editor_button">
+          <label class="control-label" for="score">Score</label>
+          <div class="controls">
+            <div class="input-append">
+              <input type="text" id="score" placeholder="0.xx" class="span1" name="score"/>
+              <span class="help-inline">value should be between 0.0 and 1.0</span>
+            </div>
+          </div>      
+        </div>
+        <div class="control-group">
+          <h3>Submissions</h3>
+          This is an optional extension to the standard that can be used in Canvas.
+          You can provide a submission text or URL (but not both) to be sent back
+          as the actual submission.
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="text">Submission Text</label>
+          <div class="controls">
+            <textarea id="text" placeholder="homework submission text" name="text" class="span10" rows="5"></textarea>
+            <span class="help-inline">you should use text or URL, but not both</span>
+          </div>      
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="url">Submission URL</label>
+          <div class="controls">
+            <input type="text" id="url" placeholder="https recommended" name="url" class="span6"/>
+          </div>      
+        </div>
+        <div class="control-group">
+          <button class='btn' type='submit' id="build">Generate XML</button>
+        </div>
+      </form>
+      <h2>XML Output</h2>
+      <div>
+        <textarea id="xml" class="span12" rows="12" disabled="true"></textarea>
+      </div>
+    </div>
+  </div>
+  <script src="jquery.min.js"></script>
+  <script src="/analytics.js"></script>
+  <script src="bootstrap-tooltip.js"></script>
+  <script src="/jquery.store.js"></script>
+  <script src="/common.js"></script>
+  <script src="/build_outcome.js"></script>
+  <script src="bootstrap-dropdown.js"></script>
+  </body>
+</html>

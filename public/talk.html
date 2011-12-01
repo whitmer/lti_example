@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LTI Extensions Talk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/common.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      footer {
+        border-top: 1px solid #e5e5e5;
+        margin-top: 40px;
+      }
+      .twtr-tweet .twtr-tweet-wrap .twtr-avatar .twtr-img a img {
+        width: 50px;
+        height: 50px;
+        padding-top: 15px;
+      }
+      .twtr-tweet .twtr-tweet-wrap .twtr-tweet-text p a.twtr-user {
+        display: block !important;
+        padding-bottom: 5px;
+      }
+      .twtr-tweet .twtr-tweet-wrap .twtr-tweet-text p {
+        padding-bottom: 10px;
+      }
+    </style>
+    <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/bootstrap/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/bootstrap/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/bootstrap/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/bootstrap/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+  <body data-view='talk'>
+    <div id="content" class="container">
+    <div class="hero-unit">
+      <h1>LTI Talk</h1>
+      
+      <p>
+        Something as magical as LTI deserves to be talked about. There's a lot of great ideas that can be shared, and sometimes it helps getting someone else's help if you're thinking about building an LTI app yourself. Here you can see some of the latest tweets about LTI, and share your thoughts/questions as well.
+      </p>
+    </div>
+    <div class="row">
+      <span class="span12">
+        <div style='margin-bottom: 5px;'>        
+          <a href="https://twitter.com/intent/tweet?button_hashtag=lti_apps&text=" class="twitter-hashtag-button" data-lang="en" data-size="large" data-related="whitmer">Tweet #lti_apps</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+
+        <script charset="utf-8" src="https://widgets.twimg.com/j/2/widget.js"></script>
+        <script>
+        new TWTR.Widget({
+          version: 2,
+          type: 'search',
+          search: '#lti_apps',
+          interval: 30000,
+          title: 'LTI Apps Talk',
+          subject: 'Of Awesomeness and Quality',
+          width: 'auto',
+          height: 300,
+          theme: {
+            shell: {
+              background: '#7d7d7d',
+              color: '#ffffff'
+            },
+            tweets: {
+              background: '#ffffff',
+              color: '#444444',
+              links: '#1985b5'
+            }
+          },
+          features: {
+            scrollbar: true,
+            loop: false,
+            live: true,
+            behavior: 'all'
+          }
+        }).render().start();
+        </script>
+      </span>
+    </div>
+  </div>
+  <script src="jquery.min.js"></script>
+  <script src="/analytics.js"></script>
+  <script src="jquery.store.js"></script>
+  <script src="/common.js"></script>
+  <script src="bootstrap-dropdown.js"></script>
+  </body>
+</html>

@@ -1,0 +1,171 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>XML Config Parameters</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/common.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      .row {
+        margin-bottom: 20px;
+      }
+      footer {
+        border-top: 1px solid #e5e5e5;
+        margin-top: 40px;
+      }
+    </style>
+    <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/bootstrap/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/bootstrap/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/bootstrap/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/bootstrap/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+  <body data-view='suggestions'>
+    <div id="contents" class="container">
+      <div class="hero-unit">
+        <h1>XML Config Parameters</h1>
+        
+      </div>
+  
+      <div class="row">
+        <span class="offset1 span9">
+          <h2>Introduction</h2>
+          <p>
+            There's a pretty slick option in our configuration interface that lets you
+            use variables that are substituted with user-entered values in your
+            generated XML configuration. For example, if your launch URL was 
+            <code>http://my.app/launch?id=&lt;customer_id&gt;</code>, it would be possible to
+            ask the user as part of the directory interface for a value for 
+            <code>customer_id</code>.
+          </p>
+          
+          <p>
+          <a href="/index.html?tool=redirect">The redirect app</a> is a good example
+          that uses some config parameters to specify the link name and redirect URL.
+          </p>
+          
+          <p>
+          There are two steps to make variable substitution work. The first is to
+          use our variable notation in form entries. Variables are entered as letters
+          and underscores surrounded by double curly-braces. So to make the previous example
+          work, you would put <code>http://my.app/launch?id={{ custom_id }}</code> as
+          the field value.</p>
+          <p>That's step one. Step two is to add a field in the "XML Config Parameters"
+          section. Name should be the variable name, in this case <code>custom_id</code>.
+          Prompt is the text users will see next to a form element. Req'd is whether the
+          value is required, Type lets you pick text field or checkbox, and Value is
+          the default value.</p>
+          <p>Side note: Once you add at least one parameter, you'll see two new fields, 
+          Variable Name and Variable Description. These fields can be ignored, or you
+          can use them to define a name and description that will be based on variables
+          that will only show up in the XML configuration. These fields won't affect the
+          app name and description as it appears in the directory.
+          </p>
+          <p>Here's a list of all the fields that support variable substitution:</p>
+          <ul>
+            <li>LTI Launch URL</li>
+            <li>Custom Field Values</li>
+            <li>Variable Name</li>
+            <li>Variable Description</li>
+            <li>Multiple Config URLs</li>
+            <li>Course Nav Link Text</li>
+            <li>Account Nav Link Text</li>
+            <li>User Nav Link Text</li>
+          </ul>
+          
+          <h2>Extra Goodies</h2>
+          <p>
+          There are some hard-coded parameter names that are used by the "Help Me Build
+          My Configuration" option to make config easier. Here's the list, and how each
+          of them affect the generated XML:</p>
+          <table class='table table-striped'>
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>
+                <code>course_nav</code>
+              </td><td>
+                If the "course navigation" extension is selected, then this
+                parameter can be used to let the user decide whether the app shows
+                up in course navigation or not. We recommend picking "Checkbox" as
+                Type with a Value of "1".
+              </td></tr>
+              <tr><td>
+                <code>user_nav</code>
+              </td><td>
+                If the "user navigation" extension is selected, then this
+                parameter can be used to let the user decide whether the app shows
+                up in user navigation or not. We recommend picking "Checkbox" as
+                Type with a Value of "1".
+              </td></tr>
+              <tr><td>
+                <code>account_nav</code>
+              </td><td>
+                If the "account navigation" extension is selected, then this
+                parameter can be used to let the user decide whether the app shows
+                up in account navigation or not. We recommend picking "Checkbox" as
+                Type with a Value of "1".
+              </td></tr>
+              <tr><td>
+                <code>editor_button</code>
+              </td><td>
+                If the "editor button" extension is selected, then this
+                parameter can be used to let the user decide whether the app shows
+                up in the rich editor or not. We recommend picking "Checkbox" as
+                Type with a Value of "1".
+              </td></tr>
+              <tr><td>
+                <code>resource_selection</code>
+              </td><td>
+                If the "resource_selection" extension is selected, then this
+                parameter can be used to let the user decide whether the app shows
+                up in module link selection tool or not. We recommend picking "Checkbox" as
+                Type with a Value of "1".
+              </td></tr>
+            </tbody>
+          </table>
+        </span>
+      </div>
+      <div class="tab-content">
+        <div class="tab-pane row active" id="suggest">
+          <span class="span9 offset1">
+            <iframe id="form" src="about:blank;" style="display: none; width: 100%; height: 1380px;" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+          </span>
+        </div>
+        <div class="tab-pane row" id="submit">
+        </div>
+      </div>
+    </div>
+  <script src="jquery.min.js"></script>
+  <script src="bootstrap-tab.js"></script>
+  <script src="/analytics.js"></script>
+  <script src="jquery.store.js"></script>
+  <script src="/common.js"></script>
+  <script src="/lti.js"></script>
+  <script src="/app_settings.js"></script>
+  <script src="bootstrap-dropdown.js"></script>
+  <script>
+    $("#form").attr('src', lti.params.url).show();
+    if($.store.get('user_key')) {
+      manageApp({});
+    } else {
+      $("#submit").html("<h2 class='offset1 span9'>You need to log in before submitting an app</h2>");
+    }
+  </script>
+  </body>
+</html>

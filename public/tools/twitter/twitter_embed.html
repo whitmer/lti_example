@@ -1,0 +1,35 @@
+
+<html>
+<head>
+<style>
+body {
+  padding: 0;
+  margin: 0;
+}
+</style>
+</head>
+<body>
+<div id="contents">
+</div>
+
+<script>var lti = {tool_id: "twitter"};</script>
+<script src="/jquery.min.js"></script>
+<script src='/lti.js'></script>
+<script src="/analytics.js"></script>
+<script>
+  if(lti.params && lti.params.widget_id && lti.params.url) {
+    var $a = $("<a/>").addClass('twitter-timeline');
+    $a.attr('href', lti.params.url).attr('data-widget-id', lti.params.widget_id).text(lti.params.text || "Twitter Feed");
+    var script = "<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=\"//platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</s" + "cript>";
+    $("#contents").append($a).append(script);
+  } else if(lti.params.tweet_id && lti.params.author) {
+
+    var $quote = $("<blockquote/>").attr('class', 'twitter-tweet');
+    $quote.append($("<a/>", {'href': "https://twitter.com/" + lti.params.author + "/status/" + lti.params.tweet_id}).text("Tweet by " + lti.params.author));
+    var script = "<script async src=\"//platform.twitter.com/widgets.js\" charset=\"utf-8\"></sc" + "ript>";
+    $("#contents").append($quote).append(script);
+  } else {
+    $("#contents").html("Invalid twitter settings");
+  }
+</script>
+</body></html>
