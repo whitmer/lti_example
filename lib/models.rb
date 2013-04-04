@@ -176,10 +176,14 @@ class App
     hash['uses'] = (full_admin && params['uses'] && params['uses'].to_i) || (app.settings && app.settings['uses'])
     hash['submitter_name'] = user_key ? user_key : (app.settings && app.settings['submitter_name'])
     hash['submitter_url'] = user_key ? "https://twitter.com/#{user_key}" : (app.settings && app.settings['submitter_url'])
+    if full_admin
+      hash['submitter_name'] = params['submitter_name'] if params['submitter_name']
+      hash['submitter_url'] = params['submitter_url'] if params['submitter_url']
+    end
 
     if full_admin
       if !params['pending'].nil?
-        hash['pending'] = params['pending'] == '1' || params['pending'] == true
+        hash['pending'] = (params['pending'] == '1' || params['pending'] == true)
       end
     elsif admin_permission
       hash['pending'] = (params['pending'] == '1' || params['pending'] = true) ? true : nil
@@ -189,7 +193,7 @@ class App
     if user_key
       AdminPermission.allow_access(id, "@" + user_key)
     end
-    hash['pending'] = nil if !hash['pending']
+    hash.delete('pending') if !hash['pending']
 
     app.pending = hash['pending'] || false
     app.beta = hash['beta'] || false

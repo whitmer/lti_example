@@ -1,234 +1,639 @@
 [
-    {
-      "id": "twitter",
-      "uses": 40,
-      "name": "Twitter",
-      "added": "2012-03-27T00:00:00Z",
-      "description": "Embed lists of recent tweets from Twitter. Lists can be derived from search results, or from a user's twitter feed.",
-      "short_description": "Embed tweet streams",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0"],
-      "extensions": ["editor_button", "resource_selection"],
-      "app_type": "open_launch",
-      "width": 690,
-      "height": 530
+  {
+    "name": "Twitter",
+    "id": "twitter",
+    "categories": [
+      "Web 2.0"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Embed lists of recent tweets or individual tweets from Twitter. Lists can be derived from search results, or from a user's twitter feed. Individual tweets require the tweet ID.",
+    "app_type": "open_launch",
+    "short_description": "Embed tweet streams",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "preview": {
+      "url": "",
+      "height": null
     },
-    {
-      "id": "wolfram",
-      "name": "Wolfram Alpha",
-      "added": "2012-11-17T00:00:00Z",
-      "description": "Wolfram Alpha provides graphs, data sets and other information about numbers, equations, etc. This app lets you quickly insert links to Wolfram Alpha search results into your course material.",
-      "short_description": "Link to Wolfram Alpha search results",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Math", "Science"],
-      "app_type": "open_launch",
-      "width": 400,
-      "height": 150,
-      "no_launch": true,
-      "extensions": ["editor_button", "resource_selection"]
-    },
-    {
-      "id": "mit_ocw",
-      "name": "MIT OCW",
-      "added": "2012-03-15T00:00:00Z",
-      "levels": ["Postsecondary"],
-      "categories": ["Content", "Open Content"],
-      "description": "MIT OpenCourseWare is a collection of materials from MIT-taught courses that have been released with a Creative Commons license. Browse and link to materials from these collections within your course.",
-      "short_description": "OCW lectures, videos, etc. from MIT",
-      "app_type": "data"
-    },
-    {
-      "id": "public_collections",
-      "uses": 50,
-      "added": "2012-02-20T00:00:00Z",
-      "name": "Public Collections",
-      "description": "Browse or search through multiple content repositories including MIT OCW, Khan Academy, USA Today, etc.",
-      "width": 800,
-      "height": 550,
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0", "Open Content", "Media"],
-      "extensions": ["editor_button", "resource_selection"],
-      "exclude_from_public_collections": true,
-      "app_type": "open_launch"
-    },
-    {
-      "id": "ted_ed",
-      "uses": 30,
-      "added": "2012-03-13T00:00:00Z",
-      "name": "TED Ed",
-      "description": "TED Ed is a collection of quality videos that can be used for instructional purposes. This app lets you search for and embed TED Ed vidoes in your course material.",
-      "short_description": "Online instructional videos",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0", "Media"],
-      "app_type": "open_launch",
-      "width": 690,
-      "height": 530,
-      "extensions": ["editor_button", "resource_selection"]
-    },
-    {
-      "id": "graph_builder",
-      "uses": 40,
-      "added": "2012-01-10T00:00:00Z",
-      "name": "Graph Builder",
-      "description": "Graph builder lets you define graphs based on simple or complex equations and chart them dynamically. Zoom and move the graph around and then embed it into course content.",
-      "short_description": "Build and embed rich interactive graphs into course content",
-      "levels": ["7th-12th Grade", "Postsecondary"],
-      "categories": ["Math"],
-      "app_type": "open_launch",
-      "width": 475,
-      "height": 770,
-      "extensions": ["editor_button", "resource_selection"]
-    },
-    {
-      "id": "codecademy",
-      "name": "Codecademy",
-      "added": "2012-02-21T00:00:00Z",
-      "levels": ["7th-12th Grade", "Postsecondary"],
-      "categories": ["Science", "Math"],
-      "description": "Online interactive tutorials to help learn computer programming. Lessons are taught using JavaScript and provide immediate feedback. Link to any Codecademy lessons from within your course.",
-      "short_description": "Interactive programming lessons",
-      "app_type": "data"
-    },
-    {
-      "id": "smarterer",
-      "name": "Smarterer",
-      "added": "2012-04-28T00:00:00Z",
-      "description": "Search through and insert links to quizzing and learning resources hosted by <a href='http://smarterer.com'>Smarterer</a>",
-      "short_description": "Crowdsourced quizzes and review tools",
-      "app_type": "data",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content"]
-    },
-    {
-      "id": "educreations",
-      "name": "educreations",
-      "added": "2012-02-23T00:00:00Z",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0", "Media", "Content"],
-      "description": "Educreations users \"record\" whiteboard sessions as short online lessons. Browse and link to any of the publibly available lessons.",
-      "short_description": "Teacher-recorded whiteboard sessions",
-      "app_type": "data"
-    },
-    {
-      "id": "archive",
-      "uses": 10,
-      "name": "Internet Archive",
-      "added": "2012-03-30T00:00:00Z",
-      "description": "The Internet Archive hosts public domain video, audio, books, images and other resources. Links to any of these resources can easily be added to any course content.",
-      "short_description": "Search public videos, books, etc.",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Media", "Open Content"],
-      "app_type": "open_launch",
-      "width": 690,
-      "height": 530,
-      "extensions": ["editor_button", "resource_selection"]
-    },
-    {
-      "id": "usa_today",
-      "name": "USA Today",
-      "added": "2012-02-25T00:00:00Z",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content"],
-      "description": "Search for and link to articles from USA Today's archives.",
-      "short_description": "Articles from USA Today",
-      "app_type": "open_launch",
-      "width": 690,
-      "height": 530,
-      "extensions": ["editor_button", "resource_selection"]
-    },
-    {
-      "id": "nytimes",
-      "name": "New Tork Times",
-      "added": "2013-01-08T00:00:00Z",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content"],
-      "description": "Search for and link to articles from New York Time's archives. Articles can be filtered by relevance and year published.",
-      "short_description": "Articles from NY Times",
-      "app_type": "open_launch",
-      "width": 690,
-      "height": 530,
-      "extensions": ["editor_button", "resource_selection"]
-    },
-    {
-      "id": "brainpop",
-      "name": "BrainPOP",
-      "added": "2012-03-06T00:00:00Z",
-      "levels": ["K-6th Grade", "7th-12th Grade"],
-      "categories": ["Media", "Content", "Math", "Science"],
-      "description": "Lessons and activities centered around an educational topic. Link to any BrainPop lessons, or to specific resources within a lesson.",
-      "short_description": "Online interactive lessons, quizzes, activities",
-      "app_type": "data"
-    },
-    {
-      "id": "manga_high",
-      "name": "Manga High",
-      "added": "2012-05-18T00:00:00Z",
-      "levels": ["K-6th Grade", "7th-12th Grade"],
-      "categories": ["Media", "Math"],
-      "description": "Free game-based math learning resources for K-12 learners. Games and activities can be linked to from within any course content. Visit <a href='http://www.mangahigh.com/en_us/'>Manga High's web site</a> for instructions on how to sign up as a school.",
-      "short_description": "Online interactive math games",
-      "app_type": "data"
-    },
-    {
-      "id": "ck12",
-      "name": "CK-12",
-      "added": "2012-05-16T00:00:00Z",
-      "levels": ["K-6th Grade", "7th-12th Grade"],
-      "categories": ["Textbooks/eBooks", "Content", "Open Content", "Math", "Science"],
-      "description": "Free, open, user-modifiable textbooks and learning content intended for K-12. Books or chapters can be linked to from within course content.",
-      "short_description": "Customizable free textbooks",
-      "app_type": "data"
-    },
-    {
-      "id": "mathalicious",
-      "name": "Mathalicious",
-      "added": "2012-05-16T00:00:00Z",
-      "exclude_from_public_collections": true,
-      "levels": ["K-6th Grade", "7th-12th Grade"],
-      "categories": ["Media", "Content", "Math", "Science"],
-      "description": "Mathalicious develops high-quality, standards-based math videos and lessons aligned to Common Core standards. Videos can be linked to from any course content. Requires a <a href='http://www.mathalicious.com/sign-up/'>Mathalicious subscription.</a>",
-      "short_description": "Real-world math tutorial videos",
-      "app_type": "data"
-    },
-    {
-      "id": "open_tapestry",
-      "name": "Open Tapestry",
-      "added": "2012-12-18T00:00:00Z",
-      "description": "Open Tapestry helps instructors discover, modify, and share open educational resources from across the web. Resources and lessons can be inserted directly into course content, while maintaining their functionality.<br/><br/><a href='http://opentapestry.com'>Register on OpenTapestry</a> and click \"Configure Integrations\" to retrieve your consumer key and shared secret.",
-      "short_description": "Embed open learning resources",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Community", "Content", "Media", "Open Content"],
-      "launch_url": "http://www.opentapestry.com/lti/items",
-      "privacy_level": "public",
-      "extensions": ["editor_button", "resource_selection"],
-      "icon_url": "//www.opentapestry.com/assets/opentapestry/modal_logo-3b1dbb9475342765e035cff3ca17a553.png",
-      "width": 892,
-      "height": 800,
-      "preview": {
-        "url": "http://player.vimeo.com/video/52579189?byline=0&amp;portrait=0&amp;badge=0",
-        "height": 400
+    "test_instructions": "",
+    "width": 690,
+    "height": 530,
+    "added": "2012-03-27T00:00:00Z",
+    "uses": 40,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Public Collections",
+    "id": "public_collections",
+    "categories": [
+      "Media",
+      "Open Content",
+      "Web 2.0"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Browse or search through multiple content repositories including MIT OCW, Khan Academy, USA Today, etc.",
+    "app_type": "open_launch",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "author_name": "Instructure",
+    "exclude_from_public_collections": true,
+    "width": 800,
+    "height": 550,
+    "added": "2012-02-20T00:00:00Z",
+    "uses": 50,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "Graph Builder",
+    "id": "graph_builder",
+    "categories": [
+      "Math"
+    ],
+    "levels": [
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Graph builder lets you define graphs based on simple or complex equations and chart them dynamically. Zoom and move the graph around and then embed it into course content.",
+    "app_type": "open_launch",
+    "short_description": "Build and embed rich interactive graphs into course content",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "width": 475,
+    "height": 770,
+    "added": "2012-01-10T00:00:00Z",
+    "uses": 40,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "OCW Search",
+    "id": "ocw_search",
+    "categories": [
+      "Content",
+      "Open Content"
+    ],
+    "levels": [
+      "Postsecondary"
+    ],
+    "description": "OCW search collects OCW courses from MIT, Stanford, Yale, the Open University, etc. for searching and linking.",
+    "app_type": "open_launch",
+    "short_description": "Find open courses",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "width": 690,
+    "height": 530,
+    "added": "2012-05-01T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Status.net",
+    "id": "status_net",
+    "categories": [
+      "Content",
+      "Community"
+    ],
+    "levels": [
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Status.net is a private microblogging platform that can be run for your institution, department or course. This app allows for auto-login to the Status.net system from course content or course navigation.<br/><br/><b>NOTE</b>: This app will only work when set to open in a new tab, it will not work in an embedded iframe.<br/><br/><b>Directions for configuring Status.net:</b><ol><li>Configure your Status.net instance</li><li>Download <a href='http://sourceforge.net/projects/learningapps/files/Files/Basic%20LTI%20Integrations/Status.net/LTIAuthentication.zip/download'>the Status.net LTI plugin</a></li><li>Extract the LTI plugin into Status.net's <code>plugins</code> folder</li><li>Edit config.php and add<br/><br/><code>addPlugin('LTIAuthentication', array('provider_name'=>'LTI'));</code><br/><br/></li><li>Edit <code>BLTI/IMSBasicLTI/configuration/authorizedConsumersKey.cfg</code>, adding the following lines:<br/><br/><code>consumer_key.&lt;consumer_key&gt;.enabled=1</code><br/><code>consumer_key.&lt;consumer_key&gt;.secret=&lt;password&gt;</code><br/><br/></li><li>For more detailed configuration, <a href='http://sourceforge.net/apps/mediawiki/learningapps/index.php?title=LTI4Status.net_English'>follow the directions here</a></ol>",
+    "extensions": [
+      "course_nav"
+    ],
+    "launch_url": "{{ site_url }}",
+    "privacy_level": "public",
+    "config_options": [
+      {
+        "name": "site_url",
+        "description": "Status.net site auth URL",
+        "type": "text",
+        "value": "http://statusnet.url/index.php/main/lti",
+        "required": true
+      },
+      {
+        "name": "course_nav",
+        "description": "Show in Course Navigation",
+        "type": "checkbox",
+        "value": "1"
       }
+    ],
+    "added": "2012-05-04T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Learning Apps"
+  },
+  {
+    "name": "Question2Answer",
+    "id": "question2answer",
+    "categories": [
+      "Content",
+      "Community"
+    ],
+    "levels": [
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Question2Answer is an open source Q&amp;A site. You could use it to host course or institution-level Q&amp;A services. This app allows for auto-login to the Question2Answer platform from another system. Links can be added to course content, or optionally as course navigation.<br/><br/><b>Directions for configuring Question2Answer:</b><ol><li>Configure your Question2Answer instance</li><li>Download <a href='http://sourceforge.net/projects/learningapps/files/Files/Basic%20LTI%20Integrations/Question2Answer/qa-plugin.zip/download'>the Q2A LTI plugin</a></li><li>Extract the LTI plugin into Q2A's main folder</li><li>Log as administrator, go to Administration center - Plugins</li><li>Click over 'options'</li><li>Configure BasicLTI Settings:<ol><li>Enable Plugin</li><li>Disable Default BLTI Username: You have to define the parameter of basic lti with the custom username instead of the default BasicLTI Parameter</li><li>Parameter Username: If you enabled Disable BLTI Username you have to indicate the custom username, usuarlly is custom_username</li><li>Logout URL: Full url (include http://) to logout from the SSO and this Q2A application</li><li>New user message: Optional. Message shown to new users when they login for the first time.</li></ol></li><li>Edit <code>BLTI/IMSBasicLTI/configuration/authorizedConsumersKey.cfg</code>, adding the following lines:<br/><br/><code>consumer_key.&lt;consumer_key&gt;.enabled=1</code><br/><code>consumer_key.&lt;consumer_key&gt;.secret=&lt;password&gt;</code><br/><br/></li><li>For more detailed configuration, <a href='http://sourceforge.net/apps/mediawiki/learningapps/index.php?title=LTI4Q2a_English'>follow the directions here</a></ol>",
+    "extensions": [
+      "course_nav"
+    ],
+    "launch_url": "{{ site_url }}",
+    "privacy_level": "public",
+    "config_options": [
+      {
+        "name": "site_url",
+        "description": "Question2Answer site URL",
+        "type": "text",
+        "value": "http://myq2a.url",
+        "required": true
+      },
+      {
+        "name": "course_nav",
+        "description": "Show in Course Navigation",
+        "type": "checkbox",
+        "value": "1"
+      }
+    ],
+    "added": "2012-05-04T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Learning Apps"
+  },
+  {
+    "name": "Wikispaces",
+    "id": "wikispaces",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Wikispaces offers free wikis for educational purposes. Private label sites can be configured to use LTI for authentication. You'll need a private label site as opposed to just a personal account in order for this app to work properly.",
+    "config_directions": "Visit <a href='https://help.wikispaces.com/basic+lti'>the Wikispages LTI configuration page</a> for directions on configuring your Wikispaces private label site.",
+    "added": "2012-03-21T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Wikispaces"
+  },
+  {
+    "name": "Wiktionary",
+    "id": "wiktionary",
+    "categories": [
+      "Web 2.0",
+      "Open Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Search through English Wiktionary definitions and insert definitions into course material.",
+    "app_type": "open_launch",
+    "short_description": "Definitions from the free dictionary",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "no_launch": true,
+    "width": 690,
+    "height": 530,
+    "added": "2012-04-23T00:00:00Z",
+    "uses": 0,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Mahara",
+    "id": "mahara",
+    "categories": [
+      "Community",
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Mahara is an open source ePortfolio and social networking tool. This app allows for auto-login to the Mahara platform from another system. Links can be added to course content, or optionally as course navigation.<br/><br/><b>Directions for configuring Mahara:</b><ol><li>Configure your Mahara instance</a></li><li>Download <a href='http://sourceforge.net/projects/learningapps/files/Files/Basic%20LTI%20Integrations/Mahara/blti_provider.zip/download'>the Mahara LTI plugin</a></li><li>Extract the LTI plugin into Mahara's <code>auth</code> folder</li><li>Go to Admin home - Extensions - Plugin Administration - Plugin type: auth</li><li>Enable 'blti'</li><li>For more detailed configuration, <a href='http://sourceforge.net/apps/mediawiki/learningapps/index.php?title=LTI4Mahara_English'>follow the directions here</a></ol>",
+    "extensions": [
+      "course_nav"
+    ],
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=100",
+    "author_name": "Learning Apps",
+    "launch_url": "{{ site_url }}",
+    "privacy_level": "public",
+    "config_options": [
+      {
+        "name": "site_url",
+        "description": "Mahara site auth URL",
+        "type": "text",
+        "value": "http://mymahara.url/auth/blti/login/login.php",
+        "required": true
+      },
+      {
+        "name": "course_nav",
+        "description": "Show in Course Navigation",
+        "type": "checkbox",
+        "value": "1"
+      }
+    ],
+    "added": "2012-05-04T00:00:00Z",
+    "uses": 0,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "WordPress",
+    "id": "wordpress",
+    "categories": [
+      "Community",
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "WordPress is a blogging and publishing platform. You could use it to host student or class blogs. This app allows for auto-login to the WordPress platform. Links can be added to course content, or optionally as course navigation.<br/><br/><b>Directions for configuring WordPress:</b><ol><li>Configure your WordPress <a href='http://codex.wordpress.org/Create_A_Network'>account for multisite</a></li><li>Download <a href='http://sourceforge.net/projects/learningapps/files/Files/Basic%20LTI%20Integrations/Wordpress/wordpressLTIPlugin.zip/download'>the WordPress LTI plugin</a></li><li>Extract the LTI plugin into <code>wp-content/mu-plugin</code></li><li>Log as superAdmin and go to Network Dashboard -> Settings -> LTI Consumers Keys. Here you can manage the authorized consumers keys</li><li>For more detailed configuration, <a href='http://sourceforge.net/apps/mediawiki/learningapps/index.php?title=LTI4Wordpress'>follow the directions here</a></ol>",
+    "extensions": [
+      "course_nav"
+    ],
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=123",
+    "author_name": "Learning Apps",
+    "launch_url": "{{ site_url }}",
+    "privacy_level": "public",
+    "config_options": [
+      {
+        "name": "site_url",
+        "description": "WordPress site URL",
+        "type": "text",
+        "value": "http://mywordpress.url",
+        "required": true
+      },
+      {
+        "name": "course_nav",
+        "description": "Show in Course Navigation",
+        "type": "checkbox",
+        "value": "1"
+      }
+    ],
+    "added": "2012-05-04T00:00:00Z",
+    "uses": 0,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "Khan Academy",
+    "id": "khan_academy",
+    "categories": [
+      "Assessment",
+      "Math",
+      "Media",
+      "Open Content",
+      "Science",
+      "Web 2.0"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Search for and embed Khan Academy lessons and exercise into course material. Khan Academy focuses on short lessons on math, science, etc. Uses the embedded player so students earn points for watching videos.",
+    "app_type": "open_launch",
+    "short_description": "Online video lessons for math, science, etc.",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "test_instructions": "",
+    "added": "2012-01-13T00:00:00Z",
+    "uses": 110,
+    "author_name": "Brian Whitmer",
+    "author_url": null,
+    "pending": null
+  },
+  {
+    "name": "Piazza",
+    "id": "piazza",
+    "categories": [
+      "Community",
+      "Web 2.0"
+    ],
+    "levels": [
+      "Postsecondary"
+    ],
+    "description": "Piazza is a new style of discussion/Q&A site with a focus on educational institutions. This integration adds a link to the course navigation for Piazza discussions.<br/><br/>Contact Piazza for instructions on getting a consumer key and secret.",
+    "extensions": [
+      "course_nav"
+    ],
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=87",
+    "author_name": "Piazza",
+    "launch_url": "https://piazza.com/basic_lti",
+    "privacy_level": "public",
+    "config_options": [
+      {
+        "name": "course_nav",
+        "description": "Show in Course Navigation",
+        "type": "checkbox",
+        "value": "1"
+      }
+    ],
+    "added": "2012-02-01T00:00:00Z",
+    "uses": 50,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "TED Ed",
+    "id": "ted_ed",
+    "categories": [
+      "Web 2.0",
+      "Media"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "TED Ed is a collection of quality videos that can be used for instructional purposes. This app lets you search for and embed TED Ed vidoes in your course material.",
+    "app_type": "open_launch",
+    "short_description": "Online instructional videos",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "width": 690,
+    "height": 530,
+    "added": "2012-03-13T00:00:00Z",
+    "uses": 30,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Mathalicious",
+    "id": "mathalicious",
+    "categories": [
+      "Media",
+      "Content",
+      "Math",
+      "Science"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade"
+    ],
+    "description": "Mathalicious develops high-quality, standards-based math videos and lessons aligned to Common Core standards. Videos can be linked to from any course content. Requires a <a href='http://www.mathalicious.com/sign-up/'>Mathalicious subscription.</a>",
+    "app_type": "data",
+    "short_description": "Real-world math tutorial videos",
+    "exclude_from_public_collections": true,
+    "added": "2012-05-16T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Slideshare",
+    "id": "slideshare",
+    "categories": [
+      "Web 2.0",
+      "Media"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Slideshare is a site that enables viewing and interacting with presentations without needing desktop software. Search for and embed Creative Commons-licensed presentations hosted on Slideshare.",
+    "app_type": "open_launch",
+    "short_description": "Creative Commons-licensed presentations",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "width": 690,
+    "height": 530,
+    "added": "2012-03-06T00:00:00Z",
+    "uses": 10,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "TitanPad",
+    "id": "titanpad",
+    "categories": [
+      "Web 2.0",
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "TitanPad offers free, public collaborative documents based on EtherPad. Every placement of a TitanPad in your content will result in a new pad being created. Students can also chat while working together on a pad.",
+    "any_key": true,
+    "launch_url": "/titanpad",
+    "privacy_level": "name_only",
+    "added": "2012-03-24T00:00:00Z",
+    "uses": 10,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "YouTube",
+    "id": "youtube",
+    "categories": [
+      "Web 2.0",
+      "Media"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Search publicly available YouTube videos. A new icon will show up in your course rich editor letting you search YouTube and click to embed videos in your course material.",
+    "app_type": "open_launch",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "width": 690,
+    "height": 530,
+    "added": "2012-03-22T00:00:00Z",
+    "uses": 120,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Quizlet Flash Cards",
+    "id": "quizlet",
+    "categories": [
+      "Assessment",
+      "Study Helps",
+      "Web 2.0"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Search for and embed publicly available question sets on Quizlet. Questions can be embedded as flash cards, review, or as a study game.",
+    "app_type": "open_launch",
+    "short_description": "Flash card and study help tools",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "test_instructions": "",
+    "width": 690,
+    "height": 510,
+    "added": "2012-02-11T00:00:00Z",
+    "uses": 30,
+    "author_name": "Brian Whitmer",
+    "author_url": null,
+    "pending": null
+  },
+  {
+    "name": "Internet Archive",
+    "id": "archive",
+    "categories": [
+      "Media",
+      "Open Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "The Internet Archive hosts public domain video, audio, books, images and other resources. Links to any of these resources can easily be added to any course content.",
+    "app_type": "open_launch",
+    "short_description": "Search public videos, books, etc.",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "width": 690,
+    "height": 530,
+    "added": "2012-03-30T00:00:00Z",
+    "uses": 10,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "CK-12",
+    "id": "ck12",
+    "categories": [
+      "Textbooks/eBooks",
+      "Content",
+      "Open Content",
+      "Math",
+      "Science"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade"
+    ],
+    "description": "Free, open, user-modifiable textbooks and learning content intended for K-12. Books or chapters can be linked to from within course content.",
+    "app_type": "data",
+    "short_description": "Customizable free textbooks",
+    "added": "2012-05-16T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "McGraw Hill Tegrity",
+    "id": "tegrity",
+    "categories": [
+      "Media"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Supports course-level support for the Tegrity lecture capture solution. Visit the Tegrity web site for instructions on how to sign up and get a consumer key and shared secret.",
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=63",
+    "author_name": "McGraw Hill",
+    "launch_url": "https://aairs-connectors.tegrity.com/sso/aairs/blti.aspx",
+    "privacy_level": "public",
+    "custom_fields": {
+      "mapping": "Canvas",
+      "application_type": "Tegrity",
+      "CourseId_Canvas_Parameter": "lis_course_offering_sourcedid",
+      "UserId_Canvas_Parameter": "custom_canvas_user_login_id"
     },
-    {
-      "id": "voice_thread",
-      "name": "VoiceThread",
-      "added": "2012-12-18T00:00:00Z",
-      "description": "VoiceThread is a collaborative communication tool that allows text, audio, video, voice and annotated communication.<br/><br/><a href='https://voicethread.com/'>Register at VoiceThread.com</a> and contact the company about receiving a consumer key and shared secret.",
-      "launch_url": "https://voicethread.com/shib/lti/",
-      "privacy_level": "public",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Community","Media"]
+    "added": "2012-01-10T00:00:00Z",
+    "uses": 30,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "Nook Study",
+    "id": "nook_study",
+    "categories": [
+      "Textbooks/eBooks"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Nook Study LTI allows you to insert link as items in a module that the teacher can use to specify a set of require reading materials for the course, or to link to specific textbook material that will load for students.<br/><br/>You can find directions for obtaining a key and secret <a href='http://www.barnesandnoble.com/nookstudy/integration/index.asp'>on the Nook Study LTI site</a>",
+    "extensions": [
+      "course_nav"
+    ],
+    "preview": {
+      "url": "http://www.youtube.com/embed/SwtcDKxclbw?rel=0",
+      "height": 400
     },
-    {
-      "id": "nook_study",
-      "name": "Nook Study",
-      "added": "2012-01-10T00:00:00Z",
-      "description": "Nook Study LTI allows you to insert link as items in a module that the teacher can use to specify a set of require reading materials for the course, or to link to specific textbook material that will load for students.<br/><br/>You can find directions for obtaining a key and secret <a href='http://www.barnesandnoble.com/nookstudy/integration/index.asp'>on the Nook Study LTI site</a>",
-      "variable_name": "{{ launch_name }}",
-      "course_nav_link_text": "{{ link_text }}",
-      "launch_url": "{{ launch_url }}",
-      "privacy_level": "public",
-      "config_urls": [
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=64",
+    "author_name": "Barnes & Noble",
+    "config_urls": [
       {
         "url": "/tools/nook_study/config.xml?launch_url=http%3A%2F%2Fnookstudyblti.com%2FBN-BLTI-Textbook-1.0.0%2Findex.jsp&launch_name=Nook%20Study%20-%20Required%20reading%20list&link_text=Readings",
         "description": "Required reading list"
@@ -236,1046 +641,2050 @@
       {
         "url": "/tools/nook_study/config.xml?launch_url=http%3A%2F%2Fnookstudyblti.com%2FBN-BLTI-Link-1.0.0%2Findex.jsp&launch_name=Nook%20Study%20-%20Link%20to%20book%2Fchapter&link_text=Nook%20Study",
         "description": "Link to book/chapter"
-      }],
-      "config_options": [
-        {
-          "name": "course_nav",
-          "description": "Show in Course Navigation",
-          "type": "checkbox",
-          "value": "1"
-        }
-      ],
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Textbooks/eBooks"],
-      "extensions": ["course_nav"],
-      "preview": {
-        "url": "http://www.youtube.com/embed/SwtcDKxclbw?rel=0",
-        "height": 400
       }
-    },
-    {
-      "id": "schooltube",
-      "name": "SchoolTube",
-      "added": "2012-04-07T00:00:00Z",
-      "description": "SchoolTube is a collection of videos uploaded from schools that is publicly searchable. Videos can be inserted as links or embedded in course material.",
-      "short_description": "Videos contributed by schools",
-      "app_type": "open_launch",
-      "width": 690,
-      "height": 530,
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0", "Media"],
-      "extensions": ["editor_button", "resource_selection"]
-    },
-    {
-      "id": "tegrity",
-      "uses": 30,
-      "name": "McGraw Hill Tegrity",
-      "added": "2012-01-10T00:00:00Z",
-      "description": "Supports course-level support for the Tegrity lecture capture solution. Visit the Tegrity web site for instructions on how to sign up and get a consumer key and shared secret.",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "launch_url": "https://aairs-connectors.tegrity.com/sso/aairs/blti.aspx",
-      "custom_fields": {
-        "mapping": "Canvas",
-        "application_type": "Tegrity",
-        "CourseId_Canvas_Parameter": "lis_course_offering_sourcedid",
-        "UserId_Canvas_Parameter": "custom_canvas_user_login_id"
-      },
-      "privacy_level": "public",
-      "categories": ["Media"]
-    },
-    {
-      "id": "mh_campus",
-      "name": "McGraw Hill Campus",
-      "added": "2013-01-04T00:00:00Z",
-      "description": "Provides access to McGraw Hill's interactive resources tied to course content and textbooks.<br/><br/><a href='http://www.mhcampus.com/'>Visit mhcampus.com</a> for more information.",
-      "launch_url": "https://aairs-connectors.tegrity.com/sso/aairs/blti.aspx",
-      "custom_fields": {
-        "mapping": "Canvas",
-        "application_type": "MHCampus"
-      },
-      "privacy_level": "public",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content"]
-    },
-    {
-      "id": "plato",
-      "name": "PLATO",
-      "added": "2012-01-10T00:00:00Z",
-      "description": "PLATO provides standards-based online curriculum in a rich, interactive environment. Embed learning resources from PLATO within your course.<br/><br/><a href='http://www.edmentum.com/products-services/plato-courseware'>Visit the PLATO web site</a> for more information.",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content"],
-      "privacy_level": "public",
-      "launch_url": "https://{{ domain }}/oauth/launch",
-      "config_options": [
-        {
-            "name": "domain",
-            "description": "Domain",
-            "required": true,
-            "type": "text",
-            "value": "lti.demople.platoweb.com"
-        }
-      ]
-    },
-    {
-      "id": "scorm_cloud",
-      "name": "SCORM Cloud",
-      "added": "2012-12-18T00:00:00Z",
-      "description": "Delivers SCORM packages in a standardized way across learning platforms. Robust SCORM engine with built-in grade passback and activity tracking.<br/><br/><a href='https://cloud.scorm.com/sc/guest/SignUpForm'>Sign up for a SCORM Cloud account</a> and upload your SCORM packages to generate a consumer key and secret.",
-      "launch_url": "http://cloud.scorm.com/sc/blti",
-      "privacy_level": "public",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content"]
-    },
-    {
-      "id": "inigral",
-      "added": "2012-04-18T00:00:00Z",
-      "name": "Inigral Schools App",
-      "description": "Schools App is a private social network within Facebook for colleges and universities. Links to a school's app can be launched from within a course, and can also be added as a link that students will see in their user profile.<br/><br/>To set up you'll need to have an existing <a href='http://www.inigral.com/'>partnership with Inigral</a>, and they will provide you with the app name to enter in the configuration.",
-      "launch_url": "/tool_redirect?url=https%3A%2F%2Fapps.facebook.com%2F{{ app_name }}",
-      "user_nav_link_text": "Schools App",
-      "any_key": true,
-      "config_options": [
-        {
-            "name": "app_name",
-            "description": "Facebook App Name",
-            "required": true,
-            "type": "text",
-            "value": "myschool"
-        },
-        {
-            "name": "user_nav",
-            "description": "Show in User Profile",
-            "type": "checkbox",
-            "value": "1"
-        }
-      ],
-      "levels": ["Postsecondary"],
-      "categories": ["Web 2.0", "Community"],
-      "extensions": ["user_nav"]
-    },
-    {
-      "id": "hoot_me",
-      "added": "2012-04-28T00:00:00Z",
-      "name": "Hoot.me",
-      "description": "Hoot.me lets students study and work collaboratively from within Facebook.",
-      "launch_url": "https://app.hoot.me/",
-      "course_nav_link_text": "Hoot",
-      "privacy_level": "public",
-      "levels": ["Postsecondary"],
-      "categories": ["Web 2.0", "Community"],
-      "extensions": ["course_nav"]
-    },
-    {
-      "id": "piazza",
-      "uses": 20,
-      "added": "2012-02-01T00:00:00Z",
-      "name": "Piazza",
-      "description": "Piazza is a new style of discussion/Q&amp;A site with a focus on educational institutions. This integration adds a link to the course navigation for Piazza discussions.<br/><br/>Contact Piazza for instructions on getting a consumer key and secret.",
-      "launch_url": "https://piazza.com/basic_lti",
-      "privacy_level": "public",
-      "config_options": [
-        {
-            "name": "course_nav",
-            "description": "Show in Course Navigation",
-            "type": "checkbox",
-            "value": "1"
-        }
-      ],
-      "levels": ["Postsecondary"],
-      "categories": ["Web 2.0", "Community"],
-      "extensions": ["course_nav"]
-    },
-    {
-      "id": "redirect",
-      "added": "2012-11-28T00:00:00Z",
-      "name": "Redirect Tool",
-      "variable_name": "{{ name }}",
-      "launch_url": "/tool_redirect?url={{ escape:url }}",
-      "description": "Add links to external web resources that show up as navigation items in course, user or account navigation. Whatever URL you specify is loaded within the content pane when users click the link.",
-      "variable_description": "Link to {{ name }} ({{ url }})",
-      "any_key": true,
-      "config_options": [
-        {
-            "name": "name",
-            "description": "Link Name",
-            "required": true,
-            "type": "text",
-            "value": "Link"
-        },
-        {
-            "name": "url",
-            "description": "URL Redirect",
-            "required": true,
-            "type": "text",
-            "value": "https://"
-        },
-        {
-            "name": "course_nav",
-            "description": "Show in Course Navigation",
-            "type": "checkbox",
-            "value": "1"
-        },
-        {
-            "name": "user_nav",
-            "description": "Show in User Navigation",
-            "type": "checkbox",
-            "value": "1"
-        },
-        {
-            "name": "account_nav",
-            "description": "Show in Account Navigation",
-            "type": "checkbox",
-            "value": "1"
-        }
-      ],
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content"],
-      "extensions": ["course_nav", "user_nav", "account_nav"]
-    },
-    {
-      "id": "slideshare",
-      "uses": 10,
-      "added": "2012-03-06T00:00:00Z",
-      "name": "Slideshare",
-      "description": "Slideshare is a site that enables viewing and interacting with presentations without needing desktop software. Search for and embed Creative Commons-licensed presentations hosted on Slideshare.",
-      "short_description": "Creative Commons-licensed presentations",
-      "app_type": "open_launch",
-      "width": 690,
-      "height": 530,
-      "extensions": ["editor_button", "resource_selection"],
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0", "Media"]
-    },
-    {
-      "id": "quizlet",
-      "uses": 30,
-      "added": "2012-02-11T00:00:00Z",
-      "name": "Quizlet Flash Cards",
-      "description": "Search for and embed publicly available question sets on Quizlet. Questions can be embedded as flash cards, review, or as a study game.",
-      "short_description": "Flash card and study help tools",
-      "width": 690,
-      "height": 510,
-      "app_type": "open_launch",
-      "extensions": ["editor_button", "resource_selection"],
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0", "Study Helps"]
-    },
-    {
-      "id": "panopto",
-      "uses": 20,
-      "name": "Panopto",
-      "added": "2012-01-10T00:00:00Z",
-      "description": "Supports lecture capture solution from Panopto.<br/><br/>Visit the Panopto web site for instructions on how to sign up and get a consumer key and shared secret.",
-      "launch_url": "https://{{ domain }}.hosted.panopto.com/Panopto/BasicLTI/BasicLTILanding.aspx",
-      "privacy_level": "public",
-      "config_options": [
-        {
-            "name": "domain",
-            "description": "Domain",
-            "required": true,
-            "type": "text",
-            "value": "myschool"
-        },
-        {
-            "name": "course_nav",
-            "description": "Show in Course Navigation",
-            "type": "checkbox",
-            "value": "1"
-        }
-      ],
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Media"],
-      "extensions": ["course_nav"]
-    },
-    {
-      "id": "pinterest",
-      "pending": true,
-      "added": "2012-04-13T00:00:00Z",
-      "name": "Pinterest",
-      "description": "Search for images shared on Pinterest. Clicking an image will embed it in your course material with a link back to the original page the image is pulled from.",
-      "app_type": "open_launch",
-      "width": 700,
-      "height": 510,
-      "extensions": ["editor_button", "resource_selection"],
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0"]
-    },
-    {
-      "id": "cengage",
-      "uses": 20,
-      "added": "2012-04-13T00:00:00Z",
-      "name": "Cengage Learning",
-      "domain": "gateway.cengage.com",
-      "privacy_level": "public",
-      "description": "Build and link to interactive educational content called MindLinks, provided by Cengage. MindLinks can deliver reading material, quizzes, activities, etc.<br/><br/><a href='http://cengage.com'>Contact Cengage</a> to receive a consumer key and secret.",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Textbooks/eBooks"]
-    },
-    {
-      "id": "coursesmart",
-      "uses": 70,
-      "name": "CourseSmart",
-      "added": "2012-01-10T00:00:00Z",
-      "description": "Add links to rich online textbooks, chapters, etc. If your institution is set up with CourseSmart then you can select and insert learning materials within your course content.",
-      "config_directions": "Contact <a href='http:www.coursesmart.com/'>CourseSmart</a> or your institution's administrator for configuration instructions.",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Textbooks/eBooks"]
-    },
-    {
-      "id": "sage_cell",
-      "added": "2012-05-02T00:00:00Z",
-      "name": "Sage",
-      "description": "Sage is an online open source mathematics software system, an alternative to Mathematica or Matlab. Users can build interactive mathematical systems that are rendered in the browser.<br/><br/>Once the app is added, you can add the app to your course content and launch it, then start building out your visualizations to be reviewed by students.",
-      "launch_url": "http://www.myopenmath.com/sagecelllti.php",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "any_key": true,
-      "categories": ["Math", "Science"]
-    },
-    {
-      "id": "chem_vantage",
-      "name": "ChemVantage",
-      "added": "2012-02-01T00:00:00Z",
-      "description": "Lets teachers build and distribute science education focused homework, video lectures, graded quizzes, etc.<br/><br/>Contact admin@chemvantage.org about getting a consumer key and shared secret.",
-      "launch_url": "http://chem-vantage.appspot.com/BLTILaunch/",
-      "privacy_level": "public",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Science"],
-      "extensions": ["course_nav"]
-    },
-    {
-      "id": "chalk_and_wire",
-      "name": "Chalk and Wire",
-      "added": "2012-12-01T00:00:00Z",
-      "description": "Chalk &amp; Wire provides ePortfolio, Assessment and Data Analysis Tools that can be used to help improve the student learning experience.<br/><br/><a href='http://chalkandwire.com/'>Contact Chalk & Wire</a> for information on signing up for an account and getting a key and secret.",
-      "launch_url": "https://epcs.chalkandwire.com/epcs/blti/tool.xml",
-      "privacy_level": "public",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content", "Community"]
-    },
-    {
-      "uses": 10,
-      "id": "elgg",
-      "name": "Elgg",
-      "added": "2012-01-10T00:00:00Z",
-      "description": "Open source social networking. You can add a link to your course navigation that will send users to an Elgg network already logged in.<br/><br/>You need to have a running Elgg server, and then you'll need to install the <a href='http://community.elgg.org/pg/plugins/project/851496/developer/spb1/www.celtic-project.org'>LTI plugin for Elgg</a> in order for this integration to work.",
-      "launch_url": "https://{{ domain }}/pg/blti/",
-      "privacy_level": "public",
-      "config_options": [
-        {
-            "name": "domain",
-            "description": "Domain",
-            "required": true,
-            "type": "text",
-            "value": "myelgg.com"
-        },
-        {
-            "name": "course_nav",
-            "description": "Show in Course Navigation",
-            "type": "checkbox",
-            "value": "1"
-        }        
-      ],
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0", "Community"],
-      "extensions": ["course_nav"]
-    },
-    {
-      "id": "noteflight",
-      "uses": 5,
-      "name": "Noteflight",
-      "added": "2012-01-10T00:00:00Z",
-      "description": "Build musical annotations on the web. Great in music classes for both teaching and assigning to students as homework. Load the app and create annotations that can be reviewed by students.<br/><br/>You'll need to <a href='http://www.noteflight.com/info/learn_more_k12'>sign up for noteflight</a> and contact them to get your key and secret.",
-      "launch_url": "http://{{ domain }}.noteflight.com/",
-      "privacy_level": "public",
-      "config_options": [
-        {
-            "name": "domain",
-            "description": "Domain",
-            "required": true,
-            "type": "text",
-            "value": "myschool"
-        }
-      ],
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content"]
-    },
-    {
-      "id": "courseload",
-      "uses": 30,
-      "name": "Courseload",
-      "added": "2012-01-10T00:00:00Z",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content"],
-      "description": "Add links to rich online textbooks, chapters, etc. If your institution is set up with Courseload then you can select and insert learning materials within your course content.",
-      "config_directions": "Contact <a href='http:courseload.com/'>Courseload</a> for configuration instructions. "
-    },
-    {
-      "id": "khan_academy",
-      "uses": 110,
-      "added": "2012-01-13T00:00:00Z",
-      "name": "Khan Academy",
-      "description": "Search for and embed Khan Academy lessons into course material. Khan Academy focuses on short lessons on math, science, etc.",
-      "short_description": "Online video lessons for math, science, etc.",
-      "app_type": "open_launch",
-      "extensions": ["editor_button", "resource_selection"],
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0", "Media", "Math", "Science", "Open Content"]
-    },
-    {
-      "id": "my_open_math",
-      "uses": 30,
-      "added": "2012-02-01T00:00:00Z",
-      "name": "MyOpenMath",
-      "description": "Internet Math Assessment System lets you create and administer auto-graded math assessments to students. It has experimental support for passing grades back to the LMS.<br/><br/>Visit the web site for instructions on how to sign up and get a consumer key and shared secret.",
-      "launch_url": "http://www.myopenmath.com/bltilaunch.php",
-      "privacy_level": "public",
-      "preview": {
-        "url": "http://www.youtube.com/embed/QDXRys2o1eY?rel=0",
-        "height": 400
-      },
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Math"]
-    },
-    {
-      "id": "wikipedia",
-      "uses": 30,
-      "name": "Wikipedia",
-      "added": "2012-03-22T00:00:00Z",
-      "description": "Search through English Wikipedia articles and link to or embed these articles into course material.",
-      "short_description": "Articles from The Free Encyclopedia",
-      "app_type": "open_launch",
-      "extensions": ["editor_button", "resource_selection"],
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0", "Open Content"],
-      "width": 590,
-      "height": 450
-    },
-    {
-      "id": "gooru",
-      "pending": true,
-      "uses": 30,
-      "name": "Gooru Learning",
-      "added": "2012-12-26T00:00:00Z",
-      "description": "Search collections of open and public learning resources from across the Internet. Insert links to learning resource collections created by other instructors.",
-      "short_description": "Open content collections",
-      "app_type": "open_launch",
-      "width": 700,
-      "height": 550,
-      "extensions": ["editor_button", "resource_selection"],
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Open Content"]
-    },
-    {
-      "id": "wiktionary",
-      "uses": 0,
-      "added": "2012-04-23T00:00:00Z",
-      "name": "Wiktionary",
-      "description": "Search through English Wiktionary definitions and insert definitions into course material.",
-      "short_description": "Definitions from the free dictionary",
-      "app_type": "open_launch",
-      "extensions": ["editor_button", "resource_selection"],
-      "no_launch": true,
-      "width": 690,
-      "height": 530,
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0", "Open Content"]
-    },
-    {
-      "id": "campus_pack",
-      "name": "Campus Pack",
-      "added": "2012-01-10T00:00:00Z",
-      "description": "Load Campus Pack inside the LMS to add ePortfolios, blogs, wikis, etc.<br/><br/><b>Directions for configuring Campus Pack:</b><ol><li>Login to Campus Pack as an administrator.</li><li>Click Administrator Portal.</li><li>Click External System Connectors.</li><li>Click Create.</li><li>Click Basic LTI Tool Producer.</li><li>Fill out the form.  These values will be important later.</li><ol><li>Set Connector Id to blti-producer.</li><li>Set Name to your institution name.</li><li>Do not alter Shared Secret Key.</li><li>Ignore URL.</li><li>Ignore IP address.</li></ol><li>Click Submit.</li></ol>",
-      "launch_url": "https://{{ domain }}.learningobjects.com/control/lti{{ launch_query }}",
-      "privacy_level": "public",
-      "variable_name": "Campus Pack - {{ launch_name }}",
-      "course_nav_link_text": "{{ link_text }}",
-      "config_urls": [
-          {
-            "url": "/tools/campus_pack/config.xml?launch_name=Collaboration&link_text=Campus%20Pack",
-            "description": "Collaboration Space"
-          },
-          {
-            "url": "/tools/campus_pack/config.xml?launch_name=Wiki&link_text=Wiki&launch_query=%3Fcustom_request_type%3Dwiki",
-            "description": "Wiki"
-          },
-          {
-            "url": "/tools/campus_pack/config.xml?launch_name=Blog&link_text=Blog&launch_query=%3Fcustom_request_type%3Dblog",
-            "description": "Blog"
-          },
-          {
-            "url": "/tools/campus_pack/config.xml?launch_name=Journal&link_text=Journal&launch_query=%3Fcustom_request_type%3Djournal",
-            "description": "Journal"
-          },
-          {
-            "url": "/tools/campus_pack/config.xml?launch_name=Podcast&link_text=Podcast&launch_query=%3Fcustom_request_type%3Dpodcast",
-            "description": "Podcast"
-          }
-      ],
-      "config_options": [
-        {
-            "name": "domain",
-            "description": "Domain",
-            "required": true,
-            "type": "text",
-            "value": "myschool"
-        },
-        {
-            "name": "course_nav",
-            "description": "Show in Course Navigation",
-            "type": "checkbox",
-            "value": "1"
-        }
-      ],
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content"],
-      "extensions": ["course_nav"]
-    },
-    {
-      "id": "bb_collaborate",
-      "name": "Blackboard Collaborate",
-      "added": "2012-11-20T00:00:00Z",
-      "description": "Create and record web conferencing sessions within your course. Can be used for virtual classrooms time, office hours, group work, etc.<br/><br/>Contact <a href='http://blackboard.com'>Blackboard</a> for account registration and to retrieve a key and secret.",
-      "privacy_level": "public",
-      "launch_url": "{{ launch_url }}",
-      "variable_name": "Blackboard Collaborate - {{ launch_name }}",
-      "course_nav_link_text": "{{ launch_name }}",
-      "config_urls": [
-          {
-            "url": "/tools/bb_collaborate/config.xml?launch_name=Collaborate&launch_url=https%3A%2F%2Flti.bbcollab.com%2Fcollaborate%2Fwebconferencing%2F",
-            "description": "Collaborate"
-          },
-          {
-            "url": "/tools/bb_collaborate/config.xml?launch_name=Voice%20Board&launch_url=https%3A%2F%2Flti.bbcollab.com%2Fcollaborate%2Fvoice%2Fboard",
-            "description": "Voice Board"
-          },
-          {
-            "url": "/tools/bb_collaborate/config.xml?launch_name=Podcaster&launch_url=https%3A%2F%2Flti.bbcollab.com%2Fcollaborate%2Fvoice%2Fpodcaster%2F",
-            "description": "Podcaster"
-          },
-          {
-            "url": "/tools/bb_collaborate/config.xml?launch_name=Presentation&launch_url=https%3A%2F%2Flti.bbcollab.com%2Fcollaborate%2Fvoice%2Fpresentation",
-            "description": "Presentation"
-          }
-      ],
-      "extensions": ["course_nav"],
-      "config_options": [
-        {
-            "name": "course_nav",
-            "description": "Show in Course Navigation",
-            "type": "checkbox",
-            "value": "1"
-        }
-      ],
-      "levels": ["7th-12th Grade", "Postsecondary"],
-      "categories": ["Media"]
-    },
-    {
-      "pending": true,
-      "id": "pathbrite",
-      "name": "Pathbrite",
-      "added": "2012-01-10T00:00:00Z",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content"],
-      "description": "Pathbrite is an ePortfolio tool that can be integrated into the LMS.",
-      "config_directions": "Contact <a href='http://www.pathbrite.com/'>Pathbrite</a> for configuration instructions."
-    },
-    {
-      "pending": true,
-      "id": "pebble_pad",
-      "name": "PebblePad",
-      "added": "2012-01-10T00:00:00Z",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content"],
-      "description": "PebblePad is an ePortfolio tool that can be integrated into the LMS.",
-      "config_directions": "Contact <a href='http://www.pebblepad.co.uk/'>PebblePad</a> for configuration instructions."
-    },
-    {
-      "id": "wikispaces",
-      "name": "Wikispaces",
-      "added": "2012-03-21T00:00:00Z",
-      "description": "Wikispaces offers free wikis for educational purposes. Private label sites can be configured to use LTI for authentication. You'll need a private label site as opposed to just a personal account in order for this app to work properly.",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content"],
-      "config_directions": "Visit <a href='https://help.wikispaces.com/basic+lti'>the Wikispages LTI configuration page</a> for directions on configuring your Wikispaces private label site."
-    },
-    {
-      "pending": true,
-      "id": "mediasite",
-      "name": "MediaSite",
-      "added": "2012-01-10T00:00:00Z",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content"],
-      "description": "MediaSite is a webcasting and lecture capture solution that can be integrated into the LMS.",
-      "config_directions": "Contact <a href='http://www.sonicfoundry.com/mediasite'>Sonic Foundry</a> for configuration instructions."
-    },
-    {
-      "id": "aleks",
-      "name": "Aleks",
-      "added": "2012-12-01T00:00:00Z",
-      "description": "Aleks is a site that offers customized assessment and learning resources that can be integrated into the LMS.<br/><br/>Contact <a href='http://www.aleks.com/'>ALEKS</a> for configuration instructions.",
-      "launch_url": "https://secure.aleks.com/lti/canvas",
-      "privacy_level": "public",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content", "Community"]
-    },
-    {
-      "id": "place_kitten",
-      "name": "PlaceKitten",
-      "added": "2012-01-20T00:00:00Z",
-      "description": "PlaceKitten lets you embed perfectly-size kitten images into any online content. You pick the dimensions, whether it's color or grayscale, and then embed it into your content.",
-      "short_description": "Embed kitten images",
-      "app_type": "open_launch",
-      "extensions": ["editor_button"],
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0"]
-    },
-    {
-      "id": "youtube",
-      "uses": 120,
-      "name": "YouTube",
-      "added": "2012-03-22T00:00:00Z",
-      "description": "Search publicly available YouTube videos. A new icon will show up in your course rich editor letting you search YouTube and click to embed videos in your course material.",
-      "width": 690,
-      "height": 530,
-      "extensions": ["editor_button", "resource_selection"],
-      "app_type": "open_launch",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0", "Media"]
-    },
-    {
-      "id": "youtube_upload",
-      "pending": true,
-      "name": "YouTube Uploader",
-      "added": "2012-03-22T00:00:00Z",
-      "exclude_from_public_collections": true,
-      "description": "Record videos from your webcam or upload them from your desktop into your personal YouTube account. Newly-created videos are automatically linked to within your course content.",
-      "app_type": "open_launch",
-      "width": 690,
-      "height": 530,
-      "extensions": ["editor_button", "resource_selection"],
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0", "Media"]
-    },
-    {
-      "id": "youtube_user",
-      "name": "YouTube Channel",
-      "added": "2012-03-22T00:00:00Z",
-      "description": "Search publicly available YouTube videos within a specific channel. A new icon will show up in your course rich editor letting you search YouTube and click to embed videos in your course material.<br/><br/>YouTube channel names are found in the URL of the channel (i.e. the channel name for http://www.youtube.com/user/DiscoveryEducation would be DiscoveryEducation).",
-      "variable_name": "YouTube Channel - {{ user_title }}",
-      "width": 690,
-      "height": 530,
-      "extensions": ["editor_button", "resource_selection"],
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "app_type": "open_launch",
-      "exclude_from_public_collections": true,
-      "categories": ["Web 2.0", "Media"],
-      "preview": {
-        "url": "/tools/youtube_user/index.html?user_name=DiscoveryEducation&user_title=Discovery%20Education",
-        "height": 475
-      },
-      "config_options": [
-        {
-            "name": "user_name",
-            "description": "URL Channel Name",
-            "required": true,
-            "type": "text",
-            "value": "DiscoveryEducation"
-        },
-        {
-            "name": "user_title",
-            "description": "Channel Display Name",
-            "required": true,
-            "type": "text",
-            "value": "Discovery Education"
-        }
-      ]
-    },
-    {
-      "id": "youtube_edu",
-      "uses": 0,
-      "name": "YouTube For Schools",
-      "added": "2012-03-22T00:00:00Z",
-      "description": "YouTube for Schools is a collection of edu-centric videos that can be whitelisted for campus access without opening up all of YouTube. A new icon in your course editor lets you browse YouTube's EDU content and click to embed videos in your course.<br/><br/><a href='http://www.youtube.com/schools'>Learn more about setting up YouTube for Schools</a>.",
-      "width": 690,
-      "height": 530,
-      "app_type": "open_launch",
-      "extensions": ["editor_button", "resource_selection"],
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0", "Media"]
-    },
-    {
-      "id": "titanpad",
-      "uses": 10,
-      "name": "TitanPad",
-      "added": "2012-03-24T00:00:00Z",
-      "description": "TitanPad offers free, public collaborative documents based on EtherPad. Every placement of a TitanPad in your content will result in a new pad being created. Students can also chat while working together on a pad.",
-      "any_key": true,
-      "launch_url": "/titanpad",
-      "privacy_level": "name_only",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0", "Content"]
-    },
-    {
-      "id": "speeqe",
-      "name": "Speeqe Chat",
-      "added": "2012-11-17T00:00:00Z",
-      "description": "Speeqe chat allows you to add chat rooms to web pages. This app lets you add a chat room as a course navigation link for your students.<br/><br/><b>NOTE</b> that since Speeqe doesn't run over SSL, you'll get security warnings when using in a Canvas instance that runs on https",
-      "any_key": true,
-      "launch_url": "/speeqe",
-      "privacy_level": "name_only",
-      "levels": ["Postsecondary"],
-      "categories": ["Web 2.0", "Community"],
-      "extensions": ["course_nav"],
-      "preview": {
-        "url": "/speeqe",
-        "height": 475
+    ],
+    "launch_url": "{{ launch_url }}",
+    "privacy_level": "public",
+    "course_nav_link_text": "{{ link_text }}",
+    "config_options": [
+      {
+        "name": "course_nav",
+        "description": "Show in Course Navigation",
+        "type": "checkbox",
+        "value": "1"
       }
+    ],
+    "variable_name": "{{ launch_name }}",
+    "added": "2012-01-10T00:00:00Z",
+    "uses": 0,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "Campus Pack",
+    "id": "campus_pack",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Load Campus Pack inside the LMS to add ePortfolios, blogs, wikis, etc.<br/><br/><b>Directions for configuring Campus Pack:</b><ol><li>Login to Campus Pack as an administrator.</li><li>Click Administrator Portal.</li><li>Click External System Connectors.</li><li>Click Create.</li><li>Click Basic LTI Tool Producer.</li><li>Fill out the form.  These values will be important later.</li><ol><li>Set Connector Id to blti-producer.</li><li>Set Name to your institution name.</li><li>Do not alter Shared Secret Key.</li><li>Ignore URL.</li><li>Ignore IP address.</li></ol><li>Click Submit.</li></ol>",
+    "extensions": [
+      "course_nav"
+    ],
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=30",
+    "author_name": "Learning Objects",
+    "config_urls": [
+      {
+        "url": "/tools/campus_pack/config.xml?launch_name=Collaboration&link_text=Campus%20Pack",
+        "description": "Collaboration Space"
+      },
+      {
+        "url": "/tools/campus_pack/config.xml?launch_name=Wiki&link_text=Wiki&launch_query=%3Fcustom_request_type%3Dwiki",
+        "description": "Wiki"
+      },
+      {
+        "url": "/tools/campus_pack/config.xml?launch_name=Blog&link_text=Blog&launch_query=%3Fcustom_request_type%3Dblog",
+        "description": "Blog"
+      },
+      {
+        "url": "/tools/campus_pack/config.xml?launch_name=Journal&link_text=Journal&launch_query=%3Fcustom_request_type%3Djournal",
+        "description": "Journal"
+      },
+      {
+        "url": "/tools/campus_pack/config.xml?launch_name=Podcast&link_text=Podcast&launch_query=%3Fcustom_request_type%3Dpodcast",
+        "description": "Podcast"
+      }
+    ],
+    "launch_url": "https://{{ domain }}.learningobjects.com/control/lti{{ launch_query }}",
+    "privacy_level": "public",
+    "course_nav_link_text": "{{ link_text }}",
+    "config_options": [
+      {
+        "name": "domain",
+        "description": "Domain",
+        "type": "text",
+        "value": "myschool",
+        "required": true
+      },
+      {
+        "name": "course_nav",
+        "description": "Show in Course Navigation",
+        "type": "checkbox",
+        "value": "1"
+      }
+    ],
+    "variable_name": "Campus Pack - {{ launch_name }}",
+    "added": "2012-01-10T00:00:00Z",
+    "uses": 0,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "Courseload",
+    "id": "courseload",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Add links to rich online textbooks, chapters, etc. If your institution is set up with Courseload then you can select and insert learning materials within your course content.",
+    "config_directions": "Contact <a href='http:courseload.com/'>Courseload</a> for configuration instructions. ",
+    "added": "2012-01-10T00:00:00Z",
+    "uses": 30,
+    "pending": null,
+    "author_name": "Courseload",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=117"
+  },
+  {
+    "name": "MyOpenMath",
+    "id": "my_open_math",
+    "categories": [
+      "Math"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Internet Math Assessment System lets you create and administer auto-graded math assessments to students. It has experimental support for passing grades back to the LMS.<br/><br/>Visit the web site for instructions on how to sign up and get a consumer key and shared secret.",
+    "preview": {
+      "url": "http://www.youtube.com/embed/QDXRys2o1eY?rel=0",
+      "height": 400
     },
-    {
-      "id": "flat_world_knowledge",
-      "name": "Flat World Knowledge",
-      "added": "2012-03-06T00:00:00Z",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Textbooks/eBooks", "Content", "Open Content"],
-      "description": "Flat World Knowledge offers free, open-licensed textbooks that can be used in class material. Link to any of these textbooks from within your class.",
-      "short_description": "Free, open online textbooks",
-      "app_type": "data"
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=101",
+    "author_name": "MyOpenMath",
+    "launch_url": "http://www.myopenmath.com/bltilaunch.php",
+    "privacy_level": "public",
+    "added": "2012-02-01T00:00:00Z",
+    "uses": 30,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "ChemVantage",
+    "id": "chem_vantage",
+    "categories": [
+      "Assessment",
+      "Science"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Lets teachers build and distribute science education focused homework, video lectures, graded quizzes, etc.<br/><br/>Contact admin@chemvantage.org about getting a consumer key and shared secret.",
+    "extensions": [
+      "course_nav"
+    ],
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=102",
+    "author_name": "ChemVantage",
+    "launch_url": "http://chem-vantage.appspot.com/BLTILaunch/",
+    "privacy_level": "public",
+    "added": "2012-02-01T00:00:00Z",
+    "uses": 0,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "Panopto",
+    "id": "panopto",
+    "categories": [
+      "Media"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Supports lecture capture solution from Panopto.<br/><br/>Visit the Panopto web site for instructions on how to sign up and get a consumer key and shared secret.",
+    "extensions": [
+      "course_nav"
+    ],
+    "launch_url": "https://{{ domain }}.hosted.panopto.com/Panopto/BasicLTI/BasicLTILanding.aspx",
+    "privacy_level": "public",
+    "config_options": [
+      {
+        "name": "domain",
+        "description": "Domain",
+        "type": "text",
+        "value": "myschool",
+        "required": true
+      },
+      {
+        "name": "course_nav",
+        "description": "Show in Course Navigation",
+        "type": "checkbox",
+        "value": "1"
+      }
+    ],
+    "added": "2012-01-10T00:00:00Z",
+    "uses": 20,
+    "pending": null,
+    "author_name": "Panopto"
+  },
+  {
+    "name": "Sage",
+    "id": "sage_cell",
+    "categories": [
+      "Math",
+      "Science"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Sage is an online open source mathematics software system, an alternative to Mathematica or Matlab. Users can build interactive mathematical systems that are rendered in the browser.<br/><br/>Once the app is added, you can add the app to your course content and launch it, then start building out your visualizations to be reviewed by students.",
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "",
+    "author_name": "David Lippman",
+    "any_key": true,
+    "launch_url": "http://www.imathas.com/sagecelllti.php",
+    "privacy_level": "anonymous",
+    "added": "2012-05-02T00:00:00Z",
+    "uses": 0,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "SchoolTube",
+    "id": "schooltube",
+    "categories": [
+      "Web 2.0",
+      "Media"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "SchoolTube is a collection of videos uploaded from schools that is publicly searchable. Videos can be inserted as links or embedded in course material.",
+    "app_type": "open_launch",
+    "short_description": "Videos contributed by schools",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "width": 690,
+    "height": 530,
+    "added": "2012-04-07T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Noteflight",
+    "id": "noteflight",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Build musical annotations on the web. Great in music classes for both teaching and assigning to students as homework. Load the app and create annotations that can be reviewed by students.<br/><br/>You'll need to <a href='http://www.noteflight.com/info/learn_more_k12'>sign up for noteflight</a> and contact them to get your key and secret.",
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=37",
+    "author_name": "Noteflight",
+    "launch_url": "http://{{ domain }}.noteflight.com/",
+    "privacy_level": "public",
+    "config_options": [
+      {
+        "name": "domain",
+        "description": "Domain",
+        "type": "text",
+        "value": "myschool",
+        "required": true
+      }
+    ],
+    "added": "2012-01-10T00:00:00Z",
+    "uses": 5,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "CourseSmart",
+    "id": "coursesmart",
+    "categories": [
+      "Textbooks/eBooks"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Add links to rich online textbooks, chapters, etc. If your institution is set up with CourseSmart then you can select and insert learning materials within your course content.",
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "author_name": "CourseSmart",
+    "privacy_level": "anonymous",
+    "added": "2012-01-10T00:00:00Z",
+    "uses": 70,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null,
+    "config_directions": "Contact <a href='http:www.coursesmart.com/'>CourseSmart</a> or your institution's administrator for configuration instructions.",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=11"
+  },
+  {
+    "name": "Storify",
+    "id": "storify",
+    "categories": [
+      "Web 2.0",
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Storify lets users organize events from across the web into a single cohesive \"story\". Adding this app allows you to search through and link to social stories from within your course material.",
+    "app_type": "open_launch",
+    "short_description": "Search and link to social stories",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "width": 690,
+    "height": 530,
+    "added": "2012-04-12T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Cengage Learning",
+    "id": "cengage",
+    "categories": [
+      "Textbooks/eBooks"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Build and link to interactive educational content called MindLinks, provided by Cengage. MindLinks can deliver reading material, quizzes, activities, etc.<br/><br/><a href='http://cengage.com'>Contact Cengage</a> to receive a consumer key and secret.",
+    "domain": "gateway.cengage.com",
+    "privacy_level": "public",
+    "added": "2012-04-13T00:00:00Z",
+    "uses": 20,
+    "pending": null,
+    "author_name": "Cengage Learning"
+  },
+  {
+    "name": "Elgg",
+    "id": "elgg",
+    "categories": [
+      "Community",
+      "Web 2.0"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Open source social networking. You can add a link to your course navigation that will send users to an Elgg network already logged in.<br/><br/>You need to have a running Elgg server, and then you'll need to install the <a href='http://community.elgg.org/pg/plugins/project/851496/developer/spb1/www.celtic-project.org'>LTI plugin for Elgg</a> in order for this integration to work.",
+    "extensions": [
+      "course_nav"
+    ],
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=99",
+    "author_name": "Learning Apps",
+    "launch_url": "https://{{ domain }}/pg/blti/",
+    "privacy_level": "public",
+    "config_options": [
+      {
+        "name": "domain",
+        "description": "Domain",
+        "type": "text",
+        "value": "myelgg.com",
+        "required": true
+      },
+      {
+        "name": "course_nav",
+        "description": "Show in Course Navigation",
+        "type": "checkbox",
+        "value": "1"
+      }
+    ],
+    "added": "2012-01-10T00:00:00Z",
+    "uses": 10,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "PlaceKitten",
+    "id": "place_kitten",
+    "categories": [
+      "Web 2.0"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "PlaceKitten lets you embed perfectly-size kitten images into any online content. You pick the dimensions, whether it's color or grayscale, and then embed it into your content.",
+    "app_type": "open_launch",
+    "short_description": "Embed kitten images",
+    "extensions": [
+      "editor_button"
+    ],
+    "added": "2012-01-20T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Wikipedia",
+    "id": "wikipedia",
+    "categories": [
+      "Web 2.0",
+      "Open Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Search through English Wikipedia articles and link to or embed these articles into course material.",
+    "app_type": "open_launch",
+    "short_description": "Articles from The Free Encyclopedia",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "width": 590,
+    "height": 450,
+    "added": "2012-03-22T00:00:00Z",
+    "uses": 30,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Merlot",
+    "id": "merlot",
+    "categories": [
+      "Content",
+      "Open Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Search through and insert links to multimedia resources curated and collected by MERLOT. This collection is only a subset of some of the higher-rated resources from MERLOT. For the full list of resources, please visit <a href='http://www.merlot.org'>merlot.org</a>.",
+    "app_type": "data",
+    "short_description": "Multimedia online learning materials",
+    "added": "2012-04-06T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Inigral Schools App",
+    "id": "inigral",
+    "categories": [
+      "Web 2.0",
+      "Community"
+    ],
+    "levels": [
+      "Postsecondary"
+    ],
+    "description": "Schools App is a private social network within Facebook for colleges and universities. Links to a school's app can be launched from within a course, and can also be added as a link that students will see in their user profile.<br/><br/>To set up you'll need to have an existing <a href='http://www.inigral.com/'>partnership with Inigral</a>, and they will provide you with the app name to enter in the configuration.",
+    "extensions": [
+      "user_nav"
+    ],
+    "any_key": true,
+    "launch_url": "/tool_redirect?url=https%3A%2F%2Fapps.facebook.com%2F{{ app_name }}",
+    "user_nav_link_text": "Schools App",
+    "config_options": [
+      {
+        "name": "app_name",
+        "description": "Facebook App Name",
+        "type": "text",
+        "value": "myschool",
+        "required": true
+      },
+      {
+        "name": "user_nav",
+        "description": "Show in User Profile",
+        "type": "checkbox",
+        "value": "1"
+      }
+    ],
+    "added": "2012-04-18T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Inigral Schools App"
+  },
+  {
+    "name": "Hoot.me",
+    "id": "hoot_me",
+    "categories": [
+      "Web 2.0",
+      "Community"
+    ],
+    "levels": [
+      "Postsecondary"
+    ],
+    "description": "Hoot.me lets students study and work collaboratively from within Facebook.",
+    "extensions": [
+      "course_nav"
+    ],
+    "launch_url": "https://app.hoot.me/",
+    "privacy_level": "public",
+    "course_nav_link_text": "Hoot",
+    "added": "2012-04-28T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Hoot.me"
+  },
+  {
+    "name": "Smarterer",
+    "id": "smarterer",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Search through and insert links to quizzing and learning resources hosted by <a href='http://smarterer.com'>Smarterer</a>",
+    "app_type": "data",
+    "short_description": "Crowdsourced quizzes and review tools",
+    "added": "2012-04-28T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Hooda Math",
+    "id": "hooda_math",
+    "categories": [
+      "Math"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade"
+    ],
+    "description": "Link to any of the math-related games hosted on Hooda Math's web site.",
+    "app_type": "data",
+    "short_description": "Online math learning games",
+    "added": "2012-02-21T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "educreations",
+    "id": "educreations",
+    "categories": [
+      "Web 2.0",
+      "Media",
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Educreations users \"record\" whiteboard sessions as short online lessons. Browse and link to any of the publibly available lessons.",
+    "app_type": "data",
+    "short_description": "Teacher-recorded whiteboard sessions",
+    "added": "2012-02-23T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "College Board",
+    "id": "college_board",
+    "categories": [
+      "Science",
+      "Math",
+      "Study Helps"
+    ],
+    "levels": [
+      "7th-12th Grade"
+    ],
+    "description": "Makes it easy for instructors to browse the list of available practice resources for SAT and AP exams provided by the College Board. Any of these resources can be linked to within course material.",
+    "app_type": "data",
+    "short_description": "Links to SAT and AP practice tests",
+    "added": "2012-05-23T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "StudyEgg",
+    "id": "studyegg",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "StudyEgg offers customized lessons using online video and questions.",
+    "app_type": "data",
+    "short_description": "Adaptive learning activities",
+    "added": "2012-04-28T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Google Art Project",
+    "id": "google_art",
+    "categories": [
+      "Web 2.0",
+      "Media",
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Google Art Project delivers high-res images of historical artwork, categorized by museum. For some museums there is also a \"street-view\"-like walkthrough of the museum available.",
+    "app_type": "data",
+    "short_description": "Digital tours of famous museum artwork",
+    "added": "2012-01-10T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Codecademy",
+    "id": "codecademy",
+    "categories": [
+      "Science",
+      "Math"
+    ],
+    "levels": [
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Online interactive tutorials to help learn computer programming. Lessons are taught using JavaScript and provide immediate feedback. Link to any Codecademy lessons from within your course.",
+    "app_type": "data",
+    "short_description": "Interactive programming lessons",
+    "added": "2012-02-21T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "MIT OCW",
+    "id": "mit_ocw",
+    "categories": [
+      "Content",
+      "Open Content"
+    ],
+    "levels": [
+      "Postsecondary"
+    ],
+    "description": "MIT OpenCourseWare is a collection of materials from MIT-taught courses that have been released with a Creative Commons license. Browse and link to materials from these collections within your course.",
+    "app_type": "data",
+    "short_description": "OCW lectures, videos, etc. from MIT",
+    "added": "2012-03-15T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Flat World Knowledge",
+    "id": "flat_world_knowledge",
+    "categories": [
+      "Textbooks/eBooks",
+      "Content",
+      "Open Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Flat World Knowledge offers free, open-licensed textbooks that can be used in class material. Link to any of these textbooks from within your class.",
+    "app_type": "data",
+    "short_description": "Free, open online textbooks",
+    "added": "2012-03-06T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Funbrain",
+    "id": "funbrain",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade"
+    ],
+    "description": "Link to interactive online learning activities targeted at K-8 learners.",
+    "app_type": "data",
+    "short_description": "K-8 online learning activities",
+    "added": "2012-04-11T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "BrainPOP",
+    "id": "brainpop",
+    "categories": [
+      "Media",
+      "Content",
+      "Math",
+      "Science"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade"
+    ],
+    "description": "Lessons and activities centered around an educational topic. Link to any BrainPop lessons, or to specific resources within a lesson.",
+    "app_type": "data",
+    "short_description": "Online interactive lessons, quizzes, activities",
+    "added": "2012-03-06T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Manga High",
+    "id": "manga_high",
+    "categories": [
+      "Media",
+      "Math"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade"
+    ],
+    "description": "Free game-based math learning resources for K-12 learners. Games and activities can be linked to from within any course content. Visit <a href='http://www.mangahigh.com/en_us/'>Manga High's web site</a> for instructions on how to sign up as a school.",
+    "app_type": "data",
+    "short_description": "Online interactive math games",
+    "added": "2012-05-18T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Programr",
+    "id": "programr",
+    "categories": [
+      "Science",
+      "Math"
+    ],
+    "levels": [
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Programr offers coding challenge projects for programming languages including Java, C# and C++. Link to any of the available challenges from your course material.",
+    "app_type": "data",
+    "short_description": "Coding challenges in Java, C# and C++",
+    "added": "2012-04-09T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Spelling City",
+    "id": "spelling_city",
+    "categories": [
+      "Content",
+      "Study Helps"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade"
+    ],
+    "description": "Spelling City offers a collection of spelling practice resources, including games, drills, and handwriting practice around different sets of words. Link to any of these resources from within your course.",
+    "app_type": "data",
+    "short_description": "Online spelling practice",
+    "added": "2012-04-07T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Elementary Paper",
+    "id": "elementary_paper",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade"
+    ],
+    "description": "Elementary Paper offers printable handwriting practice sheets. Link to any of the freely available sheets.",
+    "app_type": "data",
+    "short_description": "Browse printable writing practice sheets",
+    "added": "2012-02-21T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Filament Games",
+    "id": "filament_games",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade"
+    ],
+    "description": "Link to a collection of online games focusing on different learning activities.",
+    "app_type": "data",
+    "short_description": "Online learning activities",
+    "added": "2012-04-11T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "SoftChalk Cloud",
+    "id": "softchalk_cloud",
+    "categories": [
+      "Content",
+      "Open Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "SoftChalk Cloud hosts a collection of open-licensed learning resources created by users. Preview or link to any of these resources.",
+    "app_type": "data",
+    "short_description": "Reusable content built using SoftChalk Cloud",
+    "added": "2012-02-28T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "SoftChalk Cloud"
+  },
+  {
+    "name": "YouTube For Schools",
+    "id": "youtube_edu",
+    "categories": [
+      "Web 2.0",
+      "Media"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "YouTube for Schools is a collection of edu-centric videos that can be whitelisted for campus access without opening up all of YouTube. A new icon in your course editor lets you browse YouTube's EDU content and click to embed videos in your course.<br/><br/><a href='http://www.youtube.com/schools'>Learn more about setting up YouTube for Schools</a>.",
+    "app_type": "open_launch",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "width": 690,
+    "height": 530,
+    "added": "2012-03-22T00:00:00Z",
+    "uses": 0,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Open Tapestry",
+    "id": "open_tapestry",
+    "categories": [
+      "Community",
+      "Content",
+      "Media",
+      "Open Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Open Tapestry helps instructors discover, modify, and share open educational resources from across the web. Resources and lessons can be inserted directly into course content, while maintaining their functionality.<br/><br/><a href='http://opentapestry.com'>Register on OpenTapestry</a> and click \"Configure Integrations\" to retrieve your consumer key and shared secret.",
+    "short_description": "Embed open learning resources",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "preview": {
+      "url": "http://player.vimeo.com/video/52579189?byline=0&amp;portrait=0&amp;badge=0",
+      "height": 400
     },
-    {
-      "id": "elementary_paper",
-      "name": "Elementary Paper",
-      "added": "2012-02-21T00:00:00Z",
-      "levels": ["K-6th Grade"],
-      "categories": ["Content"],
-      "description": "Elementary Paper offers printable handwriting practice sheets. Link to any of the freely available sheets.",
-      "short_description": "Browse printable writing practice sheets",
-      "app_type": "data"
+    "icon_url": "//www.opentapestry.com/assets/opentapestry/modal_logo-3b1dbb9475342765e035cff3ca17a553.png",
+    "launch_url": "http://www.opentapestry.com/lti/items",
+    "privacy_level": "public",
+    "width": 892,
+    "height": 800,
+    "added": "2012-12-18T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Open Tapestry"
+  },
+  {
+    "name": "USA Today",
+    "id": "usa_today",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Search for and link to articles from USA Today's archives.",
+    "app_type": "open_launch",
+    "short_description": "Articles from USA Today",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "width": 690,
+    "height": 530,
+    "added": "2012-02-25T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Speeqe Chat",
+    "id": "speeqe",
+    "categories": [
+      "Web 2.0",
+      "Community"
+    ],
+    "levels": [
+      "Postsecondary"
+    ],
+    "description": "Speeqe chat allows you to add chat rooms to web pages. This app lets you add a chat room as a course navigation link for your students.<br/><br/><b>NOTE</b> that since Speeqe doesn't run over SSL, you'll get security warnings when using in a Canvas instance that runs on https",
+    "extensions": [
+      "course_nav"
+    ],
+    "preview": {
+      "url": "/speeqe",
+      "height": 475
     },
-    {
-      "id": "softchalk_cloud",
-      "name": "SoftChalk Cloud",
-      "added": "2012-02-28T00:00:00Z",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content", "Open Content"],
-      "description": "SoftChalk Cloud hosts a collection of open-licensed learning resources created by users. Preview or link to any of these resources.",
-      "short_description": "Reusable content built using SoftChalk Cloud",
-      "app_type": "data"
+    "any_key": true,
+    "launch_url": "/speeqe",
+    "privacy_level": "name_only",
+    "added": "2012-11-17T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Wolfram Alpha",
+    "id": "wolfram",
+    "categories": [
+      "Math",
+      "Science"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Wolfram Alpha provides graphs, data sets and other information about numbers, equations, etc. This app lets you quickly insert links to Wolfram Alpha search results into your course material.",
+    "app_type": "open_launch",
+    "short_description": "Link to Wolfram Alpha search results",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "test_instructions": "",
+    "no_launch": true,
+    "width": 400,
+    "height": 150,
+    "added": "2012-11-17T00:00:00Z",
+    "uses": 0,
+    "author_name": "Brian Whitmer",
+    "author_url": null,
+    "pending": "1"
+  },
+  {
+    "name": "Blackboard Collaborate",
+    "id": "bb_collaborate",
+    "categories": [
+      "Media"
+    ],
+    "levels": [
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Create and record web conferencing sessions within your course. Can be used for virtual classrooms time, office hours, group work, etc.<br/><br/>Contact <a href='http://blackboard.com'>Blackboard</a> for account registration and to retrieve a key and secret.",
+    "extensions": [
+      "course_nav"
+    ],
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=144",
+    "author_name": "Blackboard Collaborate",
+    "config_urls": [
+      {
+        "url": "/tools/bb_collaborate/config.xml?launch_name=Collaborate&launch_url=https%3A%2F%2Flti.bbcollab.com%2Fcollaborate%2Fwebconferencing%2F",
+        "description": "Collaborate"
+      },
+      {
+        "url": "/tools/bb_collaborate/config.xml?launch_name=Voice%20Board&launch_url=https%3A%2F%2Flti.bbcollab.com%2Fcollaborate%2Fvoice%2Fboard",
+        "description": "Voice Board"
+      },
+      {
+        "url": "/tools/bb_collaborate/config.xml?launch_name=Podcaster&launch_url=https%3A%2F%2Flti.bbcollab.com%2Fcollaborate%2Fvoice%2Fpodcaster%2F",
+        "description": "Podcaster"
+      },
+      {
+        "url": "/tools/bb_collaborate/config.xml?launch_name=Presentation&launch_url=https%3A%2F%2Flti.bbcollab.com%2Fcollaborate%2Fvoice%2Fpresentation",
+        "description": "Presentation"
+      }
+    ],
+    "launch_url": "{{ launch_url }}",
+    "privacy_level": "public",
+    "course_nav_link_text": "{{ launch_name }}",
+    "config_options": [
+      {
+        "name": "course_nav",
+        "description": "Show in Course Navigation",
+        "type": "checkbox",
+        "value": "1"
+      }
+    ],
+    "variable_name": "Blackboard Collaborate - {{ launch_name }}",
+    "added": "2012-11-20T00:00:00Z",
+    "uses": 0,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "Redirect Tool",
+    "id": "redirect",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Add links to external web resources that show up as navigation items in course, user or account navigation. Whatever URL you specify is loaded within the content pane when users click the link.",
+    "extensions": [
+      "course_nav",
+      "user_nav",
+      "account_nav"
+    ],
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "author_name": "Instructure",
+    "any_key": true,
+    "launch_url": "https://lti-examples.heroku.com/tool_redirect?url={{ escape:url }}",
+    "privacy_level": "anonymous",
+    "config_options": [
+      {
+        "name": "name",
+        "description": "Link Name",
+        "type": "text",
+        "value": "Link",
+        "required": true
+      },
+      {
+        "name": "url",
+        "description": "URL Redirect",
+        "type": "text",
+        "value": "https://",
+        "required": true
+      },
+      {
+        "name": "course_nav",
+        "description": "Show in Course Navigation",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "name": "user_nav",
+        "description": "Show in User Navigation",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "name": "account_nav",
+        "description": "Show in Account Navigation",
+        "type": "checkbox",
+        "value": "1"
+      }
+    ],
+    "variable_name": "{{ name }}",
+    "variable_description": "Link to {{ name }} ({{ url }})",
+    "added": "2012-11-28T00:00:00Z",
+    "uses": 100,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "YouTube Channel",
+    "id": "youtube_user",
+    "categories": [
+      "Web 2.0",
+      "Media"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Search publicly available YouTube videos within a specific channel. A new icon will show up in your course rich editor letting you search YouTube and click to embed videos in your course material.<br/><br/>YouTube channel names are found in the URL of the channel (i.e. the channel name for http://www.youtube.com/user/DiscoveryEducation would be DiscoveryEducation).",
+    "app_type": "open_launch",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "preview": {
+      "url": "/tools/youtube_user/index.html?user_name=DiscoveryEducation&user_title=Discovery%20Education",
+      "height": 475
     },
-    {
-      "id": "merlot",
-      "name": "Merlot",
-      "added": "2012-04-06T00:00:00Z",
-      "description": "Search through and insert links to multimedia resources curated and collected by MERLOT. This collection is only a subset of some of the higher-rated resources from MERLOT. For the full list of resources, please visit <a href='http://www.merlot.org'>merlot.org</a>.",
-      "short_description": "Multimedia online learning materials",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content", "Open Content"],
-      "app_type": "data"
+    "exclude_from_public_collections": true,
+    "config_options": [
+      {
+        "name": "user_name",
+        "description": "URL Channel Name",
+        "type": "text",
+        "value": "DiscoveryEducation",
+        "required": true
+      },
+      {
+        "name": "user_title",
+        "description": "Channel Display Name",
+        "type": "text",
+        "value": "Discovery Education",
+        "required": true
+      }
+    ],
+    "variable_name": "YouTube Channel - {{ user_title }}",
+    "width": 690,
+    "height": 530,
+    "added": "2012-03-22T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Chalk and Wire",
+    "id": "chalk_and_wire",
+    "categories": [
+      "Community",
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Chalk & Wire provides ePortfolio, Assessment and Data Analysis Tools that can be used to help improve the student learning experience.<br/><br/><a href='http://chalkandwire.com/'>Contact Chalk & Wire</a> for information on signing up for an account and getting a key and secret.",
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=145",
+    "author_name": "Chalk and Wire",
+    "launch_url": "https://epcs.chalkandwire.com/epcs/blti/tool.xml",
+    "privacy_level": "public",
+    "added": "2012-12-01T00:00:00Z",
+    "uses": 0,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "Aleks",
+    "id": "aleks",
+    "categories": [
+      "Community",
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Aleks is a site that offers customized assessment and learning resources that can be integrated into the LMS.<br/><br/>Contact <a href='http://www.aleks.com/'>ALEKS</a> for configuration instructions.",
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=98",
+    "author_name": "Aleks",
+    "launch_url": "https://secure.aleks.com/lti/canvas",
+    "privacy_level": "public",
+    "added": "2012-12-01T00:00:00Z",
+    "uses": 0,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "SCORM Cloud",
+    "id": "scorm_cloud",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Delivers SCORM packages in a standardized way across learning platforms. Robust SCORM engine with built-in grade passback and activity tracking.<br/><br/><a href='https://cloud.scorm.com/sc/guest/SignUpForm'>Sign up for a SCORM Cloud account</a> and upload your SCORM packages to generate a consumer key and secret.",
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=85",
+    "author_name": "SCORM Cloud",
+    "launch_url": "http://cloud.scorm.com/sc/blti",
+    "privacy_level": "public",
+    "added": "2012-12-18T00:00:00Z",
+    "uses": 0,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "WebPA",
+    "id": "web_pa",
+    "categories": [
+      "Community"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "WebPA is an open source online peer assessment tool that can be used for course activities. It also allows sharing assessment activities across courses or even institutions.<br/><br/><b>Directions for configuring WebPA:</b><ol><li>Set up your WebPA instance</li><li><a href='http://projects.oscelot.org/gf/project/webpa-lti'>Download the WebPA LTI connector</a></li><li><a href='http://www.spvsoftwareproducts.com/php/webpa-lti/'>Follow these configuration instructions</a></li></ol>",
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=55",
+    "author_name": "WebPA",
+    "launch_url": "{{ site_url }}",
+    "privacy_level": "public",
+    "config_options": [
+      {
+        "name": "site_url",
+        "description": "WebPA forum site auth URL",
+        "type": "text",
+        "value": "https://webpa.url/webpa/mod/lti/index.php",
+        "required": true
+      }
+    ],
+    "added": "2012-12-18T00:00:00Z",
+    "uses": 0,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "VoiceThread",
+    "id": "voice_thread",
+    "categories": [
+      "Community",
+      "Media"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "VoiceThread is a collaborative communication tool that allows text, audio, video, voice and annotated communication.<br/><br/><a href='https://voicethread.com/'>Register at VoiceThread.com</a> and contact the company about receiving a consumer key and shared secret.",
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=135",
+    "author_name": "VoiceThread",
+    "launch_url": "https://voicethread.com/shib/lti/",
+    "privacy_level": "public",
+    "added": "2012-12-18T00:00:00Z",
+    "uses": 0,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "Vanilla Forums",
+    "id": "vanilla",
+    "categories": [
+      "Community"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Vanilla is an open source community forum tool that can be run for your institution, department or course. This app allows for auto-login to the Vanilla forum from course content or course navigation.<br/><br/><b>Directions for configuring Vanilla:</b><ol><li>Set up your Vanilla forum</li><li>Download <a href='http://sourceforge.net/projects/learningapps/files/Files/Basic%20LTI%20Integrations/Vanilla2/'>the Vanilla LTI plugin</a></li><li>Extract the LTI plugin into Vanilla's <code>plugins</code> folder</li><li>Enter the Vanilla plugin section to enable it</li><li>Edit IMSBasicLTI/configuration/authorizedConsumersKey.cfg and add<br/><br/><code>consumer_key.external.enabled=1</code><br/><code>consumer_key.external.secret=super_sekret_code</code><br/><br/>where <code>external</code> is replaced with whatever you want to be the consumer key</li><li>For more detailed configuration, <a href='http://sourceforge.net/projects/learningapps/files/Files/Basic%20LTI%20Integrations/Vanilla2/'>follow the directions here</a></ol>",
+    "extensions": [
+      "course_nav"
+    ],
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=127",
+    "author_name": "Learning Apps",
+    "launch_url": "{{ site_url }}",
+    "privacy_level": "public",
+    "config_options": [
+      {
+        "name": "site_url",
+        "description": "Vanilla forum site auth URL",
+        "type": "text",
+        "value": "http://vanilla.url/index.php?p=/entry/signin",
+        "required": true
+      },
+      {
+        "name": "course_nav",
+        "description": "Show in Course Navigation",
+        "type": "checkbox",
+        "value": "1"
+      }
+    ],
+    "added": "2012-12-18T00:00:00Z",
+    "uses": 0,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "New York Times",
+    "id": "nytimes",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Search for and link to articles from New York Times archives. Articles can be filtered by relevance and year published.",
+    "app_type": "open_launch",
+    "short_description": "Articles from NY Times",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "test_instructions": "",
+    "width": 690,
+    "height": 530,
+    "added": "2013-01-08T00:00:00Z",
+    "uses": 0,
+    "author_name": "Brian Whitmer",
+    "author_url": null,
+    "pending": null
+  },
+  {
+    "name": "Drupal",
+    "id": "drupal",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Drupal is an open source content management system. It's flexible enough to be used for community sites, Q&amp;A services, forums, standard web pages, etc. This LTI app allows auto-login to Drupal sites from another system.<br/><br/><b>Directions for configuring Drupal:</b><ol><li>Follow the directions <a href='http://drupal.org/project/lti_tool_provider'>on the Drupal LTI Tool Provider page</a> to install and configure.</li><li>Be sure to make a note of the consumer key and shared secret.</li><li><a href='http://drupal.org/node/1859658'>More information is available here</a></ol>",
+    "extensions": [
+      "course_nav"
+    ],
+    "launch_url": "{{ site_url }}",
+    "privacy_level": "public",
+    "course_nav_link_text": "{{ link_name }}",
+    "config_options": [
+      {
+        "name": "site_url",
+        "description": "Drupal site URL",
+        "type": "text",
+        "value": "https://drupalprovider.example.com/lti",
+        "required": true
+      },
+      {
+        "name": "course_nav",
+        "description": "Show in Course Navigation",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "name": "link_name",
+        "description": "Navigation Text",
+        "type": "text",
+        "value": "Drupal"
+      }
+    ],
+    "added": "2013-01-08T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "jzornig"
+  },
+  {
+    "name": "QuestionMark",
+    "id": "question_mark",
+    "categories": [
+      "Assessment",
+      "Content"
+    ],
+    "levels": [
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "QuestionMark is a tool for creating and delivering surveys, quizzes and exams. Instructors can add assessments to their course content on configured accounts.<br/><br/><b>Directions for configuring QuestionMark:</b><ol><li>Configure your QuestionMark instance</li><li>Download and install <a href='http://projects.oscelot.org/gf/project/lti-qm/frs/'>the QuestionMark LTI extension</a></li><li>Follow the <a href='http://projects.oscelot.org/gf/project/lti-qm/wiki/?pagename=QuestionmarkConfiguration'>provided configuration direction</a></li><li>For more detailed configuration, <a href='http://projects.oscelot.org/gf/project/lti-qm/wiki/'>follow the directions here</a></ol>",
+    "test_instructions": "",
+    "launch_url": "{{ site_url }}",
+    "privacy_level": "public",
+    "config_options": [
+      {
+        "name": "site_url",
+        "description": "QuestionMark site URL",
+        "type": "text",
+        "value": "http://my.questionmark.url",
+        "required": true
+      }
+    ],
+    "added": "2012-05-04T00:00:00Z",
+    "uses": 0,
+    "author_name": "QuestionMark",
+    "author_url": null,
+    "pending": null
+  },
+  {
+    "name": "PLATO",
+    "id": "plato",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "PLATO provides standards-based online curriculum in a rich, interactive environment. Embed learning resources from PLATO within your course.<br/><br/><a href='http://www.edmentum.com/products-services/plato-courseware'>Visit the PLATO web site</a> for more information.",
+    "launch_url": "https://{{ domain }}/oauth/launch",
+    "privacy_level": "public",
+    "config_options": [
+      {
+        "name": "domain",
+        "description": "Domain",
+        "type": "text",
+        "value": "lti.demople.platoweb.com",
+        "required": true
+      }
+    ],
+    "added": "2012-01-10T00:00:00Z",
+    "uses": null,
+    "pending": null,
+    "author_name": "PLATO"
+  },
+  {
+    "name": "McGraw Hill Campus",
+    "id": "mh_campus",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Provides access to McGraw Hill's interactive resources tied to course content and textbooks.<br/><br/><a href='http://www.mhcampus.com/'>Visit mhcampus.com</a> for more information.",
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "author_name": "McGraw Hill",
+    "launch_url": "https://aairs-connectors.tegrity.com/sso/aairs/blti.aspx",
+    "privacy_level": "public",
+    "custom_fields": {
+      "mapping": "Canvas",
+      "application_type": "MHCampus"
     },
-    {
-      "id": "storify",
-      "name": "Storify",
-      "added": "2012-04-12T00:00:00Z",
-      "description": "Storify lets users organize events from across the web into a single cohesive \"story\". Adding this app allows you to search through and link to social stories from within your course material.",
-      "short_description": "Search and link to social stories",
-      "app_type": "open_launch",
-      "width": 690,
-      "height": 530,
-      "extensions": ["editor_button", "resource_selection"],
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0", "Content"]
+    "added": "2013-01-04T00:00:00Z",
+    "uses": 50,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "Pinterest",
+    "id": "pinterest",
+    "categories": [
+      "Web 2.0"
+    ],
+    "levels": [
+      "Postsecondary"
+    ],
+    "description": "Search for images shared on Pinterest. Clicking an image will embed it in your course material with a link back to the original page the image is pulled from.",
+    "app_type": "open_launch",
+    "extensions": [
+      "resource_selection"
+    ],
+    "preview": {
+      "url": "",
+      "height": null
     },
-    {
-      "id": "spelling_city",
-      "name": "Spelling City",
-      "added": "2012-04-07T00:00:00Z",
-      "levels": ["K-6th Grade", "7th-12th Grade"],
-      "categories": ["Content", "Study Helps"],
-      "description": "Spelling City offers a collection of spelling practice resources, including games, drills, and handwriting practice around different sets of words. Link to any of these resources from within your course.",
-      "short_description": "Online spelling practice",
-      "app_type": "data"
+    "test_instructions": "API is gone :-(",
+    "width": 700,
+    "height": 510,
+    "added": "2012-04-13T00:00:00Z",
+    "uses": 0,
+    "pending": "1",
+    "author_name": "Brian Whitmer"
+  },
+  {
+    "name": "Gooru Learning",
+    "id": "gooru",
+    "categories": [
+      "Open Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Search collections of open and public learning resources from across the Internet. Insert links to learning resource collections created by other instructors.",
+    "app_type": "open_launch",
+    "short_description": "Open content collections",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "width": 700,
+    "height": 550,
+    "added": "2012-12-26T00:00:00Z",
+    "uses": 30,
+    "pending": true,
+    "author_name": "Gooru Learning"
+  },
+  {
+    "name": "Pathbrite",
+    "id": "pathbrite",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Pathbrite is an ePortfolio tool that can be integrated into the LMS.",
+    "config_directions": "Contact <a href='http://www.pathbrite.com/'>Pathbrite</a> for configuration instructions.",
+    "added": "2012-01-10T00:00:00Z",
+    "uses": null,
+    "pending": true,
+    "author_name": "Pathbrite"
+  },
+  {
+    "name": "PebblePad",
+    "id": "pebble_pad",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "PebblePad is an ePortfolio tool that can be integrated into the LMS.",
+    "config_directions": "Contact <a href='http://www.pebblepad.co.uk/'>PebblePad</a> for configuration instructions.",
+    "added": "2012-01-10T00:00:00Z",
+    "uses": null,
+    "pending": true,
+    "author_name": "PebblePad"
+  },
+  {
+    "name": "MediaSite",
+    "id": "mediasite",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "MediaSite is a webcasting and lecture capture solution that can be integrated into the LMS.",
+    "config_directions": "Contact <a href='http://www.sonicfoundry.com/mediasite'>Sonic Foundry</a> for configuration instructions.",
+    "added": "2012-01-10T00:00:00Z",
+    "uses": null,
+    "pending": true,
+    "author_name": "MediaSite"
+  },
+  {
+    "name": "YouTube Uploader",
+    "id": "youtube_upload",
+    "categories": [
+      "Media",
+      "Web 2.0"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Record videos from your webcam or upload them from your desktop into your personal YouTube account. Newly-created videos are automatically linked within your course content.",
+    "app_type": "open_launch",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "test_instructions": "",
+    "exclude_from_public_collections": true,
+    "width": 550,
+    "height": 400,
+    "added": "2013-01-22T00:00:00Z",
+    "uses": 0,
+    "author_name": "Brian Whitmer",
+    "author_url": null,
+    "pending": null
+  },
+  {
+    "name": "Prulu",
+    "id": "prulu",
+    "categories": [
+      "Community",
+      "Web 2.0"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Prulu is a classroom Q&A-style site with inline equations, basic analytics and notifications. This integration adds a link to the course navigation for Prulu discussions.<br/><br/><a href='https://prulu.com/contact-us/'>Contact Prulu</a> for instructions on getting a consumer key and secret.",
+    "extensions": [
+      "course_nav"
+    ],
+    "preview": {
+      "url": "http://player.vimeo.com/video/43756239",
+      "height": 400
     },
-    {
-      "id": "hooda_math",
-      "name": "Hooda Math",
-      "added": "2012-02-21T00:00:00Z",
-      "levels": ["K-6th Grade", "7th-12th Grade"],
-      "categories": ["Math"],
-      "description": "Link to any of the math-related games hosted on Hooda Math's web site.",
-      "short_description": "Online math learning games",
-      "app_type": "data"
+    "beta": false,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "http://www.imsglobal.org/cc/detail.cfm?ID=148",
+    "author_name": "Prulu",
+    "launch_url": "https://prulu.com/accounts/registration/lti/",
+    "privacy_level": "public",
+    "config_options": [
+      {
+        "name": "course_nav",
+        "description": "Show in Course Navigation",
+        "type": "checkbox",
+        "value": "1"
+      }
+    ],
+    "added": "2013-01-30T00:17:40Z",
+    "uses": 0,
+    "submitter_name": null,
+    "submitter_url": null,
+    "pending": null
+  },
+  {
+    "name": "Via Response",
+    "id": "via_response",
+    "categories": [
+      "Community",
+      "Content"
+    ],
+    "levels": [
+      "Postsecondary"
+    ],
+    "description": "Via Response is a cloud student response system that lets students use their own devices for classroom response. Via also handles hybrid and lecture-capture classes where students participate remotely or asynchronously, case studies, image questions, equation editors, chat and more. Via is always free for instructors.",
+    "app_type": "custom",
+    "extensions": [
+      "course_nav"
+    ],
+    "test_instructions": "",
+    "config_url": "https://services.viaresponse.com/lti/v1.0/config.xml",
+    "added": "2013-01-30T23:30:59Z",
+    "uses": 0,
+    "author_name": "Via Response",
+    "author_url": "https://twitter.com/whitmer",
+    "pending": null
+  },
+  {
+    "name": "Learning Catalytics",
+    "id": "learning_catalytics",
+    "categories": [
+      "Content",
+      "Study Helps"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Learning Catalytics is a cloud-based solution for engaging students with authentic formative assessments in real time both inside and outside of the classroom, and rich data analytics that are used to drive student interactions.<br/><br/>\r\nSetting up Learning Catalytics is different depending on your account and contract, so please be sure to <a href='http://learningcatalytics.uservoice.com/knowledgebase/articles/150358-how-do-i-integrate-learning-catalytics-with-my-lea'>follow these instructions for setting up Learning Catalytics in your LMS</a>.",
+    "extensions": [
+      "course_nav"
+    ],
+    "test_instructions": "",
+    "launch_url": "{{ launch_url }}",
+    "privacy_level": "public",
+    "config_options": [
+      {
+        "name": "launch_url",
+        "description": "Launch URL (provided by LC)",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "name": "course_nav",
+        "description": "Show in Course Navigation",
+        "type": "checkbox",
+        "value": "1"
+      }
+    ],
+    "added": "2013-01-31T16:56:29Z",
+    "uses": 0,
+    "author_name": "Learning Catalytics",
+    "author_url": "https://twitter.com/whitmer",
+    "pending": null
+  },
+  {
+    "name": "Knowillage LeaP",
+    "id": "knowillage",
+    "categories": [
+      "Content",
+      "Open Content"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Using your existing learning outcomes and course content, Knowillage LeaP™ quickly creates personalized adaptive learning paths, offers recommendations, provides remediation and much more, all in a way that’s intuitive and very easy-to-use by teachers and students alike.\r\n<br/><br/>\r\nYou'll need to <a href='http://www.knowillage.com/leap-for-canvas.html'>Register for a Knowillage account</a> in order to receive a key and secret for this app.",
+    "extensions": [
+      "resource_selection"
+    ],
+    "preview": {
+      "url": "https://www.youtube.com/embed/jyOkY68dA1s",
+      "height": 500
     },
-    {
-      "id": "google_art",
-      "name": "Google Art Project",
-      "added": "2012-01-10T00:00:00Z",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Web 2.0", "Media", "Content"],
-      "description": "Google Art Project delivers high-res images of historical artwork, categorized by museum. For some museums there is also a \"street-view\"-like walkthrough of the museum available.",
-      "short_description": "Digital tours of famous museum artwork",
-      "app_type": "data"
+    "test_instructions": "",
+    "launch_url": "https://lti.knowillage.com/Lms/CanvasContentSelection",
+    "domain": "lti.knowillage.com",
+    "privacy_level": "public",
+    "width": 970,
+    "height": 600,
+    "added": "2013-01-31T23:58:55Z",
+    "uses": 0,
+    "author_name": "Knowillage",
+    "author_url": "https://twitter.com/whitmer",
+    "pending": null
+  },
+  {
+    "name": "SmartThinking",
+    "id": "smart_thinking",
+    "categories": false,
+    "levels": [
+
+    ],
+    "description": "",
+    "test_instructions": "",
+    "privacy_level": "anonymous",
+    "added": "2013-02-01T00:15:40Z",
+    "uses": 0,
+    "author_name": "SmartThinking",
+    "author_url": "https://twitter.com/whitmer",
+    "pending": "1"
+  },
+  {
+    "name": "SWoRD Peer Review",
+    "id": "sword",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "SWoRD peer review is a cloud-based, collaborative learning system that improves writing learning outcomes in college and secondary school students.  SWoRD’s proven algorithms eliminate peer reviewer bias, ensuring that peer reviews are as objective and as useful as those done by the instructor.  SWoRD saves instructors time, allowing them to assign writing tasks that would not otherwise be able to be done at all.  Writing skills of students who write and critique the work of their peers improves more rapidly than those who only write.  ",
+    "app_type": "custom",
+    "extensions": [
+      "course_nav"
+    ],
+    "test_instructions": "",
+    "logo_url": "https://sword.pantherlearning.com/sword/images/smalllogo.jpg",
+    "banner_url": "https://sword.pantherlearning.com/sword/images/largelogo.jpg",
+    "config_url": "https://sword.pantherlearning.com/sword/config.xml",
+    "added": "2013-02-01T23:42:11Z",
+    "uses": 0,
+    "author_name": "SWoRD",
+    "author_url": "https://twitter.com/whitmer",
+    "pending": "1"
+  },
+  {
+    "name": "Google Charts",
+    "id": "google_chart",
+    "categories": [
+      "Content",
+      "Math",
+      "Science"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Build and embed interactive charts, rendered using Google Charts. Populate the fields provided and see the chart update in real-time while building. Supports pie charts, bar charts, bubble charts, tree maps, etc.",
+    "app_type": "open_launch",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "test_instructions": "",
+    "width": 930,
+    "height": 360,
+    "added": "2013-02-15T20:43:01Z",
+    "uses": 0,
+    "author_name": "Brian Whitmer",
+    "author_url": "https://twitter.com/whitmer",
+    "pending": null,
+    "beta": true
+  },
+  {
+    "name": "EchoCenter",
+    "id": "EchoCenter-00001",
+    "categories": [
+      "Content"
+    ],
+    "levels": [
+      "Postsecondary"
+    ],
+    "description": "The EchoCenter is a content portal used by Echo360 faculty and students to access their rich media recordings and for faculty to view usage statistics for the captured lectures.",
+    "app_type": "custom",
+    "extensions": [
+      "course_nav"
+    ],
+    "test_instructions": "Logon to https://echo360.instructure.com.\r\nUsername:  wbarnes@echo360.com\r\nPassword:  marrelli\r\n\r\nOnce logged in, navigate to the Introduction to Echo360 course.\r\nClick the EchoCenter course navigation link.\r\nSelect the Introduction to Echo360 - Section 001 from the drop down.\r\n\r\nIf you would like to create and configure the external tool:\r\n1) Go to the Introduction to Echo360 course\r\n2) Select settings\r\n3) Select External Tools\r\n4) Click add external tool\r\n5) Provide a name for the tool\r\n6) Key:  canvas\r\n7) Secret: Dq0JzwfquR9B4vG+aerLrYmxxaJ7lNvZmAR99Q5fBud7Y/xtIxcW8+v8dpAloYh7dT+vqWLsDQKGG8Ekj+bddQ== \r\n8) Configuration Type:  By URL - https://integration.qa.echo360.com:8443/ess/lti/v1/configuration/ba18f448-8352-4016-a42d-3b39d6c5755f\r\n\r\nThis will create a duplicate EchoCenter navigation link in the course navigation area and is only assigned to one EchoSystem course so there is no drop down in this case.",
+    "logo_url": "http://echo360.com/sites/default/files/echo_logo.png",
+    "config_url": "https://integration.qa.echo360.com:8443/ess/lti/v1/configuration/ba18f448-8352-4016-a42d-3b39d6c5755f",
+    "added": "2013-03-01T15:05:18Z",
+    "uses": 0,
+    "author_name": "EchoCenter",
+    "author_url": "https://twitter.com/webarnes99",
+    "pending": "1"
+  },
+  {
+    "name": "GitHub",
+    "id": "github",
+    "categories": [
+      "Content",
+      "Science"
+    ],
+    "levels": [
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Embeds project summaries for public projects hosted on GitHub's social coding site. Includes major language, commit dates, forks and watchers, you just need to know the user/org and repo name.",
+    "app_type": "open_launch",
+    "extensions": [
+      "editor_button",
+      "resource_selection"
+    ],
+    "test_instructions": "",
+    "width": 600,
+    "height": 320,
+    "added": "2013-03-01T21:19:38Z",
+    "uses": 0,
+    "author_name": "Brian Whitmer",
+    "author_url": "https://twitter.com/whitmer",
+    "pending": null,
+    "beta": true
+  },
+  {
+    "name": "i>clicker",
+    "id": "i_clicker",
+    "categories": [
+      "Assessment",
+      "Math",
+      "Science"
+    ],
+    "levels": [
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "i>clicker is an audience response system used for tracking student answers on pop quizzes, surveys, etc. This app lets you run and track your i>clicker assessments from within the learning platform.<br/><br/>\r\n\r\nPlease note that the use of i>clicker Integrate requires the involvement of campus IT staff. If you are interested in taking advantage of i>clicker Integrate for Instructure Canvas or any other supported LMS, please contact your i>clicker Technology Specialist or write to us at contact@iclicker.com and we will begin the process.",
+    "short_description": "i>clicker options",
+    "extensions": [
+      "course_nav"
+    ],
+    "test_instructions": "",
+    "launch_url": "https://lmsreg.iclicker.com/Inst_Master.aspx",
+    "privacy_level": "public",
+    "custom_fields": {
+      "Domain_URL": "{{ domain_url }}"
     },
-    {
-      "id": "funbrain",
-      "name": "Funbrain",
-      "added": "2012-04-11T00:00:00Z",
-      "levels": ["K-6th Grade", "7th-12th Grade"],
-      "categories": ["Content"],
-      "description": "Link to interactive online learning activities targeted at K-8 learners.",
-      "short_description": "K-8 online learning activities",
-      "app_type": "data"
+    "config_options": [
+      {
+        "name": "domain_url",
+        "description": "Canvas Domain",
+        "type": "text",
+        "value": "https://yourcanvavs.instructure.com",
+        "required": true
+      }
+    ],
+    "added": "2013-03-12T23:20:54Z",
+    "uses": 0,
+    "author_name": "i>clicker",
+    "author_url": "https://twitter.com/whitmer",
+    "pending": null
+  },
+  {
+    "name": "EvaluationKit",
+    "id": "evaluation_kit",
+    "categories": false,
+    "levels": [
+
+    ],
+    "description": "",
+    "test_instructions": "",
+    "privacy_level": "anonymous",
+    "added": "2013-03-13T21:01:39Z",
+    "uses": 0,
+    "author_name": "EvaluationKit",
+    "author_url": "https://twitter.com/whitmer",
+    "pending": "1"
+  },
+  {
+    "name": "Cranium Cafe",
+    "id": "cranium_cafe",
+    "categories": [
+      "Community",
+      "Web 2.0"
+    ],
+    "levels": [
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Cranium Cafe provides video chat and whiteboard tools for one on one communication between professors and students, students and students, and academic advisors and students. <br/><br/>\r\nContact info@craniumcafe.com about getting a consumer key and shared secret.",
+    "app_type": "custom",
+    "short_description": "Video chat and whiteboard tools for one on one communication.",
+    "extensions": [
+      "course_nav"
+    ],
+    "preview": {
+      "url": "http://www.youtube.com/watch?v=gh9c6aHfbto",
+      "height": 400
     },
-    {
-      "id": "filament_games",
-      "name": "Filament Games",
-      "added": "2012-04-11T00:00:00Z",
-      "levels": ["K-6th Grade", "7th-12th Grade"],
-      "categories": ["Content"],
-      "description": "Link to a collection of online games focusing on different learning activities.",
-      "short_description": "Online learning activities",
-      "app_type": "data"
-    },
-    {
-      "id": "studyegg",
-      "name": "StudyEgg",
-      "added": "2012-04-28T00:00:00Z",
-      "levels": ["7th-12th Grade", "Postsecondary"],
-      "categories": ["Content"],
-      "description": "StudyEgg offers customized lessons using online video and questions.",
-      "short_description": "Adaptive learning activities",
-      "app_type": "data"
-    },
-    {
-      "id": "programr",
-      "name": "Programr",
-      "added": "2012-04-09T00:00:00Z",
-      "levels": ["7th-12th Grade", "Postsecondary"],
-      "categories": ["Science", "Math"],
-      "description": "Programr offers coding challenge projects for programming languages including Java, C# and C++. Link to any of the available challenges from your course material.",
-      "short_description": "Coding challenges in Java, C# and C++",
-      "app_type": "data"
-    },
-    {
-      "id": "college_board",
-      "name": "College Board",
-      "added": "2012-05-23T00:00:00Z",
-      "levels": ["7th-12th Grade"],
-      "categories": ["Science", "Math", "Study Helps"],
-      "description": "Makes it easy for instructors to browse the list of available practice resources for SAT and AP exams provided by the College Board. Any of these resources can be linked to within course material.",
-      "short_description": "Links to SAT and AP practice tests",
-      "app_type": "data"
-    },
-    {
-      "id": "ocw_search",
-      "added": "2012-05-01T00:00:00Z",
-      "name": "OCW Search",
-      "levels": ["Postsecondary"],
-      "categories": ["Content", "Open Content"],
-      "description": "OCW search collects OCW courses from MIT, Stanford, Yale, the Open University, etc. for searching and linking.",
-      "short_description": "Find open courses",
-      "app_type": "open_launch",
-      "width": 690,
-      "height": 530,
-      "extensions": ["editor_button", "resource_selection"]
-    },
-    {
-      "id": "wordpress",
-      "added": "2012-05-04T00:00:00Z",
-      "name": "WordPress",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content", "Community"],
-      "description": "WordPress is a blogging and publishing platform. You could use it to host student or class blogs. This app allows for auto-login to the WordPress platform. Links can be added to course content, or optionally as course navigation.<br/><br/><b>Directions for configuring WordPress:</b><ol><li>Configure your WordPress <a href='http://codex.wordpress.org/Create_A_Network'>account for multisite</a></li><li>Download <a href='http://sourceforge.net/projects/learningapps/files/Files/Basic%20LTI%20Integrations/Wordpress/wordpressLTIPlugin.zip/download'>the WordPress LTI plugin</a></li><li>Extract the LTI plugin into <code>wp-content/mu-plugin</code></li><li>Log as superAdmin and go to Network Dashboard -> Settings -> LTI Consumers Keys. Here you can manage the authorized consumers keys</li><li>For more detailed configuration, <a href='http://sourceforge.net/apps/mediawiki/learningapps/index.php?title=LTI4Wordpress'>follow the directions here</a></ol>",
-      "launch_url": "{{ site_url }}",
-      "privacy_level": "public",
-      "extensions": ["course_nav"],
-      "config_options": [
-        {
-            "name": "site_url",
-            "description": "WordPress site URL",
-            "required": true,
-            "type": "text",
-            "value": "http://mywordpress.url"
-        },
-        {
-            "name": "course_nav",
-            "description": "Show in Course Navigation",
-            "type": "checkbox",
-            "value": "1"
-        }
-      ]
-    },
-    {
-      "id": "status_net",
-      "added": "2012-05-04T00:00:00Z",
-      "name": "Status.net",
-      "levels": ["7th-12th Grade", "Postsecondary"],
-      "categories": ["Content", "Community"],
-      "description": "Status.net is a private microblogging platform that can be run for your institution, department or course. This app allows for auto-login to the Status.net system from course content or course navigation.<br/><br/><b>NOTE</b>: This app will only work when set to open in a new tab, it will not work in an embedded iframe.<br/><br/><b>Directions for configuring Status.net:</b><ol><li>Configure your Status.net instance</li><li>Download <a href='http://sourceforge.net/projects/learningapps/files/Files/Basic%20LTI%20Integrations/Status.net/LTIAuthentication.zip/download'>the Status.net LTI plugin</a></li><li>Extract the LTI plugin into Status.net's <code>plugins</code> folder</li><li>Edit config.php and add<br/><br/><code>addPlugin('LTIAuthentication', array('provider_name'=>'LTI'));</code><br/><br/></li><li>Edit <code>BLTI/IMSBasicLTI/configuration/authorizedConsumersKey.cfg</code>, adding the following lines:<br/><br/><code>consumer_key.&lt;consumer_key&gt;.enabled=1</code><br/><code>consumer_key.&lt;consumer_key&gt;.secret=&lt;password&gt;</code><br/><br/></li><li>For more detailed configuration, <a href='http://sourceforge.net/apps/mediawiki/learningapps/index.php?title=LTI4Status.net_English'>follow the directions here</a></ol>",
-      "launch_url": "{{ site_url }}",
-      "privacy_level": "public",
-      "extensions": ["course_nav"],
-      "config_options": [
-        {
-            "name": "site_url",
-            "description": "Status.net site auth URL",
-            "required": true,
-            "type": "text",
-            "value": "http://statusnet.url/index.php/main/lti"
-        },
-        {
-            "name": "course_nav",
-            "description": "Show in Course Navigation",
-            "type": "checkbox",
-            "value": "1"
-        }
-      ]
-    },
-    {
-      "id": "vanilla",
-      "added": "2012-12-18T00:00:00Z",
-      "name": "Vanilla Forums",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Community"],
-      "description": "Vanilla is an open source community forum tool that can be run for your institution, department or course. This app allows for auto-login to the Vanilla forum from course content or course navigation.<br/><br/><b>Directions for configuring Vanilla:</b><ol><li>Set up your Vanilla forum</li><li>Download <a href='http://sourceforge.net/projects/learningapps/files/Files/Basic%20LTI%20Integrations/Vanilla2/'>the Vanilla LTI plugin</a></li><li>Extract the LTI plugin into Vanilla's <code>plugins</code> folder</li><li>Enter the Vanilla plugin section to enable it</li><li>Edit IMSBasicLTI/configuration/authorizedConsumersKey.cfg and add<br/><br/><code>consumer_key.external.enabled=1</code><br/><code>consumer_key.external.secret=super_sekret_code</code><br/><br/>where <code>external</code> is replaced with whatever you want to be the consumer key</li><li>For more detailed configuration, <a href='http://sourceforge.net/projects/learningapps/files/Files/Basic%20LTI%20Integrations/Vanilla2/'>follow the directions here</a></ol>",
-      "launch_url": "{{ site_url }}",
-      "privacy_level": "public",
-      "extensions": ["course_nav"],
-      "config_options": [
-        {
-            "name": "site_url",
-            "description": "Vanilla forum site auth URL",
-            "required": true,
-            "type": "text",
-            "value": "http://vanilla.url/index.php?p=/entry/signin"
-        },
-        {
-            "name": "course_nav",
-            "description": "Show in Course Navigation",
-            "type": "checkbox",
-            "value": "1"
-        }
-      ]
-    },
-    {
-      "id": "web_pa",
-      "added": "2012-12-18T00:00:00Z",
-      "name": "WebPA",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Community"],
-      "description": "WebPA is an open source online peer assessment tool that can be used for course activities. It also allows sharing assessment activities across courses or even institutions.<br/><br/><b>Directions for configuring WebPA:</b><ol><li>Set up your WebPA instance</li><li><a href='http://projects.oscelot.org/gf/project/webpa-lti'>Download the WebPA LTI connector</a></li><li><a href='http://www.spvsoftwareproducts.com/php/webpa-lti/'>Follow these configuration instructions</a></li></ol>",
-      "launch_url": "{{ site_url }}",
-      "privacy_level": "public",
-      "config_options": [
-        {
-            "name": "site_url",
-            "description": "WebPA forum site auth URL",
-            "required": true,
-            "type": "text",
-            "value": "https://webpa.url/webpa/mod/lti/index.php"
-        }
-      ]
-    },
-    {
-      "id": "question2answer",
-      "added": "2012-05-04T00:00:00Z",
-      "name": "Question2Answer",
-      "levels": ["7th-12th Grade", "Postsecondary"],
-      "categories": ["Content", "Community"],
-      "description": "Question2Answer is an open source Q&amp;A site. You could use it to host course or institution-level Q&amp;A services. This app allows for auto-login to the Question2Answer platform from another system. Links can be added to course content, or optionally as course navigation.<br/><br/><b>Directions for configuring Question2Answer:</b><ol><li>Configure your Question2Answer instance</li><li>Download <a href='http://sourceforge.net/projects/learningapps/files/Files/Basic%20LTI%20Integrations/Question2Answer/qa-plugin.zip/download'>the Q2A LTI plugin</a></li><li>Extract the LTI plugin into Q2A's main folder</li><li>Log as administrator, go to Administration center - Plugins</li><li>Click over 'options'</li><li>Configure BasicLTI Settings:<ol><li>Enable Plugin</li><li>Disable Default BLTI Username: You have to define the parameter of basic lti with the custom username instead of the default BasicLTI Parameter</li><li>Parameter Username: If you enabled Disable BLTI Username you have to indicate the custom username, usuarlly is custom_username</li><li>Logout URL: Full url (include http://) to logout from the SSO and this Q2A application</li><li>New user message: Optional. Message shown to new users when they login for the first time.</li></ol></li><li>Edit <code>BLTI/IMSBasicLTI/configuration/authorizedConsumersKey.cfg</code>, adding the following lines:<br/><br/><code>consumer_key.&lt;consumer_key&gt;.enabled=1</code><br/><code>consumer_key.&lt;consumer_key&gt;.secret=&lt;password&gt;</code><br/><br/></li><li>For more detailed configuration, <a href='http://sourceforge.net/apps/mediawiki/learningapps/index.php?title=LTI4Q2a_English'>follow the directions here</a></ol>",
-      "launch_url": "{{ site_url }}",
-      "privacy_level": "public",
-      "extensions": ["course_nav"],
-      "config_options": [
-        {
-            "name": "site_url",
-            "description": "Question2Answer site URL",
-            "required": true,
-            "type": "text",
-            "value": "http://myq2a.url"
-        },
-        {
-            "name": "course_nav",
-            "description": "Show in Course Navigation",
-            "type": "checkbox",
-            "value": "1"
-        }
-      ]
-    },
-    {
-      "id": "question_mark",
-      "added": "2012-05-04T00:00:00Z",
-      "name": "QuestionMark",
-      "levels": ["7th-12th Grade", "Postsecondary"],
-      "categories": ["Content"],
-      "description": "QuestionMark is a tool for creating and delivering surveys, quizzes and exams. Instructors can add assessments to their course content on configured accounts.<br/><br/><b>Directions for configuring QuestionMark:</b><ol><li>Configure your QuestionMark instance</li><li>Download and install <a href='http://projects.oscelot.org/gf/project/lti-qm/frs/'>the QuestionMark LTI extension</a></li><li>Follow the <a href='http://projects.oscelot.org/gf/project/lti-qm/wiki/?pagename=QuestionmarkConfiguration'>provided configuration direction</a></li><li>For more detailed configuration, <a href='http://projects.oscelot.org/gf/project/lti-qm/wiki/'>follow the directions here</a></ol>",
-      "launch_url": "{{ site_url }}",
-      "privacy_level": "public",
-      "config_options": [
-        {
-            "name": "site_url",
-            "description": "QuestionMark site URL",
-            "required": true,
-            "type": "text",
-            "value": "http://my.questionmark.url"
-        }
-      ]
-    },
-    {
-      "id": "drupal",
-      "added": "2013-01-08T00:00:00Z",
-      "name": "Drupal",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content"],
-      "description": "Drupal is an open source content management system. It's flexible enough to be used for community sites, Q&amp;A services, forums, standard web pages, etc. This LTI app allows auto-login to Drupal sites from another system.<br/><br/><b>Directions for configuring Drupal:</b><ol><li>Follow the directions <a href='http://drupal.org/project/lti_tool_provider'>on the Drupal LTI Tool Provider page</a> to install and configure.</li><li>Be sure to make a note of the consumer key and shared secret.</li><li><a href='http://drupal.org/node/1859658'>More information is available here</a></ol>",
-      "launch_url": "{{ site_url }}",
-      "course_nav_link_text": "{{ link_name }}",
-      "privacy_level": "public",
-      "config_options": [
-        {
-            "name": "site_url",
-            "description": "Drupal site URL",
-            "required": true,
-            "type": "text",
-            "value": "https://drupalprovider.example.com/lti"
-        },
-        {
-            "name": "course_nav",
-            "description": "Show in Course Navigation",
-            "type": "checkbox",
-            "value": "1"
-        },
-        {
-            "name": "link_name",
-            "description": "Navigation Text",
-            "type": "text",
-            "value": "Drupal"
-        }
-      ],
-      "extensions": ["course_nav"]
-    },
-    {
-      "id": "mahara",
-      "added": "2012-05-04T00:00:00Z",
-      "name": "Mahara",
-      "levels": ["K-6th Grade", "7th-12th Grade", "Postsecondary"],
-      "categories": ["Content", "Community"],
-      "description": "Mahara is an open source ePortfolio and social networking tool. This app allows for auto-login to the Mahara platform from another system. Links can be added to course content, or optionally as course navigation.<br/><br/><b>Directions for configuring Mahara:</b><ol><li>Configure your Mahara instance</a></li><li>Download <a href='http://sourceforge.net/projects/learningapps/files/Files/Basic%20LTI%20Integrations/Mahara/blti_provider.zip/download'>the Mahara LTI plugin</a></li><li>Extract the LTI plugin into Mahara's <code>auth</code> folder</li><li>Go to Admin home - Extensions - Plugin Administration - Plugin type: auth</li><li>Enable 'blti'</li><li>For more detailed configuration, <a href='http://sourceforge.net/apps/mediawiki/learningapps/index.php?title=LTI4Mahara_English'>follow the directions here</a></ol>",
-      "launch_url": "{{ site_url }}",
-      "privacy_level": "public",
-      "extensions": ["course_nav"],
-      "config_options": [
-        {
-            "name": "site_url",
-            "description": "Mahara site auth URL",
-            "required": true,
-            "type": "text",
-            "value": "http://mymahara.url/auth/blti/login/login.php"
-        },
-        {
-            "name": "course_nav",
-            "description": "Show in Course Navigation",
-            "type": "checkbox",
-            "value": "1"
-        }
-      ]
-    }
+    "test_instructions": "This short video demonstrates a Cranium Cafe session:  \r\nhttp://www.youtube.com/watch?v=gh9c6aHfbto\r\n\r\nUsing the XML configuration URL from any canvas install should work.\r\n\r\nkey: lti-examples\r\nsecret: 061cc83a038c125c8147cdbfc53d1bda2ef32e7a",
+    "icon_url": "https://www.craniumcafe.com/images/cc-logo-16x16.png",
+    "logo_url": "https://www.craniumcafe.com/images/cc-logo72x72.png",
+    "banner_url": "https://www.craniumcafe.com/images/cc-logo-240x125.png",
+    "config_url": "https://api.craniumcafe.com/et",
+    "added": "2013-03-19T03:11:53Z",
+    "uses": 0,
+    "author_name": "Cranium Cafe",
+    "author_url": "https://twitter.com/Michael_Gorham",
+    "pending": null
+  },
+  {
+    "name": "Feed The Me",
+    "id": "feed_the_me",
+    "categories": [
+      "Content",
+      "Open Content"
+    ],
+    "levels": [
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Lightweight feed aggregator for use in a course. Allows teachers and optionally students to add RSS and Atom feeds that are then aggregated into a single view within the course. More features to come.<br/><br/>\r\n<a href=\"https://feed-the-lti.herokuapp.com/\">Visit the main page</a> for instructions on how to get a key and secret.",
+    "app_type": "custom",
+    "extensions": [
+      "course_nav"
+    ],
+    "beta": true,
+    "test_instructions": "",
+    "support_link": "https://twitter.com/whitmer",
+    "ims_link": "",
+    "author_name": "Brian Whitmer",
+    "icon_url": "https://feed-the-lti.herokuapp.com/app_icon.png",
+    "logo_url": "https://feed-the-lti.herokuapp.com/app_logo.png",
+    "banner_url": "https://feed-the-lti.herokuapp.com/app_banner.png",
+    "config_url": "https://feed-the-lti.herokuapp.com/feed_the_lti.xml",
+    "config_options": [
+      {
+        "name": "course_nav",
+        "description": "Show in Course Navigation",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "name": "link_text",
+        "description": "Link Text",
+        "type": "text",
+        "value": "Feeds",
+        "required": true
+      }
+    ],
+    "added": "2013-03-27T20:13:28Z",
+    "uses": 0,
+    "submitter_name": "whitmer",
+    "submitter_url": "https://twitter.com/whitmer",
+    "pending": null
+  },
+  {
+    "name": "Text Reader",
+    "id": "text_reader",
+    "categories": [
+      "Content",
+      "Study Helps"
+    ],
+    "levels": [
+      "K-6th Grade",
+      "7th-12th Grade",
+      "Postsecondary"
+    ],
+    "description": "Lightweight app that lets teachers create blocks of text where students can click any word in the text and retrieve an inline definition of the word.<br/><br/>\r\nIf you're interested in using this heavily you should reach out to the owners of <a href=\"http://www.imathas.com/\">IMathAS</a> beforehand since heavy unexpected load may cause problems.",
+    "beta": true,
+    "test_instructions": "",
+    "support_link": "",
+    "ims_link": "",
+    "author_name": "David Lippman",
+    "any_key": true,
+    "launch_url": "http://www.imathas.com/reader/readerlti.php",
+    "privacy_level": "anonymous",
+    "added": "2013-03-30T03:45:55Z",
+    "uses": 0,
+    "submitter_name": "whitmer",
+    "submitter_url": "https://twitter.com/whitmer",
+    "pending": null
+  }
 ]
