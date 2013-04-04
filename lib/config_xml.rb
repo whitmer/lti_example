@@ -5,6 +5,18 @@ module Sinatra
     def self.registered(app)
       app.helpers ConfigXML::Helpers
       
+      app.get "/process_xml" do
+        begin
+          api_response(LtiXmlParser.process(params['url']))
+        rescue LtiParseError => e
+          halt 400, api_response({:error => e.message})
+        rescue => e
+          puts e.message
+          puts e.backtrace
+          halt 500, api_response({:error => "unexpected error processing XML"})
+        end
+      end
+      
       # Catchall
       app.get "/tools/:tool_id/config.xml" do
         app_config(params['tool_id'])
@@ -273,6 +285,14 @@ module Sinatra
         request.scheme + "://" + request.host_with_port
       end
       
+      def api_response(hash)
+        if params['callback'] 
+          "#{params['callback']}(#{hash.to_json});"
+        else
+          hash.to_json
+        end
+      end 
+
       def app_config(id, error=false)
         load_app(id)
         return "App not found" if !@app

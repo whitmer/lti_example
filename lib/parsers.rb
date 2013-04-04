@@ -1,3 +1,103 @@
+require 'nokogiri'
+module LtiXmlParser
+  CANVAS_PLATFORM = 'canvas.instructure.com'
+  BLTI_NAMESPACE = "http://www.imsglobal.org/xsd/imsbasiclti_v1p0"
+  def self.process(url)
+    xml = url_to_xml(url)
+    xml_to_hash(xml)
+  end
+  
+  def self.url_to_xml(url)
+    uri = URI.parse(url)
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = uri.scheme == 'https'
+    request = Net::HTTP::Get.new(uri.request_uri)
+    response = nil
+    begin
+      response = http.request(request)
+    rescue Timeout::Error => e
+      raise LtiParseError.new("Request timed out")
+    end
+    if response.code.to_s.match(/^3/)
+      raise LtiParseError.new("Parser doesn't handle redirects")
+    end
+    xml = Nokogiri::XML(response.body)
+    raise LtiParseError.new("Invalid configuration") unless xml.css('cartridge_basiclti_link').length > 0
+    return xml
+  end
+
+  def self.get_blti_namespace(doc)
+    doc.namespaces.each_pair do |key, val|
+      if val == BLTI_NAMESPACE
+        return key.gsub('xmlns:','')
+      end
+    end
+    "blti"
+  end
+  
+  def self.get_custom_properties(node)
+    props = {}
+    node.children.each do |property|
+      next if property.name == 'text'
+      if property.name == 'property'
+        props[property['name']] = property.text
+      elsif property.name == 'options'
+        props[property['name']] = get_custom_properties(property)
+      elsif property.name == 'custom'
+        props[:custom_fields] = get_custom_properties(property)
+      end
+    end
+    props
+  end
+    
+  def self.get_node_val(node, selector, default=nil)
+    node.at_css(selector) ? node.at_css(selector).text : default
+  end
+  
+  def self.xml_to_hash(doc)
+    blti = get_blti_namespace(doc)
+    link_css_path = "cartridge_basiclti_link"
+    tool = {}
+    tool[:description] = get_node_val(doc, "#{link_css_path} > #{blti}|description")
+    tool[:title] = get_node_val(doc, "#{link_css_path} > #{blti}|title")
+    tool[:url] = get_node_val(doc, "#{link_css_path} > #{blti}|secure_launch_url")
+    tool[:url] ||= get_node_val(doc, "#{link_css_path} > #{blti}|launch_url")
+    if !tool[:title]
+      raise LtiParseError.new("Couldn't find title attribute")
+    end
+    if custom_node = doc.css("#{link_css_path} > #{blti}|custom").first
+      tool[:custom_fields] = get_custom_properties(custom_node)
+    end
+    tool[:custom_fields] ||= {}
+
+    doc.css("#{link_css_path} > #{blti}|extensions").each do |extension|
+      tool[:extensions] ||= []
+      ext = {}
+      ext[:platform] = extension['platform']
+      ext[:custom_fields] = get_custom_properties(extension)
+      
+      if ext[:platform] == CANVAS_PLATFORM
+        tool[:privacy_level] = ext[:custom_fields].delete 'privacy_level'
+        tool[:domain] = ext[:custom_fields].delete 'domain'
+        tool[:consumer_key] = ext[:custom_fields].delete 'consumer_key'
+        tool[:shared_secret] = ext[:custom_fields].delete 'shared_secret'
+        tool[:tool_id] = ext[:custom_fields].delete 'tool_id'
+        if tool[:assignment_points_possible] = ext[:custom_fields].delete('outcome')
+          tool[:assignment_points_possible] = tool[:assignment_points_possible].to_f
+        end
+        tool[:settings] = ext[:custom_fields]
+      else
+        tool[:extensions] << ext
+      end
+    end
+    if icon = get_node_val(doc, "#{link_css_path} > #{blti}|icon")
+      tool[:settings] ||= {}
+      tool[:settings][:icon_url] = icon
+    end
+    tool
+  end
+end
+
 module XmlConfigParser
   def self.config_options(hash, params, host)
     result = {}
@@ -392,4 +492,7 @@ module Hasher
       a.to_s == b.to_s ? nil : (a || b)
     end
   end
+end
+
+class LtiParseError < Exception
 end

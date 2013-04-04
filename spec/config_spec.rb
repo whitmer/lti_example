@@ -7,6 +7,61 @@ describe 'Config Redirects' do
     LtiExample
   end
   
+  describe "remote XML parser" do
+    it "should fail on timeout" do
+      Net::HTTP.any_instance.should_receive(:request).and_raise(Timeout::Error.new("too long!"))#return(OpenStruct.new(:code => "200", :body => "")
+      get "/process_xml?url=http://www.example.com"
+      last_response.should_not be_ok
+      JSON.parse(last_response.body)['error'].should == "Request timed out"
+    end
+    
+    it "should fail on redirect" do
+      Net::HTTP.any_instance.should_receive(:request).and_return(OpenStruct.new(:code => "300", :body => ""))
+      get "/process_xml?url=http://www.example.com"
+      last_response.should_not be_ok
+      JSON.parse(last_response.body)['error'].should == "Parser doesn't handle redirects"
+    end
+    
+    it "should fail if parameters aren't found" do
+      Net::HTTP.any_instance.should_receive(:request).and_return(OpenStruct.new(:code => "200", :body => "{}"))
+      get "/process_xml?url=http://www.example.com"
+      last_response.should_not be_ok
+      JSON.parse(last_response.body)['error'].should == "Invalid configuration"
+    end
+    
+    it "should return valid JSON on success" do
+      Net::HTTP.any_instance.should_receive(:request).and_return(OpenStruct.new(:code => "200", :body => lti_xml))
+      get "/process_xml?url=http://www.example.com"
+      last_response.should be_ok
+      json = JSON.parse(last_response.body)
+      json['title'].should == "Global Wiki"
+      json['description'].should == "Institution-wide wiki tool with all the trimmings"
+      json['settings'].should_not be_nil
+      json['settings'].should == {
+        "editor_button" => {"enabled"=>"true", "selection_width"=>"500", "selection_height"=>"300"},
+        "icon_url" => "https://example.com/wiki.png",
+        "labels" => {"en-US"=>"Build/Link to Wiki Page", "en-GB"=>"Build/Link to Wiki Page"},
+        "resource_selection" => {"enabled"=>"true", "selection_width"=>"500", "selection_height"=>"300"},
+        "text" => "Build/Link to Wiki Page"
+      }
+      json['icon_url'].should be_nil
+    end
+    
+    it "should return JSONP if requested and error" do
+      Net::HTTP.any_instance.should_receive(:request).and_raise(Timeout::Error.new("too long!"))#return(OpenStruct.new(:code => "200", :body => "")
+      get "/process_xml?callback=bob&url=http://www.example.com"
+      last_response.should_not be_ok
+      last_response.body.should == "bob({\"error\":\"Request timed out\"});"
+    end
+    
+    it "should return JSONp if requested and success" do
+      Net::HTTP.any_instance.should_receive(:request).and_return(OpenStruct.new(:code => "200", :body => lti_xml))
+      get "/process_xml?callback=bob&url=http://www.example.com"
+      last_response.should be_ok
+      last_response.body.should match(/^bob/)
+    end
+  end
+  
   describe "config xml renders/redirects" do
     @apps = JSON.parse(File.read('./public/data/lti_examples.json')).select{|a| !a['pending'] }
     ap = AdminPermission.create(:username => "me", :apps => "any")
