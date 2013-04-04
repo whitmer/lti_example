@@ -3,7 +3,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="https://www.google.com/jsapi"></script>
     <script>
-      var chartData = window.parent.chartData;
+      var chartData = null;
+      try {
+        chartData = window.parent.chartData;
+      } catch(e) { }
       var key = location.href.split(/key=/)[1];
       if(!chartData) {
         if(!key) {
