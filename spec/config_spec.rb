@@ -62,6 +62,19 @@ describe 'Config Redirects' do
     end
   end
   
+  it "should propertly escape ampersands in URL arguments" do
+    admin_permission = AdminPermission.new(apps: 'any')
+    app = App.build_or_update('bacon', {
+      'launch_url' => 'http://www.example.com?a=1&b=2&c=3',
+      'id' => 'bacon',
+      'pending' => false
+    }, admin_permission)
+    get "/tools/bacon/config.xml"
+    last_response.should be_ok
+    xml = Nokogiri(last_response.body)
+    xml.css('blti|launch_url')[0].text.should == "http://www.example.com?a=1&b=2&c=3"
+  end
+  
   describe "config xml renders/redirects" do
     @apps = JSON.parse(File.read('./public/data/lti_examples.json')).select{|a| !a['pending'] }
     ap = AdminPermission.create(:username => "me", :apps => "any")

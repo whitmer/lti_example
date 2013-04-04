@@ -9,16 +9,16 @@
       http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
       http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
       http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd">
-      <blti:title><%= app['name'] %></blti:title>
-      <blti:description><%= app['description'] %></blti:description>
-      <blti:icon><%= app['icon_url'] %></blti:icon>
+      <blti:title><%= CGI.escape_html(app['name'] || "") %></blti:title>
+      <blti:description><%= CGI.escape_html(app['description'] || "") %></blti:description>
+      <blti:icon><%= CGI.escape_html(app['icon_url'] || "") %></blti:icon>
       <% if app['launch_url'] %>
-        <blti:launch_url><%= app['launch_url'] %></blti:launch_url>
+        <blti:launch_url><%= CGI.escape_html(app['launch_url'] || "") %></blti:launch_url>
       <% end %>
       <% if app['custom_fields'] %>
         <blti:custom>
           <% app['custom_fields'].each do |key, val| %>
-            <lticm:property name="<%= key %>"><%= val %></lticm:property>
+            <lticm:property name="<%= key %>"><%= CGI.escape_html(val || "") %></lticm:property>
           <% end %>
         </blti:custom>
       <% end %>
@@ -31,11 +31,11 @@
         <% end %>
         <% if app['editor_button'] %>
           <lticm:options name="editor_button">
-            <lticm:property name="url"><%= app['editor_button']['launch_url'] %></lticm:property>
+            <lticm:property name="url"><%= CGI.escape_html(app['editor_button']['launch_url'] || "") %></lticm:property>
             <% if app['editor_button']['icon_url'] %>
-              <lticm:property name="icon_url"><%= app['editor_button']['icon_url'] %></lticm:property>
+              <lticm:property name="icon_url"><%= CGI.escape_html(app['editor_button']['icon_url'] || "") %></lticm:property>
             <% end %>
-            <lticm:property name="text"><%= app['editor_button']['link_text'] %></lticm:property>
+            <lticm:property name="text"><%= CGI.escape_html(app['editor_button']['link_text'] || "") %></lticm:property>
             <lticm:property name="selection_width"><%= app['editor_button']['width'] %></lticm:property>
             <lticm:property name="selection_height"><%= app['editor_button']['height'] %></lticm:property>
             <lticm:property name="enabled">true</lticm:property>
@@ -43,11 +43,11 @@
         <% end %>
         <% if app['resource_selection'] %>
           <lticm:options name="resource_selection">
-            <lticm:property name="url"><%= app['resource_selection']['launch_url'] %></lticm:property>
+            <lticm:property name="url"><%= CGI.escape_html(app['resource_selection']['launch_url'] || "") %></lticm:property>
             <% if app['resource_selection']['icon_url'] %>
-              <lticm:property name="icon_url"><%= app['resource_selection']['icon_url'] %></lticm:property>
+              <lticm:property name="icon_url"><%= CGI.escape_html(app['resource_selection']['icon_url'] || "") %></lticm:property>
             <% end %>
-            <lticm:property name="text"><%= app['resource_selection']['link_text'] %></lticm:property>
+            <lticm:property name="text"><%= CGI.escape_html(app['resource_selection']['link_text'] || "") %></lticm:property>
             <lticm:property name="selection_width"><%= app['resource_selection']['width'] %></lticm:property>
             <lticm:property name="selection_height"><%= app['resource_selection']['height'] %></lticm:property>
             <lticm:property name="enabled">true</lticm:property>
@@ -55,8 +55,8 @@
         <% end %>
         <% if app['course_navigation'] %>
           <lticm:options name="course_navigation">
-            <lticm:property name="url"><%= app['course_navigation']['launch_url'] %></lticm:property>
-            <lticm:property name="text"><%= app['course_navigation']['link_text'] %></lticm:property>
+            <lticm:property name="url"><%= CGI.escape_html(app['course_navigation']['launch_url'] || "") %></lticm:property>
+            <lticm:property name="text"><%= CGI.escape_html(app['course_navigation']['link_text'] || "") %></lticm:property>
             <% if app['course_navigation']['visibility'] %>
               <lticm:property name="visibility"><%= app['course_navigation']['visibility'] %></lticm:property>
             <% end %>
@@ -68,15 +68,15 @@
         <% end %>
         <% if app['account_navigation'] %>
           <lticm:options name="account_navigation">
-            <lticm:property name="url"><%= app['account_navigation']['launch_url'] %></lticm:property>
-            <lticm:property name="text"><%= app['account_navigation']['link_text'] %></lticm:property>
+            <lticm:property name="url"><%= CGI.escape_html(app['account_navigation']['launch_url'] || "") %></lticm:property>
+            <lticm:property name="text"><%= CGI.escape_html(app['account_navigation']['link_text'] || "") %></lticm:property>
             <lticm:property name="enabled">true</lticm:property>
           </lticm:options>
         <% end %>
         <% if app['user_navigation'] %>
           <lticm:options name="user_navigation">
-            <lticm:property name="url"><%= app['user_navigation']['launch_url'] %></lticm:property>
-            <lticm:property name="text"><%= app['user_navigation']['link_text'] %></lticm:property>
+            <lticm:property name="url"><%= CGI.escape_html(app['user_navigation']['launch_url'] || "") %></lticm:property>
+            <lticm:property name="text"><%= CGI.escape_html(app['user_navigation']['link_text'] || "") %></lticm:property>
             <lticm:property name="enabled">true</lticm:property>
           </lticm:options>
         <% end %>

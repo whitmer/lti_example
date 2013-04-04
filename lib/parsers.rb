@@ -236,7 +236,7 @@ module XmlConfigParser
   
   def self.sub(string, hash, params)
     opts = hash['options']
-    res = string.gsub(/{{\s*escape:([\w_]+)\s*}}/){|w| CGI.escape(params[$1] || (opts[$1] && opts[$1]['value']) || '') }
+    res = (string || '').gsub(/{{\s*escape:([\w_]+)\s*}}/){|w| CGI.escape(params[$1] || (opts[$1] && opts[$1]['value']) || '') }
     res.gsub(/{{\s*([\w_]+)\s*}}/){|w| params[$1] || (opts[$1] && opts[$1]['value']) || '' }
   end
   
