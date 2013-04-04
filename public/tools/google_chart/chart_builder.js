@@ -545,7 +545,8 @@ $(document).ready(function() {
           url: url,
           width: parseInt($("#width").val(), 10),
           height: parseInt($("#height").val(), 10),
-          title: (chartData.options.title || "Google Chart")
+          title: (chartData.options.title || "Google Chart"),
+          text: (chartData.options.title || "Google Chart")
         });
       }      
     });
