@@ -53,6 +53,18 @@
             <lticm:property name="enabled">true</lticm:property>
           </lticm:options>
         <% end %>
+        <% if app['homework_submission'] %>
+          <lticm:options name="homework_submission">
+            <lticm:property name="url"><%= CGI.escape_html(app['homework_submission']['launch_url'] || "") %></lticm:property>
+            <% if app['homework_submission']['icon_url'] %>
+              <lticm:property name="icon_url"><%= CGI.escape_html(app['homework_submission']['icon_url'] || "") %></lticm:property>
+            <% end %>
+            <lticm:property name="text"><%= CGI.escape_html(app['homework_submission']['link_text'] || "") %></lticm:property>
+            <lticm:property name="selection_width"><%= app['homework_submission']['width'] %></lticm:property>
+            <lticm:property name="selection_height"><%= app['homework_submission']['height'] %></lticm:property>
+            <lticm:property name="enabled">true</lticm:property>
+          </lticm:options>
+        <% end %>
         <% if app['course_navigation'] %>
           <lticm:options name="course_navigation">
             <lticm:property name="url"><%= CGI.escape_html(app['course_navigation']['launch_url'] || "") %></lticm:property>

@@ -11,6 +11,6 @@ end
 
 t = Time.now.utc.iso8601
 f = File.open("public/data/lti_examples-#{t}.json", 'w')
-f.puts JSON.pretty_generate(json)
+f.puts JSON.pretty_generate(json) 
 f.close
 puts "/public/data/lti_examples-#{t}.json"

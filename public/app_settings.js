@@ -2,7 +2,7 @@ $(function() {
   function formChanged() {
     var app_type = $("#app_type").val();
     var preview = !!$("#preview_url").val();
-    var dialog = $("#extensions input[name='extensions[]'][value='editor_button']").attr('checked') || $("#extensions input[name='extensions[]'][value='resource_selection']").attr('checked');
+    var dialog = $("#extensions input[name='extensions[]'][value='editor_button']").attr('checked') || $("#extensions input[name='extensions[]'][value='resource_selection']").attr('checked') || $("#extensions input[name='extensions[]'][value='homework_submission']").attr('checked');
     var course_nav = $("#extensions input[name='extensions[]'][value='course_nav']").attr('checked');
     var account_nav = $("#extensions input[name='extensions[]'][value='account_nav']").attr('checked');
     var user_nav = $("#extensions input[name='extensions[]'][value='user_nav']").attr('checked');

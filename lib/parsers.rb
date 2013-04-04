@@ -177,6 +177,17 @@ module XmlConfigParser
           }
         end
       end
+      if hash['extensions'].include?('homework_submission')
+        if !hash['options']['homework_submission'] || params['homework_submission'] == '1'
+          result['homework_submission'] = {
+            'launch_url' => prepend_host(sub(hash['homework_submission_launch_url'] || hash['launch_url'], hash, params), host),
+            'link_text' => sub(non_empty_or_default('homework_submission_link_text', hash, params, result['name']), hash, params),
+            'icon_url' => hash['homework_submission_icon_url'] || result['icon_url'],
+            'width' => hash['homework_submission_width'] || hash['width'],
+            'height' => hash['homework_submission_height'] || hash['height']
+          }
+        end
+      end
     end
     result
   end
@@ -252,7 +263,7 @@ end
 module AppParser
   CATEGORIES = ["Assessment", "Community", "Content", "Math", "Media", "Open Content", "Science", "Study Helps", "Textbooks/eBooks", "Web 2.0"]
   LEVELS = ["K-6th Grade", "7th-12th Grade", "Postsecondary"]
-  EXTENSIONS = ["course_nav", "user_nav", "account_nav", "editor_button", "resource_selection"]
+  EXTENSIONS = ["course_nav", "user_nav", "account_nav", "editor_button", "resource_selection", "homework_submission"]
   PRIVACY_LEVELS = ["public", "name_only", "anonymous"]
   APP_TYPES = ["open_launch", "data"]
   

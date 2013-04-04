@@ -270,7 +270,8 @@ Handlebars.template = Handlebars.VM.template;
     'resource_selection': 'resources',
     'course_nav': 'course nav',
     'user_nav': 'profile nav',
-    'account_nav': 'account nav'
+    'account_nav': 'account nav',
+    'homework_submission': 'homework'
   }
   var index = 0;
   Handlebars.registerHelper('checked_if_included', function(context, options) {
