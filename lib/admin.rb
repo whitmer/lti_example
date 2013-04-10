@@ -7,11 +7,13 @@ module Sinatra
       app.helpers Admin::Helpers
       
       app.get "/admin" do
+        @data_view = "admin"
         admin_check
         erb :admin
       end
       
       app.get "/propose" do
+        @data_view = "admin"
         redirect to("/") unless session['user_key']
         erb :propose
       end
@@ -68,10 +70,6 @@ module Sinatra
       def admin_check(tool_id='any')
         permission = AdminPermission.first(:username => "@#{session['user_key']}")
         halt "No" unless permission && permission.allowed_access?(tool_id)
-      end
-      
-      def data_view
-        "admin"
       end
     end
   end 

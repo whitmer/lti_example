@@ -41,6 +41,7 @@ module Sinatra
       end
       
       app.get "/index.html" do
+        @data_view = "index"
         @sheets = ['loading', 'index']
         erb :index
       end
@@ -70,6 +71,7 @@ module Sinatra
       end
       
       app.get "/suggestions" do
+        @data_view = "suggestions"
         suggestions_config = ExternalConfig.first(:config_type => 'suggestions_form')
         if !suggestions_config
           redirect to("/index.html")
