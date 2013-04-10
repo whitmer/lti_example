@@ -13,7 +13,7 @@ require './lib/custom_launches'
 require './lib/config_xml'
 require './lib/oembed'
 
-class LtiExample < Sinatra::Base
+class EduApps < Sinatra::Base
   if defined?(RACK_ENV)
     set :environment, RACK_ENV
   end

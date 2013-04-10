@@ -4,7 +4,7 @@ describe 'Parsers' do
   include Rack::Test::Methods
   
   def app
-    LtiExample
+    EduApps
   end
     
   describe "app parsing" do

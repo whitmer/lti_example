@@ -4,7 +4,7 @@ describe 'Apps API' do
   include Rack::Test::Methods
   
   def app
-    LtiExample
+    EduApps
   end
   
   def check_app_response(app)

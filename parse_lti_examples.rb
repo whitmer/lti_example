@@ -1,4 +1,4 @@
-require './lti_example'
+require './edu_apps'
 
 apps = JSON.parse(File.read('./public/data/lti_examples.json'))
 

@@ -774,7 +774,7 @@ templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data
   var foundHelper, self=this;
 
 
-  return "<footer class=\"footer\" style=\"text-align: center; padding-top: 5px;\">\n  <p>This site and its contents are <a href=\"https://github.com/whitmer/lti_example\">available on GitHub</a> under the MIT license. \n  Official IMS LTI docs are found on the <a href=\"http://www.imsglobal.org/lti/\">IMS page</a>. \n  <br/>Also\n  check out IMS's <a href=\"http://www.imsglobal.org/lti\">LTI Directory</a> and details on\n  <a href=\"http://www.imscert.org\">LTI Conformance</a>.</p>\n</footer>\n";});
+  return "<footer class=\"footer\" style=\"text-align: center; padding-top: 5px;\">\n  <p>This site and its contents are <a href=\"https://github.com/whitmer/edu_apps\">available on GitHub</a> under the MIT license. \n  Official IMS LTI docs are found on the <a href=\"http://www.imsglobal.org/lti/\">IMS page</a>. \n  <br/>Also\n  check out IMS's <a href=\"http://www.imsglobal.org/lti\">LTI Directory</a> and details on\n  <a href=\"http://www.imscert.org\">LTI Conformance</a>.</p>\n</footer>\n";});
 templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
   helpers = helpers || Handlebars.helpers;
   var buffer = "", stack1, stack2, foundHelper, tmp1, self=this;
@@ -864,7 +864,7 @@ function program12(depth0,data) {
   tmp1.inverse = self.noop;
   stack1 = stack2.call(depth0, stack1, tmp1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += " dropdown\">\n                <a href=\"/code.html\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Coding <span class='caret' style=\"color: #fff;\"></span></a>\n                <ul class=\"dropdown-menu\">\n                    <li><a href=\"/code.html\">Basics</a></li>\n                    <li><a href=\"/extensions.html\">Extensions</a></li>\n                    <li><a href=\"/build_xml.html\">XML</a></li>\n                    <li><a href=\"/api.html\">API</a></li>\n                    <li class=\"divider\"></li>\n                    <li><a href=\"https://github.com/whitmer/lti_example\">Source</a></li>\n                </ul>\n            </li>\n            ";
+  buffer += " dropdown\">\n                <a href=\"/code.html\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Coding <span class='caret' style=\"color: #fff;\"></span></a>\n                <ul class=\"dropdown-menu\">\n                    <li><a href=\"/code.html\">Basics</a></li>\n                    <li><a href=\"/extensions.html\">Extensions</a></li>\n                    <li><a href=\"/build_xml.html\">XML</a></li>\n                    <li><a href=\"/api.html\">API</a></li>\n                    <li class=\"divider\"></li>\n                    <li><a href=\"https://github.com/whitmer/edu_apps\">Source</a></li>\n                </ul>\n            </li>\n            ";
   foundHelper = helpers.allow_admin;
   stack1 = foundHelper || depth0.allow_admin;
   stack2 = helpers['if'];

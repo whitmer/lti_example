@@ -4,7 +4,7 @@ describe 'Tool Redirects' do
   include Rack::Test::Methods
   
   def app
-    LtiExample
+    EduApps
   end
   
   before(:each) do

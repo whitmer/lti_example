@@ -4,7 +4,7 @@ describe 'Config Redirects' do
   include Rack::Test::Methods
   
   def app
-    LtiExample
+    EduApps
   end
   
   describe "remote XML parser" do
@@ -94,7 +94,7 @@ describe 'Config Redirects' do
             last_response.body.should match(/Missing required value/)
             
             args = []
-            app['config_options'].each{|o| args << "#{o['name']}=#{CGI.escape(o['value'].to_s || "junk")}" }
+            app['config_options'].each{|o| args << "#{o['name']}=#{CGI.escape(o['value'] && o['value'].length > 0 ? o['value'] : "junk").to_s}" }
             get "/tools/#{app['id']}/config.xml?" + args.join("&")
             last_response.should be_ok
             last_response.body.should match(/blti/)
@@ -125,7 +125,7 @@ describe 'Config Redirects' do
             last_response.body.should match(/Missing required value/)
             
             args = []
-            app['config_options'].each{|o| args << "#{o['name']}=#{CGI.escape(o['value'].to_s || "junk")}" }
+            app['config_options'].each{|o| args << "#{o['name']}=#{CGI.escape(o['value'] && o['value'].length > 0 ? o['value'] : "junk").to_s}" }
             post "/tools/#{app['id']}/config.xml?" + args.join("&")
             last_response.should be_ok
             last_response.body.should match(/Invalid tool launch/)

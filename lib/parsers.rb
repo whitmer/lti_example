@@ -283,6 +283,8 @@ module AppParser
     hash['support_link'] = params['support_link']
     hash['ims_link'] = params['ims_link']
     hash['author_name'] = params['author_name']
+    hash['submitter_name'] = params['submitter_name']
+    hash['submitter_url'] = params['submitter_url']
     
     if hash['app_type'] == 'open_launch'
       hash['no_launch'] = unless_empty(params['no_launch'] == '1' || params['no_launch'] == true)
@@ -372,7 +374,7 @@ module AppParser
   end
   
   def self.parse_preview(params)
-    if params['preview'] && params['preview']['url'] && params['preview']['url'].length > 0
+    if params['preview'] && params['preview']['url'] && params['preview']['url'].length > 0 && unless_zero(params['preview']['height'])
       {
         'url' => params['preview']['url'],
         'height' => unless_zero(params['preview']['height'])

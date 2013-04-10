@@ -4,7 +4,7 @@ require 'capybara'
 require 'capybara/dsl'
 
 
-Capybara.app = LtiExample
+Capybara.app = EduApps
 
 RSpec.configure do |config|
   config.include Capybara::DSL
@@ -16,7 +16,7 @@ describe 'Tools Selenium' do
   Capybara.default_driver = :selenium
   
   def app
-    Sinatra::Application
+    EduApps
   end
   
   def keep_trying_until(&block)

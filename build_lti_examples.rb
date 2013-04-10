@@ -1,4 +1,4 @@
-require './lti_example'
+require './edu_apps'
 
 
 json = []

@@ -1,3 +1,3 @@
 #\ -p 4567
-require(File.expand_path("../lti_example", __FILE__))
-run LtiExample
+require(File.expand_path("../edu_apps", __FILE__))
+run EduApps

@@ -2,7 +2,7 @@ RACK_ENV='test'
 require 'rspec'
 require 'rack/test'
 require 'json'
-require './lti_example'
+require './edu_apps'
 
 RSpec.configure do |config|
   config.before(:each) { DataMapper.auto_migrate! }
