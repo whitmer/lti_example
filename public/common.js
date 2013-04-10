@@ -25,7 +25,7 @@ $(function() {
       $identity
         .append($("<img/>", 
           {'src': "https://api.twitter.com/1/users/profile_image/" + user_key}))
-        .append("<span>" + user_key + " |&nbsp;</span>");
+        .append("<a href='/filter'>" + user_key + " |&nbsp;</a>");
       $identity
         .append("<a href='/logout' class='logout'>Logout</a>");
     }
