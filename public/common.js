@@ -6,6 +6,7 @@ $(function() {
     $.store.set('suggestions', null);
     location.href = location.href.replace(/logged_in/, '');
   }
+  window.user_key = $.store.get('user_key');
   function checkForSuggestions() {
     var suggestions = $.store.get('suggestions');
     if(suggestions) {
