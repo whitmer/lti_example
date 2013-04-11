@@ -107,6 +107,20 @@
         {{/each}}
       </div>      
     </div>
+    <div class="control-group">
+      <label class="control-label" for="only_works">Only Works In</label>
+      <div class="controls">
+        <input type="text" id="only_works" placeholder="list,of,platforms (blank if none)" name="only_works" value="{{array_as_string only_works }}" class="span6"/>
+        <br/>
+        Comma-separated list of tags representing different products. <a href="#" rel="/api/v1/app_platforms" id="platforms">See the current list of tags</a>.
+      </div>      
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="doesnt_work">Don't List In</label>
+      <div class="controls">
+        <input type="text" id="doesnt_work" placeholder="list,of,platforms (blank if none)" name="doesnt_work" value="{{array_as_string doesnt_work }}" class="span6"/>
+      </div>      
+    </div>
     <div class="control-group" id="extensions">
       <label class="control-label">Extensions Used</label>
       <div class="controls">

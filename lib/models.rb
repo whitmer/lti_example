@@ -192,7 +192,7 @@ class App
     allow_new = true if !filter
     lookups = ((filter && filter.settings) || {})['app_ids'] || {}
     allow_new = (filter.settings['allow_new'] || false) if filter
-    data_apps = App.all(:pending => false).select{|a| 
+    data_apps = App.all(:pending => false, :settings.not => nil).select{|a| 
       a.settings && lookups[a.settings['id']] != false && (allow_new || lookups[a.settings['id']] == true )
     }.map{|a| a.settings }
   end

@@ -106,14 +106,36 @@ describe 'Apps API' do
       json['objects'].  each do |obj|
         check_app_response(obj)
       end
-      
-      get '/api/v1/apps?extension=Bobs+LMS'
+    end
+    
+    it "should filter by doesnt_work for platform" do
+      app = App.first
+      app.settings['doesnt_work'] = ['Canvas']
+      app.save
+      get '/api/v1/apps?platform=Canvas'
       last_response.should be_ok
       json = JSON.parse(last_response.body)
-      json['objects'].  each do |obj|
-        obj['extensions'].should be_nil
-        check_app_response(obj)
-      end
+      json['objects'].detect{|a| a['id'] == app.tool_id }.should == nil
+
+      get '/api/v1/apps?platform=NotCanvas'
+      last_response.should be_ok
+      json = JSON.parse(last_response.body)
+      json['objects'].detect{|a| a['id'] == app.tool_id }.should_not == nil
+    end
+    
+    it "should filter by only_works for platform" do
+      app = App.first
+      app.settings['only_works'] = ['Canvas']
+      app.save
+      get '/api/v1/apps?platform=Canvas'
+      last_response.should be_ok
+      json = JSON.parse(last_response.body)
+      json['objects'].detect{|a| a['id'] == app.tool_id }.should_not == nil
+
+      get '/api/v1/apps?platform=NotCanvas'
+      last_response.should be_ok
+      json = JSON.parse(last_response.body)
+      json['objects'].detect{|a| a['id'] == app.tool_id }.should == nil
     end
     
     it "should not include explicitly filtered-out apps" do

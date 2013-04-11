@@ -127,13 +127,15 @@ describe 'Apps API' do
       AdminPermission.first(:username => '@fred').should_not be_nil
       AdminPermission.first(:username => '@fred').apps.should == 'book,twitter'
 
-      post "/api/v1/apps", {'id' => 'paper', 'pending' => '0'}, 'rack.session' => {'user_key' => 'filian'}
+      post "/api/v1/apps", {'id' => 'paper', 'pending' => '0', 'doesnt_work' => 'a,b'}, 'rack.session' => {'user_key' => 'filian'}
       last_response.should be_ok
       last_response.body.should_not == "No"
       app = App.last
       app.settings['id'].should == 'paper'
       app.pending.should == true
       app.settings['pending'].should == true
+      app.settings['doesnt_work'].should == ['a', 'b']
+      app.settings['only_works'].should == nil
       AdminPermission.first(:username => '@filian').should_not be_nil
       AdminPermission.first(:username => '@filian').apps.should == 'paper'
     end

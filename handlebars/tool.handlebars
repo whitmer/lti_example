@@ -54,6 +54,12 @@
               {{#if support_link}}
                 <br/><br/><a href="{{ support_link }}">Link to support for this app</a>
               {{/if}}
+              {{#if only_works }}
+                <br/><br/>Only works in {{array_as_string only_works}}.
+              {{/if}}
+              {{#if doesnt_work }}
+                <br/><br/>Not recommended in {{array_as_string doesnt_work}}.
+              {{/if}}
               {{#if ims_link}}
                 <br/><br/><a href="{{ ims_link }}">This app is IMS certified</a>
               {{/if}}

@@ -56,6 +56,13 @@ describe 'Parsers' do
     # parse_config_options
     it "should parse custom field parameters"
     # parse_custom_fields
+    
+    it "should parse ids parameter" do
+      AppParser.parse_ids("").should == nil
+      AppParser.parse_ids("bob").should == ["bob"]
+      AppParser.parse_ids(['a', 'b']).should == ['a', 'b']
+      AppParser.parse_ids("bob,fred").should == ["bob", "fred"]
+    end
     it "should parse app type parameters" do
       AppParser::APP_TYPES.each do |type|
         AppParser.parse_app_type(type).should == type

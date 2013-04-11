@@ -273,6 +273,8 @@ module AppParser
     hash['id'] = params['id']
     hash['categories'] = parse_categories(params)
     hash['levels'] = parse_levels(params)
+    hash['doesnt_work'] = parse_ids(params['doesnt_work'])
+    hash['only_works'] = parse_ids(params['only_works'])
     hash['description'] = fix_description(params['description'])
     hash['app_type'] = parse_app_type(params['app_type'])
     hash['short_description'] = unless_empty(params['short_description'])
@@ -456,6 +458,15 @@ module AppParser
   
   def self.parse_privacy_level(str)
     PRIVACY_LEVELS.include?(str) ? str : nil
+  end
+  
+  def self.parse_ids(ids)
+    if ids.is_a?(String)
+      ids = ids.split(/,/)
+    end
+    res = ids.is_a?(Array) ? ids.flatten.map(&:to_s) : nil
+    res = nil if res && res.empty?
+    res
   end
   
   def self.parse_categories(params)

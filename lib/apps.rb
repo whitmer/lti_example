@@ -25,6 +25,12 @@ module Sinatra
         list.to_json
       end
       
+      app.get "/api/v1/app_platforms" do
+        res = []
+        App.load_apps.each{|a| res += (a['doesnt_work'] || []) + (a['only_works'] || []) }
+        res.uniq.sort.to_json
+      end
+      
       # single app details
       app.get "/api/v1/apps/:tool_id" do
         host = request.scheme + "://" + request.host_with_port
@@ -222,13 +228,14 @@ module Sinatra
           data = data.select{|e| (e['app_type'] == 'open_launch' || e['app_type'] == 'data') }
         end
         if params['platform'] && params['platform'].length > 0 
-          if params['platform'] == 'Canvas'
-            bad_tools = ['titanpad', 'flickr']
-            data = data.select{|e| !bad_tools.include?(e['id']) }
-          else
-            bad_tools = ['wolfram', 'wiktionary']
-            data = data.select{|e| !bad_tools.include?(e['id']) }
-          end
+          data = data.select{|e| (!e['doesnt_work'] || !e['doesnt_work'].include?(params['platform'])) && (!e['only_works'] || e['only_works'].include?(params['platform'])) }
+#           if params['platform'] == 'Canvas'
+#             bad_tools = ['titanpad', 'flickr']
+#             data = data.select{|e| !bad_tools.include?(e['id']) }
+#           else
+#             bad_tools = ['wolfram', 'wiktionary', 'graph_builder']
+#             data = data.select{|e| !bad_tools.include?(e['id']) }
+#           end
         end
         found_data = data
         if paginated
