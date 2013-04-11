@@ -40,6 +40,12 @@ module Sinatra
         end  
       end
       
+      app.get "/filter" do
+        halt 400, "No user" unless session['user_key']
+        @filter = AppFilter.first(:username => "@#{session['user_key']}")
+        erb :filter
+      end
+      
       app.get "/index.html" do
         @data_view = "index"
         @sheets = ['loading', 'index']
