@@ -192,7 +192,7 @@ module Sinatra
     
       def apps_list(request, paginated=true)
         host = request.scheme + "://" + request.host_with_port
-        limit = 24
+        limit = 72
         params = request.params
         offset = params['offset'].to_i
         filter = AppFilter.first(:code => params['filter'])
