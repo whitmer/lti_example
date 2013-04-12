@@ -1,0 +1,25 @@
+<div class="board">
+  <img src="./logo.png"/>
+  <a href="{{ url }}" class="name" target="_blank">{{ name }}</a>
+  <div class='details'>
+    <div class='owner'>
+      {{ members }} members, 
+      {{ list_count }} lists
+    </div>
+    <span class='description'>{{ description }}</span>
+    <ul class='nav nav-tabs nav-stacked'>
+      {{#each lists}}
+        <li class='list'>
+          <a>
+            <span class='name'>{{ name }}</span> 
+            <span class='cards'>
+              <span class='count'>{{ card_count }}</span>
+              cards
+            </span>
+            <span style='display: block; clear: left;'></span>
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

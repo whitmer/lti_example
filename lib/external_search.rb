@@ -56,6 +56,43 @@ module Sinatra
         response.body
       end
       
+      app.get '/trello_board' do
+        # TODO: add caching API responses, or at least consider it
+        @trello_config = ExternalConfig.first(:config_type => 'trello')
+        return "Not configured" unless @trello_config
+        url = "https://api.trello.com/1/boards/#{params['board']}?key=#{@trello_config.value}&lists=open&list_fields=id,name,pos&cards=open&card_fields=id,name,idList,pos&members=all&member_fields=username"
+        uri = URI.parse(url)
+        http = Net::HTTP.new(uri.host, uri.port)
+        http.use_ssl = true
+        request = Net::HTTP::Get.new(uri.request_uri)
+        response = http.request(request)
+        if response.code.to_s == '200'
+          json = JSON.parse(response.body)
+          res = {
+            :name => json['name'],
+            :url => json['url'],
+            :description => json['desc'],
+            :members => json['members'].length,
+            :lists => json['lists'],
+            :list_count => json['lists'].length
+          }
+          res[:lists].each do |list|
+            json['cards'].each do |card|
+              if card['idList'] == list['id']
+                list['cards'] ||= []
+                list['cards'] << card
+              end
+            end
+            list['cards'] = (list['cards'] || []).sort_by{|c| c['pos'] }
+            list['card_count'] = list['cards'].length
+          end
+          res[:lists] = res[:lists].sort_by{|l| l['pos'] }
+          res.to_json
+        else
+          {:error => response.body}.to_json
+        end
+      end
+      
       app.get '/github_repo' do
         # TODO: add caching API responses, or at least consider it
         @github_config = ExternalConfig.first(:config_type => 'github')
