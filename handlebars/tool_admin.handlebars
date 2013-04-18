@@ -20,6 +20,12 @@
       </div>      
     </div>
     <div class="control-group">
+      <label class="control-label" for="author_name">Author</label>
+      <div class="controls">
+        <input type="text" id="author_name" placeholder="name or company" name="author_name" value="{{ author_name }}" class="span6"/>
+      </div>      
+    </div>
+    <div class="control-group">
       <label class="control-label" for="id">ID</label>
       <div class="controls">
         <input type="text" id="id" placeholder="unique_tool_id" name="id" value="{{ id }}"/>
@@ -326,12 +332,6 @@
           <input type="text" id="preview_height" class="span1" name="preview[height]" value="{{ preview.height }}"/>
           <span class="add-on">px</span>
         </div>
-      </div>      
-    </div>
-    <div class="control-group">
-      <label class="control-label" for="author_name">App Author</label>
-      <div class="controls">
-        <input type="text" id="author_name" placeholder="name or company" name="author_name" value="{{ author_name }}" class="span6"/>
       </div>      
     </div>
     <div class="control-group">

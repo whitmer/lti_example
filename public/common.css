@@ -58,9 +58,6 @@ span.stars.star4_5 img.star5 {
 .rating > div.voter {
     float: left;
 }
-.single_app .rating > div.voter {
-    float: right;
-}
 .identity {
     float: right;
     vertical-align: bottom;

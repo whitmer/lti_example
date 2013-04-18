@@ -1,7 +1,4 @@
-{{#if single_tool}}
-    <span class='span2 app'></span>
-{{/if}}
-<span class='span{{#if single_tool}}8{{else}}3{{/if}} app {{#if single_tool}}single_app{{/if}}'>
+<span class='span{{#if single_tool}}7{{else}}3{{/if}} app {{#if single_tool}}single_app offset1{{/if}}'>
     <div class='header'>
         <div class='icon'>
             <a href='/index.html?tool={{id}}'>
@@ -27,10 +24,12 @@
                 </div>
             {{/if}}
             {{#if show_votes}}
+              {{#unless single_tool }}
                 <div style='width: 55px;' class='voter'><a href='https://twitter.com/share' class='twitter-share-button' data-lang='en' data-count='vertical' data-url='{{refUrl}}' data-text='LTI Tool: {{name}}'>Tweet</a></div>
                 <div class='voter fb-like' data-send='false' data-layout='box_count' data-width='55' data-show-faces='false' data-href='{{refUrl}}' style='width: 55px;'></div>
                 <div style='padding-top: 1px; margin-right: 7px;' class='voter'><div class='g-plusone' data-annotation='bubble' data-size='tall' data-width='55' data-href='{{refUrl}}'></div></div>
                 <div style='clear: both;'></div>
+              {{/unless}}
             {{/if}}
         </div>
         <div class='description'>
@@ -44,26 +43,6 @@
                 <span class='label label-info'>BETA</span>&nbsp;
             {{/if}}
             {{desc}}
-            {{#if single_tool}}
-              {{#if any_key}}
-                <br/><br/>Any key and secret will work for this app.
-              {{/if}}
-              {{#if beta}}
-                <br/><br/>This app is currently in beta/alpha.
-              {{/if}}
-              {{#if support_link}}
-                <br/><br/><a href="{{ support_link }}">Link to support for this app</a>
-              {{/if}}
-              {{#if only_works }}
-                <br/><br/>Only works in {{array_as_string only_works}}.
-              {{/if}}
-              {{#if doesnt_work }}
-                <br/><br/>Not recommended in {{array_as_string doesnt_work}}.
-              {{/if}}
-              {{#if ims_link}}
-                <br/><br/><a href="{{ ims_link }}">This app is IMS certified</a>
-              {{/if}}
-            {{/if}}
         </div>
         {{#unless single_tool}}
             <div class='ratings_on_hover'>
@@ -150,5 +129,35 @@
     {{/if}}
 </span>
 {{#if single_tool}}
-    <span class='span2 app'></span>
+    <span class='span3 app well' style="min-height: 200px;">
+      <div class='rating'>
+        {{#if show_votes}}
+            <div style='width: 55px;' class='voter'><a href='https://twitter.com/share' class='twitter-share-button' data-lang='en' data-count='vertical' data-url='{{refUrl}}' data-text='LTI Tool: {{name}}'>Tweet</a></div>
+            <div class='voter fb-like' data-send='false' data-layout='box_count' data-width='55' data-show-faces='false' data-href='{{refUrl}}' style='width: 55px;'></div>
+            <div style='padding-top: 1px; margin-left: 7px;' class='voter'><div class='g-plusone' data-annotation='bubble' data-size='tall' data-width='55' data-href='{{refUrl}}'></div></div>
+            <div style='clear: both;'></div>
+        {{/if}}
+      </div>
+      {{#if any_key}}
+        <br/><br/>Any key and secret will work for this app.
+      {{/if}}
+      {{#if costs_money }}
+        <br/><br/>This app requires a payment agreement with the vendor.
+      {{/if}}
+      {{#if beta}}
+        <br/><br/>This app is currently in beta/alpha.
+      {{/if}}
+      {{#if only_works }}
+        <br/><br/>Only works in {{array_as_string only_works}}.
+      {{/if}}
+      {{#if doesnt_work }}
+        <br/><br/>Not recommended in {{array_as_string doesnt_work}}.
+      {{/if}}
+      {{#if support_link}}
+        <br/><br/><a href="{{ support_link }}">Link to support for this app</a>
+      {{/if}}
+      {{#if ims_link}}
+        <br/><br/><a href="{{ ims_link }}">This app is IMS certified</a>
+      {{/if}}
+    </span>
 {{/if}}

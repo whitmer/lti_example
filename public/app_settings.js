@@ -24,6 +24,18 @@ $(function() {
     $(this).closest(".field").remove();
     formChanged();
   });
+  $(document).on('click', '#platforms', function(event) {
+    event.preventDefault();
+    var $a = $(this);
+    $a.text("loading...");
+    $.getJSON($(this).attr('rel'), function(data) {
+      var html = "There are currently no tags defined.";
+      if(data.length) {
+        html = "Current tags include: " + data.join(", ");
+      }
+      $a.after(html).remove();
+    });
+  });
   $(document).on('click', '#custom_fields .add_field', function(event) {
     event.preventDefault();
     var field = Handlebars.templates['custom_field']({});

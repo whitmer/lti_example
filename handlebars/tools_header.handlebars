@@ -15,6 +15,15 @@
             <option value="{{this}}">{{this}}</option>
         {{/each}}
     </select>
+    
+    <label for="platform">Platform:</label>
+    <select id="platform">
+        <option value="all">All Platforms</option>
+        {{#each platforms}}
+            <option value="{{this}}">{{this}}</option>
+        {{/each}}
+        <option value="other">Other Platform</option>
+    </select>
     <span id="visible_app_count"></span>
     Apps Shown
 </div>

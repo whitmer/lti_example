@@ -10,6 +10,7 @@
   };
   var grade_levels = {};
   var categories = {};
+  var platforms = {};
   $("#preview").live('click', function() {
     var tool = visible_tools[0];
     $(".preview_pane").remove();
@@ -94,7 +95,7 @@
         }
     });
   });
-  $("#category,#level").live('change', filterTools);
+  $("#category,#level,#platform").live('change', filterTools);
   if(params.tool) {
     $.getJSON('/api/v1/apps/' + params.tool, function(data) {
       toolsReady([data]);
@@ -120,8 +121,9 @@
   }
   function filterTools() {
     var tools = visible_tools;
-    var category = $("#category").val();
-    var level = $("#level").val();
+    var category = $("#category").val() || "all";
+    var level = $("#level").val() || "all";
+    var platform = $("#platform").val() || "all";
     $("#contents").empty();
     var mod = 0;
     var $div = null;
@@ -137,10 +139,27 @@
       if(level != "all" && !(tool.levels || []).join(" ").match(level)) {
         continue;
       }
+      if(platform != "all") {
+        if(tool.only_works && tool.only_works.indexOf(platform) == -1) {
+          continue;
+        } else if(tool.doesnt_work && tool.doesnt_work.indexOf(platform) != -1) {
+          continue;
+        }
+      }
       filterTools.appCount++;
       if(tool.categories) {
         for(var jdx in tool.categories) {
           categories[tool.categories[jdx]] = true;
+        }
+      }
+      if(tool.only_works) {
+        for(var jdx in tool.only_works) {
+          platforms[tool.only_works[jdx]] = true;
+        }
+      }
+      if(tool.doesnt_work) {
+        for(var jdx in tool.doesnt_work) {
+          platforms[tool.doesnt_work[jdx]] = true;
         }
       }
       var refUrl = location.protocol + "//" + location.host + "/index.html?tool=" + tool.id;
@@ -167,6 +186,7 @@
       var $tool = $(html).data('tool', tool);
       $div.append($tool);
       if(tools.length == 1) {
+        $div.find(".app:last").height($div.find(".single_app .header").height() + $div.find(".single_app .config").height() - 10);
         // add ratings and comments
         $(".app .config").css('visibility', 'visible');
         $("title,h1").text(tools[0].name);
@@ -226,14 +246,18 @@
     
     filterTools();
     var categories_list = [];
+    var platforms_list = []
     for(var idx in categories) {
       categories_list.push(idx);
+    }
+    for(var idx in platforms) {
+      platforms_list.push(idx);
     }
     
     if(tools.length > 1) {
       categories_list = categories_list.sort();
       var levels_list = ["K-6th Grade", "7th-12th Grade", "Postsecondary"];
-      var header = Handlebars.templates['tools_header']({categories: categories_list, levels: levels_list});
+      var header = Handlebars.templates['tools_header']({categories: categories_list, levels: levels_list, platforms: platforms_list});
       $("#contents").before(header);
       $("#visible_app_count").text(filterTools.appCount);
     }
