@@ -1169,7 +1169,7 @@ function program17(depth0,data) {
   stack1 = foundHelper || depth0.refUrl;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
   else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "refUrl", { hash: {} }); }
-  buffer += escapeExpression(stack1) + "'></div></div>\n                <div style='clear: both;'></div>\n              ";
+  buffer += escapeExpression(stack1) + "'></div></div>\n              ";
   return buffer;}
 
 function program19(depth0,data) {
@@ -1689,6 +1689,16 @@ function program64(depth0,data) {
   tmp1.inverse = self.noop;
   stack1 = stack2.call(depth0, stack1, tmp1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n      ";
+  foundHelper = helpers.user_key;
+  stack1 = foundHelper || depth0.user_key;
+  stack2 = helpers['if'];
+  tmp1 = self.program(81, program81, data);
+  tmp1.hash = {};
+  tmp1.fn = tmp1;
+  tmp1.inverse = self.noop;
+  stack1 = stack2.call(depth0, stack1, tmp1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n    </span>\n";
   return buffer;}
 function program65(depth0,data) {
@@ -1782,6 +1792,11 @@ function program79(depth0,data) {
   buffer += escapeExpression(stack1) + "\">This app is IMS certified</a>\n      ";
   return buffer;}
 
+function program81(depth0,data) {
+  
+  
+  return "\n        <br/><br/>\n        <a href=\"#\" id=\"report\">Report incompatibility</a>\n        <form>This app doesn't work in: <input type=\"text\"/><button type='submit'>Report</button></form>\n      ";}
+
   buffer += "<span class='span";
   foundHelper = helpers.single_tool;
   stack1 = foundHelper || depth0.single_tool;
@@ -1852,7 +1867,7 @@ function program79(depth0,data) {
   tmp1.inverse = self.noop;
   stack1 = stack2.call(depth0, stack1, tmp1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n        </div>\n        <div class='description'>\n            ";
+  buffer += "\n            <div style='clear: both;'></div>\n        </div>\n        <div class='description'>\n            ";
   foundHelper = helpers.pending;
   stack1 = foundHelper || depth0.pending;
   stack2 = helpers['if'];

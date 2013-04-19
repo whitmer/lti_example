@@ -28,9 +28,9 @@
                 <div style='width: 55px;' class='voter'><a href='https://twitter.com/share' class='twitter-share-button' data-lang='en' data-count='vertical' data-url='{{refUrl}}' data-text='LTI Tool: {{name}}'>Tweet</a></div>
                 <div class='voter fb-like' data-send='false' data-layout='box_count' data-width='55' data-show-faces='false' data-href='{{refUrl}}' style='width: 55px;'></div>
                 <div style='padding-top: 1px; margin-right: 7px;' class='voter'><div class='g-plusone' data-annotation='bubble' data-size='tall' data-width='55' data-href='{{refUrl}}'></div></div>
-                <div style='clear: both;'></div>
               {{/unless}}
             {{/if}}
+            <div style='clear: both;'></div>
         </div>
         <div class='description'>
             {{#if pending}}
@@ -158,6 +158,11 @@
       {{/if}}
       {{#if ims_link}}
         <br/><br/><a href="{{ ims_link }}">This app is IMS certified</a>
+      {{/if}}
+      {{#if user_key }}
+        <br/><br/>
+        <a href="#" id="report">Report incompatibility</a>
+        <form>This app doesn't work in: <input type="text"/><button type='submit'>Report</button></form>
       {{/if}}
     </span>
 {{/if}}
