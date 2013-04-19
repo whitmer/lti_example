@@ -2165,7 +2165,7 @@ function program79(depth0,data) {
 function program81(depth0,data) {
   
   
-  return "\n        <br/><br/>\n        <a href=\"#\" id=\"report\">Report incompatibility</a>\n        <form>This app doesn't work in: <input type=\"text\"/><button type='submit'>Report</button></form>\n      ";}
+  return "\n        <!--\n        <br/><br/>\n        <a href=\"#\" id=\"report\">Report incompatibility</a>\n        <form>This app doesn't work in: <input type=\"text\"/><button type='submit'>Report</button></form>\n        -->\n      ";}
 
   buffer += "<span class='span";
   foundHelper = helpers.single_tool;
@@ -2680,7 +2680,7 @@ function program49(depth0,data) {
   tmp1.inverse = self.noop;
   stack1 = stack2.call(depth0, stack1, tmp1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n      </div>      \n    </div>\n    <div class=\"control-group\">\n      <label class=\"control-label\" for=\"only_works\">Only Works In</label>\n      <div class=\"controls\">\n        <input type=\"text\" id=\"only_works\" placeholder=\"list,of,platforms (blank if none)\" name=\"only_works\" value=\"";
+  buffer += "\n      </div>      \n    </div>\n    <div class=\"control-group\">\n      <label class=\"control-label\" for=\"only_works\">Only Works In</label>\n      <div class=\"controls\">\n        <input type=\"text\" id=\"only_works\" placeholder=\"list,of,platforms (blank if all)\" name=\"only_works\" value=\"";
   foundHelper = helpers.only_works;
   stack1 = foundHelper || depth0.only_works;
   foundHelper = helpers.array_as_string;
