@@ -2245,7 +2245,7 @@ function program49(depth0,data) {
   stack1 = foundHelper || depth0.id;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
   else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "id", { hash: {} }); }
-  buffer += escapeExpression(stack1) + "\"/>\n      </div>      \n    </div>\n    <div class=\"control-group\">\n      <label class=\"control-label\" for=\"description\">Description</label>\n      <div class=\"controls\">\n        <textarea name=\"description\" rows=\"4\" class=\"span6\" placeholder=\"100 words or less, go easy on the marketspeak please\">";
+  buffer += escapeExpression(stack1) + "\"/>\n      </div>      \n    </div>\n    <div class=\"control-group\">\n      <label class=\"control-label\" for=\"description\">Description</label>\n      <div class=\"controls\">\n        <textarea name=\"description\" rows=\"4\" class=\"span6\" placeholder=\"100 words or less, go easy on the marketspeak or you'll be edited. Explain what your app does.\">";
   foundHelper = helpers.description;
   stack1 = foundHelper || depth0.description;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
