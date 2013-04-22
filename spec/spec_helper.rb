@@ -1,11 +1,16 @@
-RACK_ENV='test'
-require 'rspec'
+ENV['RACK_ENV'] ||= 'test'
+
+require_relative '../config/environment.rb'
+
+require 'edu_apps'
+
 require 'rack/test'
 require 'json'
-require './edu_apps'
 
 RSpec.configure do |config|
-  config.before(:each) { DataMapper.auto_migrate! }
+  config.before(:each) do
+    DataMapper.auto_migrate!
+  end
 end
 
 def populate_apps

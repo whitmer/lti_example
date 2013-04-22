@@ -3,6 +3,8 @@ require 'sanitize'
 
 module Sinatra
   module Apps
+    PAGINATION_LIMIT = 72
+
     def self.registered(app)
       app.helpers Apps::Helpers
       
@@ -192,7 +194,7 @@ module Sinatra
     
       def apps_list(request, paginated=true)
         host = request.scheme + "://" + request.host_with_port
-        limit = 72
+        limit = PAGINATION_LIMIT
         params = request.params
         offset = params['offset'].to_i
         filter = AppFilter.first(:code => params['filter'])

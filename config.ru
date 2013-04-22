@@ -1,3 +1,4 @@
 #\ -p 4567
-require(File.expand_path("../edu_apps", __FILE__))
+require './config/environment.rb'
+require 'edu_apps'
 run EduApps

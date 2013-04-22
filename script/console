@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -z $RACK_ENV ]; then
+RACK_ENV=development
+fi
+
+echo 'Loading LTI-Apps.org console...'
+echo $RACK_ENV
+
+bundle exec pry -r ./config/environment.rb

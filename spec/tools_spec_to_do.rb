@@ -1,20 +1,9 @@
-require File.dirname(__FILE__) + '/spec_helper'
+require_relative './spec_helper'
 
-require 'capybara'
-require 'capybara/dsl'
-
-
+require 'capybara/rspec'
 Capybara.app = EduApps
 
-RSpec.configure do |config|
-  config.include Capybara::DSL
-end
-
-describe 'Tools Selenium' do
-  include Rack::Test::Methods
-  include Capybara::DSL
-  Capybara.default_driver = :selenium
-  
+describe 'Tools Selenium', :type => :feature do
   def app
     EduApps
   end
@@ -64,7 +53,7 @@ describe 'Tools Selenium' do
   end
 
   describe "/tools/public_collections/index.html" do
-    it "shoud load" do
+    it "should load" do
       populate_apps
       visit_tool '/tools/public_collections/index.html'
       keep_trying_until{ all('#tools .tool').length > 20 }

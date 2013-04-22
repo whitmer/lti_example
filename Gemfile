@@ -12,11 +12,19 @@ gem 'dm-postgres-adapter'
 gem 'dm-types', "1.2.0"
 
 group :development do
-    gem 'ruby-debug19'
-    gem 'dm-sqlite-adapter'
-    gem 'handlebars'
-    gem 'rspec'
-    gem 'rack-test'
-    gem 'selenium-webdriver'
-    gem 'capybara'
+  gem 'debugger'
+  gem 'handlebars'
+  gem 'shotgun'
+end
+
+group :test do
+  gem 'rspec'
+  gem 'rack-test'
+  gem 'selenium-webdriver'
+  gem 'capybara'
+end
+
+group :development, :test do
+  gem 'pry'
+  gem 'dm-sqlite-adapter'
 end

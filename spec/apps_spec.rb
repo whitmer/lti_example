@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/spec_helper'
+require_relative './spec_helper'
 
 describe 'Apps API' do
   include Rack::Test::Methods
@@ -24,9 +24,9 @@ describe 'Apps API' do
       json = JSON.parse(last_response.body)
       json['meta'].should_not be_nil
       json['objects'].should_not be_nil
-      json['objects'].length.should == 24
-      json['meta']['next'].should == "http://example.org/api/v1/apps?offset=24"
-      json['objects'].  each do |obj|
+      json['objects'].length.should == Sinatra::Apps::PAGINATION_LIMIT
+      json['meta']['next'].should == "http://example.org/api/v1/apps?offset=#{Sinatra::Apps::PAGINATION_LIMIT}"
+      json['objects'].each do |obj|
         check_app_response(obj)
       end
     end

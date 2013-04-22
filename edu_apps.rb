@@ -1,17 +1,4 @@
 require 'sinatra/base'
-require 'digest/md5'
-
-require './lib/main'
-require './lib/models'
-require './lib/external_search'
-require './lib/apps'
-require './lib/admin'
-require './lib/parsers'
-require './lib/twitter_login'
-require './lib/assessment'
-require './lib/custom_launches'
-require './lib/config_xml'
-require './lib/oembed'
 
 class EduApps < Sinatra::Base
   if defined?(RACK_ENV)
@@ -35,9 +22,4 @@ class EduApps < Sinatra::Base
   raise "session key required" if ENV['RACK_ENV'] == 'production' && !ENV['SESSION_KEY']
   set :session_secret, ENV['SESSION_KEY'] || "local_secret"
   set :method_override, true
-
-  env = ENV['RACK_ENV'] || settings.environment
-  DataMapper.setup(:default, (ENV["DATABASE_URL"] || "sqlite3:///#{Dir.pwd}/#{env}.sqlite3"))
-  DataMapper.auto_upgrade!
-  
 end

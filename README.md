@@ -28,7 +28,7 @@ After that you'll want to pre-populate your db with some known apps:
 
 Now, just start it up:
 
-    $ bundle exec rackup config.ru
+    $ rackup config.ru
 
 You will see some output like this:
 
