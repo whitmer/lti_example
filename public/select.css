@@ -1,0 +1,10 @@
+.filters select {
+  width: 150px;
+}
+#nav {
+  display: none;
+}
+.hero-unit {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

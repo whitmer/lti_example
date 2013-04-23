@@ -1,6 +1,5 @@
 <div class="filters form-inline well">
-    <label for="category">Category:</label>
-    <select id="category">
+    <select id="category" title="Category">
         <option value="all">All Categories</option>
         <option value="recent">Recently Added</option>
         {{#each categories}}
@@ -8,16 +7,14 @@
         {{/each}}
     </select>
     
-    <label for="level">Grade Level:</label>
-    <select id="level">
+    <select id="level" title="Grade Level">
         <option value="all">All Grade Levels</option>
         {{#each levels}}
             <option value="{{this}}">{{this}}</option>
         {{/each}}
     </select>
     
-    <label for="platform">Platform:</label>
-    <select id="platform">
+    <select id="platform" title="Platform">
         <option value="all">All Platforms</option>
         {{#each platforms}}
             <option value="{{this}}">{{this}}</option>

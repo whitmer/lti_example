@@ -52,6 +52,12 @@ module Sinatra
         erb :index
       end
       
+      app.get "/select.html" do
+        @data_view = "index"
+        @sheets = ['loading', 'index', 'select']
+        erb :select
+      end
+      
       app.get "/twitter.html" do
         redirect to("/tools/twitter/index.html")
       end

@@ -36,6 +36,7 @@
 .app .description {
   height: 110px;
   overflow: hidden;
+  clear: left;
 }
 .app.single_app .description {
   height: auto;
@@ -84,3 +85,14 @@
  .app:hover .ratings_on_hover {
   opacity: 1.0;
  }
+ #app_sidebar {
+  margin-left: 5px;
+ }
+#sidebar_content {
+  display: block; 
+  padding: 10px 20px;
+}
+#sidebar_content .note {
+  display: block;
+  margin: 10px 0;
+}

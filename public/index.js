@@ -4,6 +4,7 @@
     location.href = location.href.replace(/^http/, 'https')
   }
   var visible_tools = [];
+  var select_mode = $("#contents").hasClass('selectable');
   var extensions = {
     'editor_button': "rich editor",
     'course_nav': "course navigation"
@@ -16,6 +17,30 @@
     $(".preview_pane").remove();
     var preview = Handlebars.templates['tool_preview'](tool);
     $(".config").after(preview);
+  });
+  $("#cancel").live('click', function(event) {
+    event.preventDefault();
+    history.back();
+  });
+  $("#install").live('click', function(event) {
+    event.preventDefault();
+    var key = $("#key").val() || ("key" + (new Date()).getTime().toString() + Math.round(Math.random(999999)));
+    var secret = $("#secret").val() || ("secret" + (new Date()).getTime().toString() + Math.round(Math.random(999999)));
+    var url = $(".config_url_radio:checked").parent().find(".config_field").val() || $(".config_field:first").val();
+    console.log(url);
+    $("#contents").html("<div style='text-align: center;'><h2>Installing...</h2></div>");
+    $.getJSON("/process_xml?url=" + encodeURIComponent(url), function(data) {
+      data.key = key;
+      data.secret = secret;
+      data.action = "InstallEduApp";
+      console.log(data);
+      if(window.parent) {
+        window.parent.postMessage(data, "*");
+        $("#contents").html("<div style='text-align: center;'><h2>App Installed! This window should disappear on its own.</h2></div>");
+      } else {
+        $("#contents").html("<div style='text-align: center;'><h2>Oops! This window wasn't loaded correctly, so the app can't be installed.</h2></div>");
+      }
+    });
   });
   $(".config_option").live('change keyup', function() {
     $(".config_field").each(function() {
@@ -177,6 +202,7 @@
         tool.desc = tool.description;
         tool.config_dir = tool.config_directions;
       }
+      tool.select = select_mode;
       tool.user_key = window.user_key;
       html = Handlebars.templates['tool'](tool);
       if(mod == 0) {
@@ -186,7 +212,7 @@
       var $tool = $(html).data('tool', tool);
       $div.append($tool);
       if(tools.length == 1) {
-        $div.find(".app:last").height($div.find(".single_app .header").height() + $div.find(".single_app .config").height() - 10);
+        $div.find("#app_sidebar").height($div.find(".single_app .header").height() + $div.find(".single_app .config").height() + 28);
         // add ratings and comments
         $(".app .config").css('visibility', 'visible');
         $("title,h1").text(tools[0].name);

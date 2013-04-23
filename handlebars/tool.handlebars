@@ -1,27 +1,27 @@
-<span class='span{{#if single_tool}}7{{else}}3{{/if}} app {{#if single_tool}}single_app offset1{{/if}}'>
-    <div class='header'>
-        <div class='icon'>
-            <a href='/index.html?tool={{id}}'>
+<span class='span{{#if single_tool}}{{#if select}}10{{else}}7{{/if}}{{else}}3{{/if}} app {{#if single_tool}}single_app offset1{{/if}}'>
+    <span class='header' style="display: block;">
+        <span class='icon' style="display: block;">
+            <a href='?tool={{id}}'>
                 {{#if single_tool }}
                     <img src='{{banner_url}}' alt='' class="banner"/>
                 {{else}}
                     <img src='{{logo_url}}' alt='' class="logo"/>
                 {{/if}}
             </a>
-        </div>
+        </span>
         <h3>
-            <a href='/index.html?tool={{id}}'>{{name}}</a>
+            <a href='?tool={{id}}'>{{name}}</a>
         </h3>
-        <div class='author'>{{ author_name }}</div>
-        <div class='rating'>
+        <span style="display: block;" class='author'>{{ author_name }}</span>
+        <span class='rating' style="display: block;">
             {{#if single_tool}}
-                <div class='rating_summary'>
+                <span class='rating_summary' style="display: block;">
                     {{#if ratings_count}}
                         {{stars avg_rating}} {{ratings_count}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/comments.png'/> {{comments_count}}
                     {{else}}
                         No Ratings
                     {{/if}}
-                </div>
+                </span>
             {{/if}}
             {{#if show_votes}}
               {{#unless single_tool }}
@@ -30,9 +30,9 @@
                 <div style='padding-top: 1px; margin-right: 7px;' class='voter'><div class='g-plusone' data-annotation='bubble' data-size='tall' data-width='55' data-href='{{refUrl}}'></div></div>
               {{/unless}}
             {{/if}}
-            <div style='clear: both;'></div>
-        </div>
-        <div class='description'>
+            <span style='clear: both;'></span>
+        </span>
+        <span class='description' style="display: block;">
             {{#if pending}}
               <div><b>NOTE:</b> Remember this URL if you want to update app settings, as it won't show up in the directory until it's approved. Also, HTML tags are escaped until the app is approved.</div><br/>
             {{/if}}
@@ -43,56 +43,74 @@
                 <span class='label label-info'>BETA</span>&nbsp;
             {{/if}}
             {{desc}}
-        </div>
+        </span>
         {{#unless single_tool}}
-            <div class='ratings_on_hover'>
+            <span style="display: block;" class='ratings_on_hover'>
                 {{#if ratings_count}}
                     {{stars avg_rating}} {{ratings_count}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/comments.png'/> {{comments_count}}
                 {{else}}
                     &nbsp;
                 {{/if}}
-            </div>
+            </span>
         {{/unless}}
-    </div>
+    </span>
     {{#if config_details}}
-        <div class='config alert alert-info'>
+        <span class='config alert alert-info' style="display: block;">
         {{#if single_tool}}
             {{#if has_config_url}}
                 {{#each config_options}}
                     {{#if_eql type val="checkbox"}}
-                        <div class='form-horizontal'><label><input style='margin: -4px 3px 0 0;' type='checkbox' class='config_option' name='{{name}}' value='{{value}}'/> {{description}}</label></div>
+                        <span class='form-horizontal'><label><input style='margin: -4px 3px 0 0;' type='checkbox' class='config_option' name='{{name}}' value='{{value}}'/> {{description}}</label></span>
                     {{else}}
-                        <div class='form-horizontal'><label>{{description}}: <input type='text' class='config_option' name='{{name}}' value='{{value}}'/></label></div>
+                        <span class='form-horizontal'><label>{{description}}: <input type='text' class='config_option' name='{{name}}' value='{{value}}'/></label></span>
                     {{/if_eql}}
                     <br/>
                 {{/each}}
+                <span>
                 {{#if config_urls}}
                     {{#each config_urls}}
-                        <label>{{description}}: <input type='text' title='copy this URL and paste it into the tool configuration in your LMS' class='config_field' value='{{full_url url}}'/>
+                        <label>
+                           {{#if ../../select}}<input class="config_url_radio" type='radio' name='config_url'/>{{/if}}
+                          {{description}} <input type='text' title='copy this URL and paste it into the tool configuration in your LMS' class='config_field' value='{{full_url url}}' {{#if ../../select}}style="display: none;"{{/if}}/>
                         </label>                  
                     {{/each}}
                 {{else}}
-                    <label>configuration url: <input type='text' title='copy this URL and paste it into the tool configuration in your LMS' class='config_field' value='{{full_url config_url}}'/>
+                    <label {{#if ../select}}style="display: none;"{{/if}}>configuration url: <input type='text' title='copy this URL and paste it into the tool configuration in your LMS' class='config_field' value='{{full_url config_url}}'/>
                     </label>                        
                 {{/if}}
+                </span>
             {{else}}
                 {{#if config_dir}}
                     {{config_dir}}
                 {{/if}}
             {{/if}}
         {{/if}}
-        {{#if preview}}
-            {{#if single_tool}}
-                <a id='preview' class='btn btn-primary' href='#preview'>Preview</a>
+        {{#if select }}
+          {{#if single_tool}}
+            {{#unless any_key}}
+              <span class='form-horizontal'><label>Consumer Key: <input type='text' id='key' name='key'/></label></span>
+              <span class='form-horizontal'><label>Shared Secret: <input type='text' id='secret' name='secret'/></label></span>
+            {{/unless}}
+            <a id='install' class='btn btn-primary' href='#install'>Install</a>
+            {{#if preview}}
+              <a id='preview' class='btn' href='#preview'>Preview</a>
             {{/if}}
+            <a id='cancel' class='btn' href='#back'>Cancel</a>
+          {{/if}}
+        {{else}}
+          {{#if preview}}
+              {{#if single_tool}}
+                  <a id='preview' class='btn btn-primary' href='#preview'>Preview</a>
+              {{/if}}
+          {{/if}}
         {{/if}}
         {{#if extensions_or_preview}}
-            <div class='extensions'>
+            <span style="display: block;" class='extensions'>
               {{#if preview}}
                 {{#if single_tool}}
                     <span class='label label-info'>preview</span>
                 {{else}}
-                    <a href="/index.html?tool={{id}}#preview">
+                    <a href="?tool={{id}}#preview">
                         <span class='label label-info'>preview</span></a>
                 {{/if}}
               {{/if}}
@@ -100,64 +118,46 @@
                 <a href="{{ ims_link }}"><span class='label' title='IMS Certified'>IMS</span></a>
               {{/if}}
               {{extensions_list extensions}}
-            </div>
+            </span>
         {{/if}}
-        </div>
-    {{/if}}
-    {{#if single_tool}}
-        <a name="preview"></a>
-        <div class='ratings'>
-            {{stars avg_rating}} {{ratings_count}}
-            {{#if comments_count}}
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/comments.png'/> {{comments_count}}
-            {{/if}}
-            {{#unless user_key}}
-            <div><a href='/login'><img src='/tools/twitter/icon.png'/> Login via Twitter</a> to rate and review this app</div>
-            {{/unless}}
-            <form id='add_rating' style="display: none;">
-                <input id="rating_star" type="hidden" name="rating" value=""/>
-                <textarea id="rating_comments" placeholder="Type any additional comments here" style="width: 300px; height: 50px;"></textarea><br/>
-                <button type='submit' class='btn btn-primary'>Submit Comments</button>
-                <button type='button' class='bnt btn-cancel'>No Comment</button>
-            </form>
-            {{#if comments_count}}
-                <h3>Recent Comments</h3>
-                <div class='comments'>
-                </div>
-            {{/if}}
-        </div>
+        </span>
     {{/if}}
 </span>
 {{#if single_tool}}
-    <span class='span3 app well' style="min-height: 200px;">
-      <div class='rating'>
-        {{#if show_votes}}
-            <div style='width: 55px;' class='voter'><a href='https://twitter.com/share' class='twitter-share-button' data-lang='en' data-count='vertical' data-url='{{refUrl}}' data-text='LTI Tool: {{name}}'>Tweet</a></div>
-            <div class='voter fb-like' data-send='false' data-layout='box_count' data-width='55' data-show-faces='false' data-href='{{refUrl}}' style='width: 55px;'></div>
-            <div style='padding-top: 1px; margin-left: 7px;' class='voter'><div class='g-plusone' data-annotation='bubble' data-size='tall' data-width='55' data-href='{{refUrl}}'></div></div>
-            <div style='clear: both;'></div>
-        {{/if}}
-      </div>
+    <span id="{{#unless select}}app_sidebar{{/unless}}" class='{{#if select}}span10 offset1{{else}}span3{{/if}} app well' style="padding: 0;">
+      <span id="sidebar_content">
+      {{#unless select}}
+        <span class='rating note'>
+          {{#if show_votes}}
+              <div style='width: 55px;' class='voter'><a href='https://twitter.com/share' class='twitter-share-button' data-lang='en' data-count='vertical' data-url='{{refUrl}}' data-text='LTI Tool: {{name}}'>Tweet</a></div>
+              <div class='voter fb-like' data-send='false' data-layout='box_count' data-width='55' data-show-faces='false' data-href='{{refUrl}}' style='width: 55px;'></div>
+              <div style='padding-top: 1px; margin-left: 7px;' class='voter'><div class='g-plusone' data-annotation='bubble' data-size='tall' data-width='55' data-href='{{refUrl}}'></div></div>
+              <div style='clear: both;'></div>
+          {{/if}}
+        </span>
+      {{/unless}}
       {{#if any_key}}
-        <br/><br/>Any key and secret will work for this app.
+        <span class='note'>
+        Any key and secret will work for this app.
+        </span>
       {{/if}}
       {{#if costs_money }}
-        <br/><br/>This app requires a payment agreement with the vendor.
+        <span class='note'>This app requires a payment agreement with the vendor.</span>
       {{/if}}
       {{#if beta}}
-        <br/><br/>This app is currently in beta/alpha.
+        <span class='note'>This app is currently in beta/alpha.</span>
       {{/if}}
       {{#if only_works }}
-        <br/><br/>Only works in {{array_as_string only_works}}.
+        <span class='note'>Only works in {{array_as_string only_works}}.</span>
       {{/if}}
       {{#if doesnt_work }}
-        <br/><br/>Not recommended in {{array_as_string doesnt_work}}.
+        <span class='note'>Not recommended in {{array_as_string doesnt_work}}.</span>
       {{/if}}
       {{#if support_link}}
-        <br/><br/><a href="{{ support_link }}">Link to support for this app</a>
+        <span class='note'><a href="{{ support_link }}" target="_blank">Link to support for this app</a></span>
       {{/if}}
       {{#if ims_link}}
-        <br/><br/><a href="{{ ims_link }}">This app is IMS certified</a>
+        <span class='note'><a href="{{ ims_link }}" target="_blank">This app is IMS certified</a></span>
       {{/if}}
       {{#if user_key }}
         <!--
@@ -166,5 +166,31 @@
         <form>This app doesn't work in: <input type="text"/><button type='submit'>Report</button></form>
         -->
       {{/if}}
+      </span>
     </span>
+{{/if}}
+{{#if single_tool}}
+  <span class='span10 offset1'>
+    <a name="preview"></a>
+    <span class='ratings' style="display: block;">
+        {{stars avg_rating}} {{ratings_count}}
+        {{#if comments_count}}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/comments.png'/> {{comments_count}}
+        {{/if}}
+        {{#unless user_key}}
+        <div><a href='/login'><img src='/tools/twitter/icon.png'/> Login via Twitter</a> to rate and review this app</div>
+        {{/unless}}
+        <form id='add_rating' style="display: none;">
+            <input id="rating_star" type="hidden" name="rating" value=""/>
+            <textarea id="rating_comments" placeholder="Type any additional comments here" style="width: 300px; height: 50px;"></textarea><br/>
+            <button type='submit' class='btn btn-primary'>Submit Comments</button>
+            <button type='button' class='bnt btn-cancel'>No Comment</button>
+        </form>
+        {{#if comments_count}}
+            <h3>Recent Comments</h3>
+            <span style="display: block;" class='comments'>
+            </span>
+        {{/if}}
+    </span>
+  </span>
 {{/if}}
