@@ -32,6 +32,7 @@
     $.getJSON("/process_xml?url=" + encodeURIComponent(url)).done(function(data) {
       data.key = key;
       data.secret = secret;
+      data.config_url = url;
       data.action = "InstallEduApp";
       console.log(data);
       if(window.parent) {
