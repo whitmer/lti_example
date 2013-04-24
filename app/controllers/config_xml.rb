@@ -7,7 +7,15 @@ module Sinatra
       
       app.get "/process_xml" do
         begin
-          api_response(LtiXmlParser.process(params['url']))
+          uri = URI.parse(params['url']) rescue nil
+          if uri && uri.host == request.host
+            tool_id = uri.request_uri.match(/tools\/(\w+)\/config\.xml/)[1]
+            xml = app_config(tool_id)
+            headers 'Content-Type' => 'text/json'
+            api_response(LtiXmlParser.xml_to_hash(Nokogiri::XML(xml)))
+          else
+            api_response(LtiXmlParser.process(params['url']))
+          end
         rescue LtiParseError => e
           halt 400, api_response({:error => e.message})
         rescue => e
