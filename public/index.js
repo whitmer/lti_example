@@ -29,7 +29,7 @@
     var url = $(".config_url_radio:checked").parent().find(".config_field").val() || $(".config_field:first").val();
     console.log(url);
     $("#contents").html("<div style='text-align: center;'><h2>Installing...</h2></div>");
-    $.getJSON("/process_xml?url=" + encodeURIComponent(url), function(data) {
+    $.getJSON("/process_xml?url=" + encodeURIComponent(url)).done(function(data) {
       data.key = key;
       data.secret = secret;
       data.action = "InstallEduApp";
@@ -40,6 +40,8 @@
       } else {
         $("#contents").html("<div style='text-align: center;'><h2>Oops! This window wasn't loaded correctly, so the app can't be installed.</h2></div>");
       }
+    }).fail(function() {
+      $("#contents").html("<div style='text-align: center;'><h2>Install failed. Please try again.</h2></div>");
     });
   });
   $(".config_option").live('change keyup', function() {
