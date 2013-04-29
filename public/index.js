@@ -125,6 +125,7 @@
   });
   $("#category,#level,#platform").live('change', filterTools);
   if(params.tool) {
+    $("#hero-desc").remove();
     $.getJSON('/api/v1/apps/' + params.tool, function(data) {
       toolsReady([data]);
     });
@@ -219,6 +220,7 @@
         // add ratings and comments
         $(".app .config").css('visibility', 'visible');
         $("title,h1").text(tools[0].name);
+        $("#hero-desc").remove();
         $("#hero-content").remove();
         if(($.store.get('admin') || ($.store.get('apps') && $.store.get('apps').indexOf(tool.id) > -1)) && window.manageApp) {
           window.manageApp(tools[0]);
