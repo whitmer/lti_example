@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Edu Apps</title>
@@ -37,13 +38,19 @@
     <div id="fb-root"></div>
     <div class="container" id="content">
       <%= yield %>
-    </div>
+    </div> <!-- /container -->
+
+  <!-- Le javascript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
   <script src="/jquery.min.js"></script>
+  <script src="/json2.js"></script>
   <script src="/analytics.js"></script>
   <script src="/bootstrap-tooltip.js"></script>
   <script src="/jquery.store.js"></script>
   <script src="/common.js"></script>
   <script src="/bootstrap-dropdown.js"></script>
   <%= more_scripts %>
+
   </body>
 </html>

@@ -11,6 +11,7 @@
 }
 .app h3 {
   text-align: center;
+  margin: 0;
 }
 .app h3 a {
   color: #000;
@@ -20,6 +21,7 @@
 }
 .app .config.alert {
   margin-bottom: 5px;
+  padding: 0 5px 5px;
 }
 .app .header {
   padding: 5px;
@@ -34,9 +36,10 @@
   background: transparent;
 }
 .app .description {
-  height: 110px;
+  height: 112px;
   overflow: hidden;
   clear: left;
+  line-height: 19px;
 }
 .app.single_app .description {
   height: auto;
@@ -56,6 +59,7 @@
   color: #888;
   text-align: center;
   font-size: 12px;
+  margin-top: -10px;
 }
 .data-row {
   margin-top: 10px;

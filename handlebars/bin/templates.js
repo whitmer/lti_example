@@ -436,7 +436,7 @@ function program7(depth0,data) {
 function program9(depth0,data) {
   
   var buffer = "", stack1, stack2;
-  buffer += "\n              <li";
+  buffer += "\n            <li";
   foundHelper = helpers.admin;
   stack1 = foundHelper || depth0.admin;
   stack2 = helpers['if'];
@@ -446,7 +446,7 @@ function program9(depth0,data) {
   tmp1.inverse = self.noop;
   stack1 = stack2.call(depth0, stack1, tmp1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "><a href=\"/admin\">Admin</a></li>\n            ";
+  buffer += "><a href=\"/admin\">Admin</a></li>\n          ";
   return buffer;}
 function program10(depth0,data) {
   
@@ -458,7 +458,7 @@ function program12(depth0,data) {
   
   return " class=\"active\"";}
 
-  buffer += "<header>\n  <div id=\"nav\" class=\"navbar navbar-fixed-top\">\n    <div class=\"navbar-inner\">\n      <div class=\"container\">\n        <a class=\"brand\" href=\"/index.html\">Edu Apps</a>\n        <div class=\"nav-collapse\">\n          <ul class=\"nav\">\n            <li";
+  buffer += "<div id=\"nav\" class=\"navbar navbar-fixed-top\">\n  <div class=\"navbar-inner\">\n    <div class=\"container\">\n      <a class=\"brand\" href=\"/index.html\">Edu Apps</a>\n      <div class=\"nav-collapse\">\n        <ul class=\"nav\">\n          <li";
   foundHelper = helpers.index;
   stack1 = foundHelper || depth0.index;
   stack2 = helpers['if'];
@@ -468,7 +468,7 @@ function program12(depth0,data) {
   tmp1.inverse = self.noop;
   stack1 = stack2.call(depth0, stack1, tmp1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "><a href=\"/index.html\">Home</a></li>\n            <li";
+  buffer += "><a href=\"/index.html\">Home</a></li>\n          <li";
   foundHelper = helpers.talk;
   stack1 = foundHelper || depth0.talk;
   stack2 = helpers['if'];
@@ -478,7 +478,7 @@ function program12(depth0,data) {
   tmp1.inverse = self.noop;
   stack1 = stack2.call(depth0, stack1, tmp1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "><a href=\"/talk.html\">Talk</a></li>\n            <li";
+  buffer += "><a href=\"/talk.html\">Talk</a></li>\n          <li";
   foundHelper = helpers.tutorials;
   stack1 = foundHelper || depth0.tutorials;
   stack2 = helpers['if'];
@@ -488,7 +488,7 @@ function program12(depth0,data) {
   tmp1.inverse = self.noop;
   stack1 = stack2.call(depth0, stack1, tmp1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "><a href=\"/tutorials.html\">Tutorials</a></li>\n            <li class=\"";
+  buffer += "><a href=\"/tutorials.html\">Tutorials</a></li>\n          <li class=\"";
   foundHelper = helpers.coding;
   stack1 = foundHelper || depth0.coding;
   stack2 = helpers['if'];
@@ -498,7 +498,7 @@ function program12(depth0,data) {
   tmp1.inverse = self.noop;
   stack1 = stack2.call(depth0, stack1, tmp1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += " dropdown\">\n                <a href=\"/code.html\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Coding <span class='caret' style=\"color: #fff;\"></span></a>\n                <ul class=\"dropdown-menu\">\n                    <li><a href=\"/code.html\">Basics</a></li>\n                    <li><a href=\"/extensions.html\">Extensions</a></li>\n                    <li><a href=\"/build_xml.html\">XML</a></li>\n                    <li><a href=\"/api.html\">API</a></li>\n                    <li class=\"divider\"></li>\n                    <li><a href=\"https://github.com/whitmer/edu_apps\">Source</a></li>\n                </ul>\n            </li>\n            ";
+  buffer += " dropdown\">\n              <a href=\"/code.html\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Coding <span class='caret' style=\"color: #fff;\"></span></a>\n              <ul class=\"dropdown-menu\">\n                  <li><a href=\"/code.html\">Basics</a></li>\n                  <li><a href=\"/extensions.html\">Extensions</a></li>\n                  <li><a href=\"/build_xml.html\">XML</a></li>\n                  <li><a href=\"/api.html\">API</a></li>\n                  <li class=\"divider\"></li>\n                  <li><a href=\"https://github.com/whitmer/edu_apps\">Source</a></li>\n              </ul>\n          </li>\n          ";
   foundHelper = helpers.allow_admin;
   stack1 = foundHelper || depth0.allow_admin;
   stack2 = helpers['if'];
@@ -508,7 +508,7 @@ function program12(depth0,data) {
   tmp1.inverse = self.noop;
   stack1 = stack2.call(depth0, stack1, tmp1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n            <li";
+  buffer += "\n          <li";
   foundHelper = helpers.suggestions;
   stack1 = foundHelper || depth0.suggestions;
   stack2 = helpers['if'];
@@ -518,7 +518,7 @@ function program12(depth0,data) {
   tmp1.inverse = self.noop;
   stack1 = stack2.call(depth0, stack1, tmp1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += " style=\"display: none;\" id=\"suggestions\"><a href=\"/suggestions\">Suggest / Submit</a></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n</header>\n";
+  buffer += " style=\"display: none;\" id=\"suggestions\"><a href=\"/suggestions\">Suggest / Submit</a></li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>\n";
   return buffer;});
 templates['lti_outcome'] = template(function (Handlebars,depth0,helpers,partials,data) {
   helpers = helpers || Handlebars.helpers;

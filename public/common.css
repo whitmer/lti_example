@@ -78,7 +78,7 @@ span.stars.star4_5 img.star5 {
 
 .navbar .brand:hover {
   text-decoration: none;
-  text-shadow: 0 0 0.4em #fff, 0 0 0.4em #fff, 0 0 0.4em #fff;
+  text-shadow: 0 0 0.4em #0088cc, 0 0 0.4em #0088cc, 0 0 0.4em #0088cc;
 }
 .navbar .brand {
   display: block;
@@ -88,7 +88,7 @@ span.stars.star4_5 img.star5 {
   font-size: 20px;
   font-weight: 200;
   line-height: 1;
-  color: #ffffff !important;
+  color: #444 !important;
   text-shadow: 0 0 0.2em #0088CC, 0 0 0.2em #0088CC, 0 0 0.2em #0088CC;
 }
 .filters select {
@@ -99,4 +99,11 @@ label.app {
 }
 label.app.selected {
   opacity: 1.0;
+}
+#hero-desc .sub {
+  font-size: 13px;
+  line-height: 18px;
+}
+.form-horizontal {
+  height: 25px;
 }

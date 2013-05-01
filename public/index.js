@@ -216,7 +216,7 @@
       var $tool = $(html).data('tool', tool);
       $div.append($tool);
       if(tools.length == 1) {
-        $div.find("#app_sidebar").height($div.find(".single_app .header").height() + $div.find(".single_app .config").height() + 28);
+        $div.find("#app_sidebar").height($div.find(".single_app .header").height() + $div.find(".single_app .config").height() + 18);
         // add ratings and comments
         $(".app .config").css('visibility', 'visible');
         $("title,h1").text(tools[0].name);

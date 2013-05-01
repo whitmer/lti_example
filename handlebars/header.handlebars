@@ -1,31 +1,29 @@
-<header>
-  <div id="nav" class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="brand" href="/index.html">Edu Apps</a>
-        <div class="nav-collapse">
-          <ul class="nav">
-            <li{{#if index}} class="active"{{/if}}><a href="/index.html">Home</a></li>
-            <li{{#if talk}} class="active"{{/if}}><a href="/talk.html">Talk</a></li>
-            <li{{#if tutorials}} class="active"{{/if}}><a href="/tutorials.html">Tutorials</a></li>
-            <li class="{{#if coding}}active {{/if}} dropdown">
-                <a href="/code.html" class="dropdown-toggle" data-toggle="dropdown">Coding <span class='caret' style="color: #fff;"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="/code.html">Basics</a></li>
-                    <li><a href="/extensions.html">Extensions</a></li>
-                    <li><a href="/build_xml.html">XML</a></li>
-                    <li><a href="/api.html">API</a></li>
-                    <li class="divider"></li>
-                    <li><a href="https://github.com/whitmer/edu_apps">Source</a></li>
-                </ul>
-            </li>
-            {{#if allow_admin }}
-              <li{{#if admin}} class="active"{{/if}}><a href="/admin">Admin</a></li>
-            {{/if}}
-            <li{{#if suggestions}} class="active"{{/if}} style="display: none;" id="suggestions"><a href="/suggestions">Suggest / Submit</a></li>
-          </ul>
-        </div>
+<div id="nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html">Edu Apps</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li{{#if index}} class="active"{{/if}}><a href="/index.html">Home</a></li>
+          <li{{#if talk}} class="active"{{/if}}><a href="/talk.html">Talk</a></li>
+          <li{{#if tutorials}} class="active"{{/if}}><a href="/tutorials.html">Tutorials</a></li>
+          <li class="{{#if coding}}active {{/if}} dropdown">
+              <a href="/code.html" class="dropdown-toggle" data-toggle="dropdown">Coding <span class='caret' style="color: #fff;"></span></a>
+              <ul class="dropdown-menu">
+                  <li><a href="/code.html">Basics</a></li>
+                  <li><a href="/extensions.html">Extensions</a></li>
+                  <li><a href="/build_xml.html">XML</a></li>
+                  <li><a href="/api.html">API</a></li>
+                  <li class="divider"></li>
+                  <li><a href="https://github.com/whitmer/edu_apps">Source</a></li>
+              </ul>
+          </li>
+          {{#if allow_admin }}
+            <li{{#if admin}} class="active"{{/if}}><a href="/admin">Admin</a></li>
+          {{/if}}
+          <li{{#if suggestions}} class="active"{{/if}} style="display: none;" id="suggestions"><a href="/suggestions">Suggest / Submit</a></li>
+        </ul>
       </div>
     </div>
   </div>
-</header>
+</div>
