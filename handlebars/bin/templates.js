@@ -2386,7 +2386,7 @@ function program49(depth0,data) {
   tmp1.inverse = self.noop;
   stack1 = stack2.call(depth0, stack1, tmp1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\" method=\"POST\" id=\"app_settings\">\n  ";
+  buffer += "\" method=\"POST\" id=\"app_settings\" style=\"height: auto;\">\n  ";
   foundHelper = helpers.id;
   stack1 = foundHelper || depth0.id;
   stack2 = helpers['if'];
@@ -2900,6 +2900,6 @@ function program5(depth0,data) {
   tmp1.inverse = self.noop;
   stack1 = stack2.call(depth0, stack1, tmp1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n        <option value=\"other\">Other Platform</option>\n    </select>\n    <span id=\"visible_app_count\"></span>\n    Apps Shown\n</div>";
+  buffer += "\n        <option value=\"other\">Other Platform</option>\n    </select>\n    <span id=\"visible_app_count\"></span>&nbsp;\n    Apps Shown\n</div>";
   return buffer;});
 })();
