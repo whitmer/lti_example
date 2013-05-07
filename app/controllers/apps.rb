@@ -365,6 +365,7 @@ module Sinatra
         
         if @tool_summary && @tool_summary.settings
           @tool = @tool_summary.settings
+          @tool['related'] = @tool_summary.related_apps
         else
           data = App.load_apps
           @tool = data.detect{|t| t['id'] == id }
