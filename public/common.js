@@ -2693,6 +2693,11 @@ function program33(depth0,data) {
 
 function program35(depth0,data) {
   
+  
+  return "selected";}
+
+function program37(depth0,data) {
+  
   var buffer = "", stack1;
   buffer += "\n              ";
   stack1 = depth0;
@@ -2701,12 +2706,12 @@ function program35(depth0,data) {
   buffer += "\n            ";
   return buffer;}
 
-function program37(depth0,data) {
+function program39(depth0,data) {
   
   
   return "style=\"display: none;\"";}
 
-function program39(depth0,data) {
+function program41(depth0,data) {
   
   var buffer = "", stack1;
   buffer += "\n                ";
@@ -2716,7 +2721,7 @@ function program39(depth0,data) {
   buffer += "\n              ";
   return buffer;}
 
-function program41(depth0,data) {
+function program43(depth0,data) {
   
   var buffer = "", stack1;
   buffer += "\n              ";
@@ -2726,11 +2731,6 @@ function program41(depth0,data) {
   buffer += "\n            ";
   return buffer;}
 
-function program43(depth0,data) {
-  
-  
-  return "checked";}
-
 function program45(depth0,data) {
   
   
@@ -2739,9 +2739,14 @@ function program45(depth0,data) {
 function program47(depth0,data) {
   
   
-  return "Update";}
+  return "checked";}
 
 function program49(depth0,data) {
+  
+  
+  return "Update";}
+
+function program51(depth0,data) {
   
   
   return "Submit";}
@@ -2947,7 +2952,7 @@ function program49(depth0,data) {
   stack1 = foundHelper || depth0.domain;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
   else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "domain", { hash: {} }); }
-  buffer += escapeExpression(stack1) + "\"/>\n      </div>      \n    </div>\n    <div class=\"control-group app_type by_hand\">\n      <label class=\"control-label\" for=\"privacy_level\">Launch Privacy</label>\n      <div class=\"controls\">\n        <select name=\"privacy_level\" id=\"privacy_level\">\n          <option ";
+  buffer += escapeExpression(stack1) + "\"/>\n      </div>      \n    </div>\n    <div class=\"control-group\">\n      <label class=\"control-label\" for=\"privacy_level\">Launch Privacy</label>\n      <div class=\"controls\">\n        <select name=\"privacy_level\" id=\"privacy_level\">\n          <option ";
   foundHelper = helpers.privacy_level;
   stack1 = foundHelper || depth0.privacy_level;
   stack2 = {};
@@ -2981,11 +2986,26 @@ function program49(depth0,data) {
   foundHelper = helpers.privacy_level;
   stack1 = foundHelper || depth0.privacy_level;
   stack2 = {};
-  stack3 = "public";
+  stack3 = "email_only";
   stack2['val'] = stack3;
   foundHelper = helpers.if_eql;
   stack3 = foundHelper || depth0.if_eql;
   tmp1 = self.program(33, program33, data);
+  tmp1.hash = stack2;
+  tmp1.fn = tmp1;
+  tmp1.inverse = self.noop;
+  if(foundHelper && typeof stack3 === functionType) { stack1 = stack3.call(depth0, stack1, tmp1); }
+  else { stack1 = blockHelperMissing.call(depth0, stack3, stack1, tmp1); }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += " value=\"email_only\">Email Only</option>\n          <option ";
+  foundHelper = helpers.privacy_level;
+  stack1 = foundHelper || depth0.privacy_level;
+  stack2 = {};
+  stack3 = "public";
+  stack2['val'] = stack3;
+  foundHelper = helpers.if_eql;
+  stack3 = foundHelper || depth0.if_eql;
+  tmp1 = self.program(35, program35, data);
   tmp1.hash = stack2;
   tmp1.fn = tmp1;
   tmp1.inverse = self.noop;
@@ -3007,7 +3027,7 @@ function program49(depth0,data) {
   stack1 = foundHelper || depth0.custom_fields;
   foundHelper = helpers.each_in_hash;
   stack2 = foundHelper || depth0.each_in_hash;
-  tmp1 = self.program(35, program35, data);
+  tmp1 = self.program(37, program37, data);
   tmp1.hash = {};
   tmp1.fn = tmp1;
   tmp1.inverse = self.noop;
@@ -3018,7 +3038,7 @@ function program49(depth0,data) {
   foundHelper = helpers.config_options;
   stack1 = foundHelper || depth0.config_options;
   stack2 = helpers.unless;
-  tmp1 = self.program(37, program37, data);
+  tmp1 = self.program(39, program39, data);
   tmp1.hash = {};
   tmp1.fn = tmp1;
   tmp1.inverse = self.noop;
@@ -3028,7 +3048,7 @@ function program49(depth0,data) {
   foundHelper = helpers.config_options;
   stack1 = foundHelper || depth0.config_options;
   stack2 = helpers.each;
-  tmp1 = self.program(39, program39, data);
+  tmp1 = self.program(41, program41, data);
   tmp1.hash = {};
   tmp1.fn = tmp1;
   tmp1.inverse = self.noop;
@@ -3038,7 +3058,7 @@ function program49(depth0,data) {
   foundHelper = helpers.config_urls;
   stack1 = foundHelper || depth0.config_urls;
   stack2 = helpers.each;
-  tmp1 = self.program(41, program41, data);
+  tmp1 = self.program(43, program43, data);
   tmp1.hash = {};
   tmp1.fn = tmp1;
   tmp1.inverse = self.noop;
@@ -3083,7 +3103,7 @@ function program49(depth0,data) {
   foundHelper = helpers.exclude_from_public_collections;
   stack1 = foundHelper || depth0.exclude_from_public_collections;
   stack2 = helpers['if'];
-  tmp1 = self.program(43, program43, data);
+  tmp1 = self.program(45, program45, data);
   tmp1.hash = {};
   tmp1.fn = tmp1;
   tmp1.inverse = self.noop;
@@ -3093,7 +3113,7 @@ function program49(depth0,data) {
   foundHelper = helpers.no_launch;
   stack1 = foundHelper || depth0.no_launch;
   stack2 = helpers['if'];
-  tmp1 = self.program(45, program45, data);
+  tmp1 = self.program(47, program47, data);
   tmp1.hash = {};
   tmp1.fn = tmp1;
   tmp1.inverse = self.noop;
@@ -3130,10 +3150,10 @@ function program49(depth0,data) {
   foundHelper = helpers.id;
   stack1 = foundHelper || depth0.id;
   stack2 = helpers['if'];
-  tmp1 = self.program(47, program47, data);
+  tmp1 = self.program(49, program49, data);
   tmp1.hash = {};
   tmp1.fn = tmp1;
-  tmp1.inverse = self.program(49, program49, data);
+  tmp1.inverse = self.program(51, program51, data);
   stack1 = stack2.call(depth0, stack1, tmp1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += " App</button>\n      </div>\n    </div>\n  </fieldset>\n</form>\n</div>";

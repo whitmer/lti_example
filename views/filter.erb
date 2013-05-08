@@ -35,6 +35,13 @@
         </div>
         <div class="control-group">
           <div class="controls">
+            <label>
+              <input type="checkbox" id="anonymous_only" <%= 'checked' if !@filter || @filter.settings['anonymous_only'] %> name="anonymous_only" value="1"/>
+              Restrict listing to only apps with privacy level "anonymous"
+          </div>      
+        </div>
+        <div class="control-group">
+          <div class="controls">
             <h2>Allowed Apps</h2>
           </div>
         </div>
@@ -43,7 +50,7 @@
         <% apps[0, half].each do |app| %>
           <div class="control-group">
             <div class="controls">
-              <label class="app">
+              <label class="app <%= 'anonymous' if !app['privacy_level'] || app['privacy_level'] == 'anonymous' %>">
                 <input type="checkbox" <%= 'checked' if app['checked'] %> name="app_ids[]" value="<%= app['id'] %>"/>
                   <img src="/tools/<%= app['id'] %>/logo.png" style="width: 32px;"/>
                   <%= app['name'] %>
@@ -61,7 +68,7 @@
         <% apps[half, half].each do |app| %>
           <div class="control-group">
             <div class="controls">
-              <label class="app">
+              <label class="app <%= 'anonymous' if !app['privacy_level'] || app['privacy_level'] == 'anonymous' %>">
                 <input type="checkbox" <%= 'checked' if app['checked'] %> name="app_ids[]" value="<%= app['id'] %>"/>
                   <img src="/tools/<%= app['id'] %>/logo.png" style="width: 32px;"/>
                   <%= app['name'] %>

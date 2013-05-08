@@ -156,6 +156,22 @@ describe 'Apps API' do
       json['objects'].detect{|o| o['id'] == id}.should_not == nil
     end
     
+    it "should not include public apps for anonymous filters" do
+      filter = AppFilter.create(:code => 'abc', :settings => {'anonymous_only' => true, 'allow_new' => true})
+      get '/api/v1/apps?filter=abc'
+      last_response.should be_ok
+      json = JSON.parse(last_response.body)
+      json['objects'].detect{|o| o['privacy_level'] != 'anonymous'}.should == nil
+    end
+    
+    it "should include pulic apps for non-anonymous filters" do
+      filter = AppFilter.create(:code => 'abc', :settings => {'anonymous_only' => false, 'allow_new' => true})
+      get '/api/v1/apps?filter=abc'
+      last_response.should be_ok
+      json = JSON.parse(last_response.body)
+      json['objects'].detect{|o| o['privacy_level'] != 'anonymous'}.should_not == nil
+    end
+    
     it "should not include unconfigured apps if not allowed" do
       id = App.load_apps[0]['id']
       filter = AppFilter.create(:code => 'abc', :settings => {'app_ids' => {}, 'allow_new' => false})

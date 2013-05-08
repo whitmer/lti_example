@@ -264,7 +264,7 @@ module AppParser
   CATEGORIES = ["Assessment", "Community", "Content", "Math", "Media", "Open Content", "Science", "Study Helps", "Textbooks/eBooks", "Web 2.0"]
   LEVELS = ["K-6th Grade", "7th-12th Grade", "Postsecondary"]
   EXTENSIONS = ["course_nav", "user_nav", "account_nav", "editor_button", "resource_selection", "homework_submission"]
-  PRIVACY_LEVELS = ["public", "name_only", "anonymous"]
+  PRIVACY_LEVELS = ["public", "name_only", "email_only", "anonymous"]
   APP_TYPES = ["open_launch", "data"]
   
   def self.parse(params)
@@ -287,6 +287,7 @@ module AppParser
     hash['author_name'] = params['author_name']
     hash['submitter_name'] = params['submitter_name']
     hash['submitter_url'] = params['submitter_url']
+    hash['privacy_level'] = parse_privacy_level(params['privacy_level'])
     
     if hash['app_type'] == 'open_launch'
       hash['no_launch'] = unless_empty(params['no_launch'] == '1' || params['no_launch'] == true)
@@ -314,7 +315,6 @@ module AppParser
         hash['launch_url'] = unless_empty(params['launch_url'])
         hash['domain'] = unless_empty(params['domain'])
         hash['config_directions'] = unless_empty(params['config_directions'])
-        hash['privacy_level'] = parse_privacy_level(params['privacy_level'])
         hash['custom_fields'] = parse_custom_fields(params)
         if hash['extensions'] && hash['extensions'].include?('course_nav')
           hash['course_nav_link_text'] = unless_empty(params['course_nav_link_text'])
@@ -457,7 +457,7 @@ module AppParser
   end
   
   def self.parse_privacy_level(str)
-    PRIVACY_LEVELS.include?(str) ? str : nil
+    PRIVACY_LEVELS.include?(str) ? str : 'anonymous'
   end
   
   def self.parse_ids(ids)

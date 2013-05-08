@@ -17,6 +17,7 @@ $("#filter_settings").submit(function(event) {
 });
 $(":checkbox").change(function() {
   $(this).closest(".app").toggleClass('selected', !!$(this).attr('checked'));
+  $(".app:not(.anonymous)").toggleClass('disabled', !!$("#anonymous_only").attr('checked'));
 }).each(function() {
   $(this).change();
 });

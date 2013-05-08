@@ -10,6 +10,7 @@ class App
   property :beta, Boolean
   property :categories, String, :length => 512
   property :levels, String, :length => 512
+  property :anonymous, Boolean
   property :added, String
   property :extensions, String, :length => 512
   property :platforms, String, :length => 512
@@ -96,8 +97,9 @@ class App
     allow_new = true if !filter
     lookups = ((filter && filter.settings) || {})['app_ids'] || {}
     allow_new = (filter.settings['allow_new'] || false) if filter
+    anonymous_only = (filter.settings['anonymous_only'] || false) if filter
     data_apps = App.all(:pending => false, :settings.not => nil).select{|a| 
-      a.settings && lookups[a.settings['id']] != false && (allow_new || lookups[a.settings['id']] == true )
+      a.settings && lookups[a.settings['id']] != false && (allow_new || lookups[a.settings['id']] == true) && (!anonymous_only || a.anonymous)
     }.map{|a| a.settings }
   end
 
@@ -143,6 +145,7 @@ class App
     app.added = hash['added']
     app.extensions = (hash['extensions'] || []).join(",")
     app.platforms = (hash['platforms'] || []).join(",")
+    app.anonymous = hash['privacy_level'] == 'anonymous'
     app.tool_id = hash['id']
     app.settings = hash
     app.save

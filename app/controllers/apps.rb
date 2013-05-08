@@ -283,6 +283,7 @@ module Sinatra
         tool['banner_url'] ||= "/tools/#{tool['id']}/banner.png"
         tool['logo_url'] ||= "/tools/#{tool['id']}/logo.png"
         tool['icon_url'] ||= "/tools/#{tool['id']}/icon.png"
+        tool['privacy_level'] ||= "anonymous"
         cutoff = (Time.now - (60 * 60 * 24 * 7 * 24)).utc.iso8601
         tool['new'] = tool['added'] && tool['added'] > cutoff
 

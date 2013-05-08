@@ -103,6 +103,9 @@ label.app {
 label.app.selected {
   opacity: 1.0;
 }
+label.app.selected.disabled {
+  opacity: 0.5;
+}
 #hero-desc .sub {
   font-size: 13px;
   line-height: 18px;

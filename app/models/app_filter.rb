@@ -9,6 +9,7 @@ class AppFilter
     self.settings = {}
     self.code ||= Digest::MD5.hexdigest(self.username + Time.now.to_i.to_s + rand(9999).to_s)
     self.settings['app_ids'] = {}
+    self.settings['anonymous_only'] = params['anonymous_only'] == true || params['anonymous_only'] == '1'
     self.settings['allow_new'] = params['allow_new'] == true || params['allow_new'] == '1'
     App.load_apps.each do |app|
       self.settings['app_ids'][app['id']] = false

@@ -178,12 +178,13 @@
         <input type="text" id="domain" placeholder="my.domain.com" name="domain" value="{{ domain }}"/>
       </div>      
     </div>
-    <div class="control-group app_type by_hand">
+    <div class="control-group">
       <label class="control-label" for="privacy_level">Launch Privacy</label>
       <div class="controls">
         <select name="privacy_level" id="privacy_level">
           <option {{#if_eql privacy_level val="anonymous"}}selected{{/if_eql}} value="anonymous">Anonymous</option>
           <option {{#if_eql privacy_level val="name_only"}}selected{{/if_eql}} value="name_only">Name Only</option>
+          <option {{#if_eql privacy_level val="email_only"}}selected{{/if_eql}} value="email_only">Email Only</option>
           <option {{#if_eql privacy_level val="public"}}selected{{/if_eql}} value="public">Public</option>
         </select>
       </div>      
