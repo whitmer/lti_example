@@ -18,6 +18,19 @@ module Sinatra
         return response.body
       end
       
+      app.get "/learnzillion_search" do
+        @@lz_config = ExternalConfig.first(:config_type => 'learnzillion')
+        return "LearnZillion not propertly configured" unless @@lz_config
+        uri = URI.parse("https://www.learnzillion.com/api/lessons")
+        http = Net::HTTP.new(uri.host, uri.port)
+        http.use_ssl = true
+        tmp_url = uri.path+"?per_page=50&q=#{params['q']}"
+        request = Net::HTTP::Get.new(tmp_url)
+        request.basic_auth(@@lz_config.value, @@lz_config.secret)
+        response = http.request(request)
+        return response.body
+      end
+      
       app.get "/storify_search" do
         url = "http://api.storify.com/v1/stories/browse/popular?per_page=21"
         if params['sort'] == 'latest'
@@ -91,6 +104,15 @@ module Sinatra
         else
           {:error => response.body}.to_json
         end
+      end
+      
+      app.get '/github_gist/:gist' do
+        uri = URI.parse("https://gist.github.com/" + params['gist'] + ".js")
+        http = Net::HTTP.new(uri.host, uri.port)
+        http.use_ssl = true
+        request = Net::HTTP::Get.new(uri.request_uri)
+        response = http.request(request)
+        response.body.gsub(/document\.write/, "$('#content').append")
       end
       
       app.get '/github_repo' do

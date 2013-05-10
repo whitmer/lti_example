@@ -30,23 +30,31 @@ h1 {
 button {
   vertical-align: top;
 }
+form {
+  margin-left: 80px;
+}
 </style>
 </head>
 <body>
 <div id="header">
   <img id="header_img" src="logo.png" style="padding-right: 10px; width: 70px; vertical-align: middle; float: left;"/>
   <h1>
-  Embed GitHub repo summary:
+  Embed GitHub content:
   </h1>
   
   <form id="search" class='form-inline'>
-  <div>Enter a full repository name, including username or org:</div>
-  <input type="text" title="query" id="query" style="width: 200px;" value="instructure/canvas-lms"/>
+  <select name="type" id="type">
+    <option value="repo">Repo</option>
+    <option value="gist">Gist</option>
+  </select>
+  <div id="repo">Enter a full repository name, including username or org:</div>
+  <div id="gist" style="display: none;">Enter a gist id, including username or org:</div>
+  <input type="text" title="query" id="query" style="width: 200px;" data-repo="instructure/canvas-lms" data-gist="zwily/1073588"/>
   <button type="submit" class='btn'>Preview</button>
   <button type="submit" class='btn btn-primary' id="add">Add</button>
   </form>
 </div>
-<iframe id="preview" src="github_summary.html" id="" frameborder="0" style="width: 550px; height: 200px; border: 1px solid #888; margin: -10px 10px 10px; "></iframe>
+<iframe id="preview" src="github_summary_repo.html" id="" frameborder="0" style="width: 550px; height: 200px; border: 1px solid #888; margin: -10px 10px 10px; "></iframe>
 
 <script src="/jquery.min.js"></script>
 <script src="github.js"></script>
