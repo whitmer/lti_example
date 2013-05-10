@@ -20,6 +20,12 @@ module Sinatra
         redirect to("http://lti-demo.speeqe.com")
       end
       
+      app.get "/dropbox_key" do
+        @@dropbox_config = ExternalConfig.first(:config_type => 'dropbox')
+        return "Dropbox not propertly configured" unless @@dropbox_config
+        {:key => @@dropbox_config.value}.to_json
+      end
+      
       app.post "/google_chart" do
         if session[params[:key]]
           params[:data] = JSON.parse(params[:data]) if params[:data].is_a?(String)

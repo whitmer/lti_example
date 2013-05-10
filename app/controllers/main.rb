@@ -128,7 +128,7 @@ module Sinatra
         
         # include the required arguments and any query string parameters
         params.each do |key, val|
-          args << "#{CGI.escape(key)}=#{CGI.escape(val)}" if key.match(/^custom_/) || ['launch_presentation_return_url', 'selection_directive'].include?(key) || (key != 'url' && key != 'id' && request.GET[key])
+          args << "#{CGI.escape(key)}=#{CGI.escape(val)}" if key.match(/^custom_/) || ['launch_presentation_return_url', 'selection_directive', 'ext_content_intended_use', 'ext_content_return_types', 'ext_content_file_extensions'].include?(key) || (key != 'url' && key != 'id' && request.GET[key])
         end
         
         # key is used to remember the launch, this is used for standard LTI launches which make you
