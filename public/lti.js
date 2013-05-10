@@ -19,7 +19,7 @@ var trackUrl = location.href.split(/\?/)[0];
     trackUrl = trackUrl + "tool=" + lti.params.tool;
   }
   if(trackEvent && (params.tool || lti.tool_id)) {
-    if(params['selection_directive'] && params['launch_presentation_return_url']) {
+    if((params['selection_directive'] || params['ext_content_intended_use']) && params['launch_presentation_return_url']) {
       trackEvent('tool_launch', (params.tool || lti.tool_id), trackUrl);
     } else {
       // If not launched as a resource selection, track separately
@@ -88,7 +88,7 @@ if(!skipValidation) {
   };
   (function() {
     var params = lti.params;
-    if(!params['selection_directive'] || !params['launch_presentation_return_url']) {
+    if(!(params['selection_directive'] || params['ext_content_intended_use']) || !params['launch_presentation_return_url']) {
       console.log("This page is normally used an an example of embedding content, but you've referenced it some other way. As such, it's not going to be very useful to you, other than maybe for demo purposes.");
       callbackUrl = null;
     } else if(!params['launch_presentation_return_url'].match(/\?/)) {
@@ -97,7 +97,7 @@ if(!skipValidation) {
     var returnUrl = params['launch_presentation_return_url'];
     lti.returnUrl = returnUrl;
     lti.resourceSelected = function(data) {
-      if(lti.params.selection_directive && returnUrl && returnUrl != "undefined" && returnUrl != "undefined?") {
+      if((lti.params.selection_directive || lti.params.ext_content_intended_use) && returnUrl && returnUrl != "undefined" && returnUrl != "undefined?") {
         if(trackEvent) {
           trackEvent('resource_selected', lti.tool_id || data.embed_type, trackUrl);
         }

@@ -35,7 +35,7 @@ button {
   DropBox link:
   </h1>
   <h2 id="message">Loading...</h2>
-  <a href="#" id="link" class='btn btn-primary btn-large' style="display: none;">Select File to Retrieve</a>
+  <a href="#" id="link" target="_blank" class='btn btn-primary btn-large' style="display: none;">Select File to Retrieve</a>
 </div>
 
 <script src="/jquery.min.js"></script>
@@ -43,41 +43,54 @@ button {
 <script src="/analytics.js"></script>
 <script src="/lti.js"></script>
 <script>
-  $.getJSON('/dropbox_key', function(data) {
-    var $script = $(document.createElement('script'));
-    $script.attr('src', "https://www.dropbox.com/static/api/1/dropins.js");
-    $script.attr('id', 'dropboxjs');
-    $script.attr('data-app-key', data.key);
-    document.body.appendChild($script[0]);
+  if(lti.params.link) {
+    $("#link").attr('href', lti.params.link).text("Preview " + (lti.params.name || "File"));
     $("#link").show();
     $("#message").hide();
-  }).fail(function() { $("#message").text("Failure loading settings") });
-  $(document).ready(function() {
-    var file_allowed = lti.params.ext_content_intended_use == 'homework' && (lti.params.ext_content_return_types || "").match(/file/);
-    var type = file_allowed ? "link" : "preview";
-    $("#link").click(function(event) {
-      event.preventDefault();
-      Dropbox.choose({
-        linkType: type,
-        multiselect: false,
-        success: function(files) {
-          if(lti.params.ext_content_file_extensions) {
-            var extensions = lti.params.ext_content_file_extensions.split(/,/);
-            if(extensions.indexOf(files[0].name.split(/\./).pop()) == -1) {
-              alert("That is not a valid file type for this submission");
-              return;
+  } else {
+    $.getJSON('/dropbox_key', function(data) {
+      var $script = $(document.createElement('script'));
+      $script.attr('src', "https://www.dropbox.com/static/api/1/dropins.js");
+      $script.attr('id', 'dropboxjs');
+      $script.attr('data-app-key', data.key);
+      document.body.appendChild($script[0]);
+      $("#link").show();
+      $("#message").hide();
+    }).fail(function() { $("#message").text("Failure loading settings") });
+    $(document).ready(function() {
+      var file_allowed = lti.params.ext_content_intended_use == 'homework' && (lti.params.ext_content_return_types || "").match(/file/);
+      var type = file_allowed ? "direct" : "preview";
+      $("#link").click(function(event) {
+        event.preventDefault();
+        Dropbox.choose({
+          linkType: type,
+          multiselect: false,
+          success: function(files) {
+            console.log(files);
+            if(lti.params.ext_content_file_extensions) {
+              var extensions = lti.params.ext_content_file_extensions.split(/,/);
+              if(extensions.indexOf(files[0].name.split(/\./).pop()) == -1) {
+                alert("That is not a valid file type for this submission");
+                return;
+              }
             }
+            var url = files[0].link;
+            var preview_url = location.protocol + "//" + location.host + "/tools/dropbox/index.html?name=" + encodeURIComponent(files[0].name) + "&link=" + encodeURIComponent(files[0].link);
+            // Traditional LTI embeds need a new tab link since dropbox doesn't like being in an iframe
+            if(!lti.params.selection_directive && !lti.params.ext_content_intended_use) {
+              url = preview_url;
+            }
+            lti.resourceSelected({
+              embed_type: (file_allowed ? "file" : "link"),
+              url: url,
+              title: files[0].name,
+              text: files[0].name
+             });
           }
-          lti.resourceSelected({
-            embed_type: (file_allowed ? "file" : "link"),
-            url: files[0].link,
-            title: files[0].name,
-            text: files[0].name
-           });
-        }
+        });
       });
     });
-  });
+  }
 </script>
 </body>
 </html>
