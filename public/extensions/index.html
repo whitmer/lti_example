@@ -1,0 +1,138 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LTI Extensions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/common.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        footer {
+            border-top: 1px solid #e5e5e5;
+            margin-top: 40px;
+        }
+
+        img.preview {
+            width: 250px;
+            padding-right: 10px;
+            padding-bottom: 20px;
+        }
+
+        .data-row {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #E5E5E5;
+        }
+    </style>
+    <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/bootstrap/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/bootstrap/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/bootstrap/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/bootstrap/ico/apple-touch-icon-57-precomposed.png">
+</head>
+<body data-view='coding'>
+<div id="content" class="container">
+    <div class="hero-unit">
+        <h1>LTI Extensions</h1>
+    </div>
+    <div class="row">
+      <span class="span12">
+        <h2>Introduction</h2>
+        <p>LTI provides a great base for creating a connection between learning
+            tools. These extensions are used to add functionality on top of that
+            connection. These are unofficial and not all consumers and
+            providers will support them.</p>
+      </span>
+    </div>
+    <div class="row data-row">
+      <span class="span8">
+        <h3>Extensions</h3>
+      </span>
+    </div>
+    <table class="table table-striped table-bordered table-condensed">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><a href="content.html">Content</a></td>
+            <td>This extension is used to pass content to the tool consumer from
+                the tool provider.
+            </td>
+        </tr>
+        <tr>
+            <td><a href="result_data.html">Result Data</a></td>
+            <td>Add resultData in addition to resultScore in outcome services
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="row data-row">
+      <span class="span8">
+        <h3>Vendor-Specific Configurations</h3>
+        <p>
+            These aren't LTI extensions, but applications of the extensions in
+            some tools/platforms. These pages show examples and have info for
+            setting up tools with these extensions.
+        </p>
+      </span>
+    </div>
+
+    <table class="table table-striped table-bordered table-condensed">
+        <thead>
+        <tr>
+            <th>Vendor</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Canvas</td>
+            <td><a href="canvas/navigation.html">Navigation</a></td>
+            <td>Add LTI links as navigation items in courses/accounts/user
+                areas
+            </td>
+        </tr>
+        <tr>
+            <td>Canvas</td>
+            <td><a href="canvas/wysiwyg.html">WYSIWYG</a></td>
+            <td>Add content to WYSIWYG editor using the <a href="content.html">content extension</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Canvas</td>
+            <td><a href="canvas/link_selection.html">Link Selection</a></td>
+            <td>Add LTI launch urls to modules using the <a href="content.html">content extension</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Canvas</td>
+            <td><a href="canvas/homework.html">Homework</a></td>
+            <td>Turn in homework assignments using the <a href="content.html">content extension</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="/jquery.min.js"></script>
+<script src="/analytics.js"></script>
+<script src="/jquery.store.js"></script>
+<script src="/common.js"></script>
+<script src="/bootstrap-dropdown.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Canvas Extensions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/common.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        footer {
+            border-top: 1px solid #e5e5e5;
+            margin-top: 40px;
+        }
+
+        img.preview {
+            width: 250px;
+            padding-right: 10px;
+            padding-bottom: 20px;
+        }
+
+        .data-row {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #E5E5E5;
+        }
+    </style>
+    <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/bootstrap/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/bootstrap/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/bootstrap/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/bootstrap/ico/apple-touch-icon-57-precomposed.png">
+</head>
+<body data-view='coding'>
+<div id="content" class="container">
+    <div class="hero-unit">
+        <h1>Canvas WYSIWYG Examples</h1>
+    </div>
+    <div class="row">
+      <span class="span12">
+        <h2>Introduction</h2>
+        <p>In Canvas you can configure an LTI tool to add content to a rich content editor.
+            See Canvas documentation for more details <a href='https://canvas.instructure.com/doc/api/file.editor_button_tools.html'>more information</a>.
+        </p>
+        <p>
+            The examples are very basic, really just enough to get the point of the extension across.
+            If you are interested in seeing more advanced or practical implementations,
+            check out <a href="/index.html">the list of LTI apps on the home page</a>.
+        </p>
+      </span>
+    </div>
+    <div class="row data-row">
+      <span class="span8">
+        <h3>Rich Editor Button Demo</h3>
+          <p>
+              This shows adding an editor button to the rich editor
+              in course/group content. Editor button extensions show up in
+              Canvas
+              as icons in the right editor, in this case as a fish icon.
+              This simple demo app lets the user pick from a list of fish
+              pictures. The picture they choose will be inserted into the
+              rich editor.</p>
+          <p>
+              Editor button apps can be configured at the course or account
+              levels. If the app is configured at the account
+              level, then the button will appear for any courses/groups within
+              that account.
+          </p>
+        <a class='label label-info' href="/config/editor_button.xml">xml
+            configuration</a>
+        <a class='label' href='https://canvas.instructure.com/doc/api/editor_button_tools.html'>more
+            information</a>
+      </span>
+      <span class="span4">
+        <img src="/examples/editor_button_example.png" alt="" class="preview thumbnail"/>
+      </span>
+    </div>
+    <div class="row data-row">
+      <span class="span8">
+        <h3>Another Rich Editor Button Demo</h3>
+          <p>
+              This shows adding an editor button to the rich editor
+              in course/group content. Clicking the new kitten icon will pop up
+              a dialog
+              that uses placekitten.com to generate an image of a kitten set
+              to the user's specified dimensions.
+          </p>
+          <p>
+              Again, if the app is configured at the account
+              level, then the button will appear for any courses/groups within
+              that account.
+          </p>
+        <a class='label label-info' href="/config/editor_button2.xml">xml
+            configuration</a>
+        <a class='label' href='https://canvas.instructure.com/doc/api/editor_button_tools.html'>more
+            information</a>
+      </span>
+      <span class="span4">
+        <img src="/examples/kitten_example.png" alt="" class="preview thumbnail"/>
+      </span>
+    </div>
+    <div class="row data-row">
+      <span class="span8">
+        <h3>Combination Rich Editor Button and Module links Demo</h3>
+          <p>
+              This example shows configuring an app to serve multiple purposes
+              at
+              the same time. In this case, a single app can add both a fish
+              icon to the rich editor, and the ability to add named fish pages
+              to
+              course modules.
+          </p>
+        <a class='label label-info' href="/config/editor_button_and_resource_selection.xml">xml
+            configuration</a>
+        <a class='label' href='https://canvas.instructure.com/doc/api/tools_xml.html'>more
+            information</a>
+      </span>
+      <span class="span4">
+      </span>
+    </div>
+</div>
+<script src="../../jquery.min.js"></script>
+<script src="/analytics.js"></script>
+<script src="../../jquery.store.js"></script>
+<script src="/common.js"></script>
+<script src="../../bootstrap-dropdown.js"></script>
+</body>
+</html>

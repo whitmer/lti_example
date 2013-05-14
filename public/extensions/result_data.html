@@ -1,0 +1,174 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Content Extension</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/common.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        footer {
+            border-top: 1px solid #e5e5e5;
+            margin-top: 40px;
+        }
+
+        img.preview {
+            width: 250px;
+            padding-right: 10px;
+            padding-bottom: 20px;
+        }
+
+        .data-row {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #E5E5E5;
+        }
+    </style>
+    <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/bootstrap/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/bootstrap/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/bootstrap/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/bootstrap/ico/apple-touch-icon-57-precomposed.png">
+</head>
+<body data-view='coding'>
+<div id="content" class="container">
+    <div class="hero-unit">
+        <h1>Result Data Extension</h1>
+
+        <p>
+            This extension is used to pass data in addition to a grade when using the outcome service
+        </p>
+    </div>
+    <div class="row">
+      <span class="span12">
+        <h2>Introduction</h2>
+        <p>
+            If this extension is supported the <span class='label label-warning'>consumer</span> sends a list of accepted data
+            values and the <span class='label label-info'>provider</span> adds a <code>resultData</code> node to the result
+            XML sent to the <span class='label label-warning'>consumer</span>.
+        </p>
+      </span>
+    </div>
+
+    <h2>Launch Parameters</h2>
+
+    <table class="table table-striped table-bordered table-condensed">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>ext_outcome_data_values_accepted</td>
+            <td>yes</td>
+            <td>
+                Presence of this key indicates that the <span class='label label-warning'>consumer</span> is capable of using the resultData extension.
+                The value should be a comma separated list of: <code>url</code>, <code>text</code>,
+                or values agreed upon between <span class='label label-warning'>consumer</span> and <span class='label label-info'>provider</span>.
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>Tool Provider Response</h2>
+
+    <p>If the <span class='label label-info'>provider</span> wants to supply these values, it can augment the POX
+        sent with the grading value. <a href="http://www.imsglobal.org/LTI/v1p1/ltiIMGv1p1.html#_Toc319560473">LTI replaceResult POX</a>
+    </p>
+
+    <p>Only one type of resultData should be sent, if multiple types are sent
+        the tool consumer behavior is undefined and is implementation-specific.
+    </p>
+
+    <h4>Text</h4>
+
+    <p>Add a <code>resultData</code> node with a <code>text</code> node of plain text in the same encoding as
+    the rest of the document within it like this:</p>
+
+    <pre class="code"><code>
+    &lt;?xml version = &quot;1.0&quot; encoding = &quot;UTF-8&quot;?&gt;
+    &lt;imsx_POXEnvelopeRequest xmlns=&quot;http://www.imsglobal.org/services/ltiv1p1/xsd/imsoms_v1p0&quot;&gt;
+      &lt;imsx_POXHeader&gt;
+        &lt;imsx_POXRequestHeaderInfo&gt;
+          &lt;imsx_version&gt;V1.0&lt;/imsx_version&gt;
+          &lt;imsx_messageIdentifier&gt;999999123&lt;/imsx_messageIdentifier&gt;
+        &lt;/imsx_POXRequestHeaderInfo&gt;
+      &lt;/imsx_POXHeader&gt;
+      &lt;imsx_POXBody&gt;
+        &lt;replaceResultRequest&gt;
+          &lt;resultRecord&gt;
+            &lt;sourcedGUID&gt;
+              &lt;sourcedId&gt;3124567&lt;/sourcedId&gt;
+            &lt;/sourcedGUID&gt;
+            &lt;result&gt;
+              &lt;resultScore&gt;
+                &lt;language&gt;en&lt;/language&gt;
+                &lt;textString&gt;0.92&lt;/textString&gt;
+              &lt;/resultScore&gt;
+              &lt;!--      Added element      --&gt;
+              &lt;resultData&gt;
+                &lt;text&gt;text data for canvas submission&lt;/text&gt;
+              &lt;/resultData&gt;
+            &lt;/result&gt;
+          &lt;/resultRecord&gt;
+        &lt;/replaceResultRequest&gt;
+      &lt;/imsx_POXBody&gt;
+    &lt;/imsx_POXEnvelopeRequest&gt;
+    </code></pre>
+
+    <h4>URL</h4>
+
+    <p>Add a <code>resultData</code> node with a <code>url</code> node within it like this:</p>
+
+    <pre class="code"><code>
+    &lt;?xml version = &quot;1.0&quot; encoding = &quot;UTF-8&quot;?&gt;
+    &lt;imsx_POXEnvelopeRequest xmlns=&quot;http://www.imsglobal.org/services/ltiv1p1/xsd/imsoms_v1p0&quot;&gt;
+      &lt;imsx_POXHeader&gt;
+        &lt;imsx_POXRequestHeaderInfo&gt;
+          &lt;imsx_version&gt;V1.0&lt;/imsx_version&gt;
+          &lt;imsx_messageIdentifier&gt;999999123&lt;/imsx_messageIdentifier&gt;
+        &lt;/imsx_POXRequestHeaderInfo&gt;
+      &lt;/imsx_POXHeader&gt;
+      &lt;imsx_POXBody&gt;
+        &lt;replaceResultRequest&gt;
+          &lt;resultRecord&gt;
+            &lt;sourcedGUID&gt;
+              &lt;sourcedId&gt;3124567&lt;/sourcedId&gt;
+            &lt;/sourcedGUID&gt;
+            &lt;result&gt;
+              &lt;resultScore&gt;
+                &lt;language&gt;en&lt;/language&gt;
+                &lt;textString&gt;0.92&lt;/textString&gt;
+              &lt;/resultScore&gt;
+              &lt;!--      Added element      --&gt;
+              &lt;resultData&gt;
+                &lt;url&gt;https://www.example.com/cool_lti_link_submission&lt;/url&gt;
+              &lt;/resultData&gt;
+            &lt;/result&gt;
+          &lt;/resultRecord&gt;
+        &lt;/replaceResultRequest&gt;
+      &lt;/imsx_POXBody&gt;
+    &lt;/imsx_POXEnvelopeRequest&gt;
+    </code></pre>
+
+</div>
+<script src="../jquery.min.js"></script>
+<script src="/analytics.js"></script>
+<script src="../jquery.store.js"></script>
+<script src="/common.js"></script>
+<script src="../bootstrap-dropdown.js"></script>
+</body>
+</html>

@@ -498,7 +498,7 @@ function program12(depth0,data) {
   tmp1.inverse = self.noop;
   stack1 = stack2.call(depth0, stack1, tmp1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += " dropdown\">\n              <a href=\"/code.html\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Coding <span class='caret' style=\"color: #fff;\"></span></a>\n              <ul class=\"dropdown-menu\">\n                  <li><a href=\"/code.html\">Basics</a></li>\n                  <li><a href=\"/extensions.html\">Extensions</a></li>\n                  <li><a href=\"/build_xml.html\">XML</a></li>\n                  <li><a href=\"/api.html\">API</a></li>\n                  <li class=\"divider\"></li>\n                  <li><a href=\"https://github.com/whitmer/edu_apps\">Source</a></li>\n              </ul>\n          </li>\n          ";
+  buffer += " dropdown\">\n              <a href=\"/code.html\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Coding <span class='caret' style=\"color: #fff;\"></span></a>\n              <ul class=\"dropdown-menu\">\n                  <li><a href=\"/code.html\">Basics</a></li>\n                  <li><a href=\"/extensions/index.html\">Extensions</a></li>\n                  <li><a href=\"/build_xml.html\">XML</a></li>\n                  <li><a href=\"/api.html\">API</a></li>\n                  <li class=\"divider\"></li>\n                  <li><a href=\"https://github.com/whitmer/edu_apps\">Source</a></li>\n              </ul>\n          </li>\n          ";
   foundHelper = helpers.allow_admin;
   stack1 = foundHelper || depth0.allow_admin;
   stack2 = helpers['if'];
