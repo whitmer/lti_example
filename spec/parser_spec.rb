@@ -16,6 +16,7 @@ describe 'Parsers' do
           hash = AppParser.parse(app)
           hash['added'] = app['added']
           hash['uses'] = app['uses']
+          hash.delete('privacy_level').should == "anonymous" unless app['privacy_level']
           Hasher.diff(hash, app).should == nil
         end
       end
@@ -77,9 +78,9 @@ describe 'Parsers' do
       AppParser::PRIVACY_LEVELS.each do |lev|
         AppParser.parse_privacy_level(lev).should == lev
       end
-      AppParser.parse_privacy_level("").should == nil
-      AppParser.parse_privacy_level("super_public").should == nil
-      AppParser.parse_privacy_level(nil).should == nil
+      AppParser.parse_privacy_level("").should == 'anonymous'
+      AppParser.parse_privacy_level("super_public").should == 'anonymous'
+      AppParser.parse_privacy_level(nil).should == 'anonymous'
     end
 
     it "should parse category parameters" do
