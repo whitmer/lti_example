@@ -18,6 +18,21 @@ module Sinatra
         return response.body
       end
       
+      app.get "/learning_registry_search" do
+        host = params['host']
+        uri = URI.parse("#{host}/search?page=0&terms=#{CGI.escape(params['q'])}")
+        http = Net::HTTP.new(uri.host, uri.port)
+        http.use_ssl = uri.scheme == "https"
+        request = Net::HTTP::Get.new(uri.request_uri)
+        response = http.request(request)
+        json = JSON.parse(response.body)
+        request = Net::HTTP::Get.new(uri.request_uri.sub(/page=0/, 'page=1'))
+        response = http.request(request)
+        json += JSON.parse(response.body)
+        json.to_json
+        # "http://12.109.40.31/search?terms=cheese&page=0"
+      end
+      
       app.get "/learnzillion_search" do
         @@lz_config = ExternalConfig.first(:config_type => 'learnzillion')
         return "LearnZillion not propertly configured" unless @@lz_config
