@@ -23,6 +23,15 @@ form.form-horizontal {
 body.user_key .single_app span.stars img {
     cursor: pointer;
 }
+.related_app {
+  display: inline-block; 
+  padding: 5px 3px;
+}
+.related_app img {
+  width: 36px;
+  height: 36px;
+}
+
 span.stars img {
     width: 16px;
     height: 16px;

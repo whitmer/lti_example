@@ -2137,10 +2137,20 @@ function program71(depth0,data) {
   stack1 = stack2.call(depth0, stack1, tmp1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n      ";
+  foundHelper = helpers.related;
+  stack1 = foundHelper || depth0.related;
+  stack2 = helpers['if'];
+  tmp1 = self.program(95, program95, data);
+  tmp1.hash = {};
+  tmp1.fn = tmp1;
+  tmp1.inverse = self.noop;
+  stack1 = stack2.call(depth0, stack1, tmp1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n      ";
   foundHelper = helpers.user_key;
   stack1 = foundHelper || depth0.user_key;
   stack2 = helpers['if'];
-  tmp1 = self.program(95, program95, data);
+  tmp1 = self.program(98, program98, data);
   tmp1.hash = {};
   tmp1.fn = tmp1;
   tmp1.inverse = self.noop;
@@ -2271,10 +2281,46 @@ function program93(depth0,data) {
 
 function program95(depth0,data) {
   
+  var buffer = "", stack1, stack2;
+  buffer += "\n        <br/>\n        <b>Related Apps:</b><br/>\n        ";
+  foundHelper = helpers.related;
+  stack1 = foundHelper || depth0.related;
+  stack2 = helpers.each;
+  tmp1 = self.program(96, program96, data);
+  tmp1.hash = {};
+  tmp1.fn = tmp1;
+  tmp1.inverse = self.noop;
+  stack1 = stack2.call(depth0, stack1, tmp1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n      ";
+  return buffer;}
+function program96(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n          <a class=\"related_app\" href=\"?tool=";
+  foundHelper = helpers.tool_id;
+  stack1 = foundHelper || depth0.tool_id;
+  if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
+  else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "tool_id", { hash: {} }); }
+  buffer += escapeExpression(stack1) + "\" title=\"";
+  foundHelper = helpers.name;
+  stack1 = foundHelper || depth0.name;
+  if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
+  else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "name", { hash: {} }); }
+  buffer += escapeExpression(stack1) + "\"><img src=\"/tools/";
+  foundHelper = helpers.tool_id;
+  stack1 = foundHelper || depth0.tool_id;
+  if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
+  else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "tool_id", { hash: {} }); }
+  buffer += escapeExpression(stack1) + "/logo.png\"/></a>\n        ";
+  return buffer;}
+
+function program98(depth0,data) {
+  
   
   return "\n        <!--\n        <br/><br/>\n        <a href=\"#\" id=\"report\">Report incompatibility</a>\n        <form>This app doesn't work in: <input type=\"text\"/><button type='submit'>Report</button></form>\n        -->\n      ";}
 
-function program97(depth0,data) {
+function program100(depth0,data) {
   
   var buffer = "", stack1, stack2;
   buffer += "\n  <span class='span10 offset1'>\n    <a name=\"preview\"></a>\n    <span class='ratings' style=\"display: block;\">\n        ";
@@ -2294,7 +2340,7 @@ function program97(depth0,data) {
   foundHelper = helpers.comments_count;
   stack1 = foundHelper || depth0.comments_count;
   stack2 = helpers['if'];
-  tmp1 = self.program(98, program98, data);
+  tmp1 = self.program(101, program101, data);
   tmp1.hash = {};
   tmp1.fn = tmp1;
   tmp1.inverse = self.noop;
@@ -2304,7 +2350,7 @@ function program97(depth0,data) {
   foundHelper = helpers.user_key;
   stack1 = foundHelper || depth0.user_key;
   stack2 = helpers.unless;
-  tmp1 = self.program(100, program100, data);
+  tmp1 = self.program(103, program103, data);
   tmp1.hash = {};
   tmp1.fn = tmp1;
   tmp1.inverse = self.noop;
@@ -2314,7 +2360,7 @@ function program97(depth0,data) {
   foundHelper = helpers.comments_count;
   stack1 = foundHelper || depth0.comments_count;
   stack2 = helpers['if'];
-  tmp1 = self.program(102, program102, data);
+  tmp1 = self.program(105, program105, data);
   tmp1.hash = {};
   tmp1.fn = tmp1;
   tmp1.inverse = self.noop;
@@ -2322,7 +2368,7 @@ function program97(depth0,data) {
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n    </span>\n  </span>\n";
   return buffer;}
-function program98(depth0,data) {
+function program101(depth0,data) {
   
   var buffer = "", stack1;
   buffer += "\n            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/comments.png'/> ";
@@ -2333,12 +2379,12 @@ function program98(depth0,data) {
   buffer += escapeExpression(stack1) + "\n        ";
   return buffer;}
 
-function program100(depth0,data) {
+function program103(depth0,data) {
   
   
   return "\n        <div><a href='/login'><img src='/tools/twitter/icon.png'/> Login via Twitter</a> to rate and review this app</div>\n        ";}
 
-function program102(depth0,data) {
+function program105(depth0,data) {
   
   
   return "\n            <h3>Recent Comments</h3>\n            <span style=\"display: block;\" class='comments'>\n            </span>\n        ";}
@@ -2482,7 +2528,7 @@ function program102(depth0,data) {
   foundHelper = helpers.single_tool;
   stack1 = foundHelper || depth0.single_tool;
   stack2 = helpers['if'];
-  tmp1 = self.program(97, program97, data);
+  tmp1 = self.program(100, program100, data);
   tmp1.hash = {};
   tmp1.fn = tmp1;
   tmp1.inverse = self.noop;
@@ -2796,7 +2842,7 @@ function program51(depth0,data) {
   stack1 = foundHelper || depth0.id;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
   else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "id", { hash: {} }); }
-  buffer += escapeExpression(stack1) + "\"/>\n      </div>      \n    </div>\n    <div class=\"control-group\">\n      <label class=\"control-label\" for=\"description\">Description</label>\n      <div class=\"controls\">\n        <textarea name=\"description\" rows=\"4\" class=\"span6\" placeholder=\"100 words or less, go easy on the marketspeak or you'll be edited. Explain what your app does.\">";
+  buffer += escapeExpression(stack1) + "\"/>\n      </div>      \n    </div>\n    <div class=\"control-group\">\n      <label class=\"control-label\" for=\"description\">Description</label>\n      <div class=\"controls\">\n        <textarea name=\"description\" rows=\"4\" class=\"span6\" placeholder=\"100 words or less, go easy on the marketspeak or you'll be edited. Explain what your app does, and also what the LTI integration does.\">";
   foundHelper = helpers.description;
   stack1 = foundHelper || depth0.description;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }

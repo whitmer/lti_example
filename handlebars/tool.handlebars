@@ -159,6 +159,13 @@
       {{#if ims_link}}
         <span class='note'><a href="{{ ims_link }}" target="_blank">This app is IMS certified</a></span>
       {{/if}}
+      {{#if related}}
+        <br/>
+        <b>Related Apps:</b><br/>
+        {{#each related}}
+          <a class="related_app" href="?tool={{tool_id}}" title="{{name}}"><img src="/tools/{{tool_id}}/logo.png"/></a>
+        {{/each}}
+      {{/if}}
       {{#if user_key }}
         <!--
         <br/><br/>
