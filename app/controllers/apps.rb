@@ -199,7 +199,7 @@ module Sinatra
         offset = params['offset'].to_i
         filter = AppFilter.first(:code => params['filter'])
         
-        data = App.load_apps(filter).sort_by{|a| [(0 - (a['uses'] || 0)), a['name'].downcase || 'zzz'] }
+        data = App.load_apps(filter).sort_by{|a| [((a['uses'] || 0) > 20 ? 0 : 1), a['name'].downcase || 'zzz'] }
         [['category', 'categories'], ['level', 'levels'], ['extension', 'extensions']].each do |filter, key|
           if params[filter] && params[filter].length > 0
             if params[filter] == 'all'
@@ -333,6 +333,7 @@ module Sinatra
       end
         
       def review_as_json(review)
+        return nil unless review
         fields = [:id, :user_name, :user_url, :user_avatar_url, :tool_name, :rating, :comments, :source_name, :source_url]
         res = {}
         res['created'] = review.created_at.strftime("%b %e, %Y")
