@@ -343,6 +343,31 @@ describe 'Apps API' do
     end
   end
   
+  describe "app review retrieve" do
+    it "should return matching review" do
+      app_review
+      get "/api/v1/apps/#{@review.tool_id}/reviews/#{@review.external_access_token.token}/#{@review.user_id}"
+      last_response.should be_ok
+      json = JSON.parse(last_response.body)
+      json['id'].should == @review.id
+    end
+    
+    it "should not error when missing the review" do
+      app_review
+      get "/api/v1/apps/#{@review.tool_id}/reviews/ax/bq"
+      last_response.should be_ok
+      last_response.body.should == "null"
+    end
+    
+    it "should return nil for an invalid app" do
+      app_review
+      get "/api/v1/apps/not_an_app/reviews/ax/bq"
+      last_response.should be_ok
+      JSON.parse(last_response.body).should == {'type' => 'error', 'message' => 'Tool not found'}
+    end
+    
+  end
+  
   describe "app atom feed" do
     it "should not fail" do
       get "/data/lti_apps.atom"
@@ -357,5 +382,3 @@ describe 'Apps API' do
   describe "app review feed" do
   end
 end
-
-#     post "/api/v1/apps/:tool_id/reviews" do

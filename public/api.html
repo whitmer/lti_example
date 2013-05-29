@@ -66,6 +66,9 @@
       <li>
         <a href="#contributing">Contributing Reviews</a>
       </li>
+      <li>
+        <a href="#retrieve_review">Retrieving a Review</a>
+      </li>
     </ul>
     <div id="contents">
       <div class="row description">
@@ -368,6 +371,22 @@
               </td>
             </tr>
           </table>
+          </div>
+          
+          <a name="retrieve_review"></a>
+          <h2>Retrieving a Review</h2>
+          <p>You can retrieve a specific review (to see for example if the current
+          user has already reviewed the specified app) by calling. Requires the same
+          <code>user_id</code> and <code>access_token</code> used when posting the review.</p>
+          <div style="margin-left: 30px;">
+          <code>GET /api/v1/apps/:app_id/reviews/:access_token/:user_id</code>
+<pre>
+{
+  "user_avatar_url": "http://example.com/user/avatar/50x50.png",
+  "source_name": "Human-readable name of platform/app where user posted",
+  // Same as above
+}
+</pre>
           </div>
           
         </span>

@@ -23,9 +23,12 @@ end
   
 def app_review
   app = App.last
+  @token = ExternalAccessToken.create(:token => 'abc', :active => true)
   @review = AppReview.create(
     :tool_id => app.tool_id,
+    :external_access_token_id => @token.id,
     :tool_name => app.name,
+    :user_id => 12345,
     :user_name => "Some User",
     :user_url => "http://www.example.com/some_user",
     :rating => 4,

@@ -76,6 +76,14 @@ module Sinatra
         json_result(@filter.to_json)
       end
       
+      app.get "/api/v1/apps/:tool_id/reviews/:token/:user_id" do
+        return @error unless get_tool
+        @token = ExternalAccessToken.first(:token => params['token'], :active => true)
+        review = nil
+        review = AppReview.first(:tool_id => params['tool_id'], :external_access_token_id => @token.id, :user_id => params['user_id']) if @token
+        json_result(review_as_json(review).to_json)
+      end
+      
       # review an app
       app.post "/api/v1/apps/:tool_id/reviews" do
         host = request.scheme + "://" + request.host_with_port
