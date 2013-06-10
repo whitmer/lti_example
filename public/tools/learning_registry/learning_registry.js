@@ -20,7 +20,7 @@
     $.ajax({
       url: url,
       success: function(data) {
-        var records = []
+        var records = [];
         for(var idx = 0; idx < data.length; idx++) {
           var record = data[idx];
           var date = "no date";

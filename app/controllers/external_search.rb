@@ -25,12 +25,11 @@ module Sinatra
         http.use_ssl = uri.scheme == "https"
         request = Net::HTTP::Get.new(uri.request_uri)
         response = http.request(request)
-        json = JSON.parse(response.body)
+        json = JSON.parse(response.body)['data']
         request = Net::HTTP::Get.new(uri.request_uri.sub(/page=0/, 'page=1'))
         response = http.request(request)
-        json += JSON.parse(response.body)
+        json += JSON.parse(response.body)['data']
         json.to_json
-        # "http://12.109.40.31/search?terms=cheese&page=0"
       end
       
       app.get "/learnzillion_search" do
