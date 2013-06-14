@@ -15,6 +15,7 @@ $(function() {
   }
   function sessionReady() {
     var user_key = $.store.get('user_key');
+    var user_image = $.store.get('user_image');
     var $div = $("#nav .navbar-inner .nav-collapse");
     var $identity = $("<div/>", {'class': 'identity'});
     checkForSuggestions();
@@ -25,7 +26,7 @@ $(function() {
       $("body").addClass('user_key');
       $identity
         .append($("<img/>", 
-          {'src': "https://api.twitter.com/1/users/profile_image/" + user_key}))
+          {'src': user_image}))
         .append("<a href='/filter'>" + user_key + "</a>");
       $identity
         .append("<span>&nbsp;|&nbsp;</span><a href='/logout' class='logout'>Logout</a>");
@@ -35,6 +36,7 @@ $(function() {
   checkForSuggestions();
   $(".logout").live('click', function() {
     $.store.set('user_key', null);
+    $.store.set('user_image', null);
     $.store.set('admin', null);
     $.store.set('apps', null);
     $.store.set('suggestions', null);
@@ -46,6 +48,7 @@ $(function() {
   $("#content.container").append(Handlebars.templates['footer']());
   $.getJSON('/user_key.json', function(data) {
     $.store.set('user_key', data.user_key);
+    $.store.set('user_image', data.user_image);
     $.store.set('suggestions', data.suggestions);
     $.store.set('admin', data.admin);
     $.store.set('apps', (data.apps || "").split(/,/));

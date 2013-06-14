@@ -33,6 +33,8 @@ module Sinatra
         session[:oauth_token] = nil
         session[:oauth_token_secret] = nil
         session[:user_key] = access_token.params['screen_name']
+        data = JSON.parse(access_token.get("/1.1/users/show.json?screen_name=#{session[:user_key]}").body)
+        session[:user_image] = data['profile_image_url_https']
         permission = AdminPermission.first(:username => "@#{session[:user_key]}")
         session[:admin] = permission && permission.apps == "any"
         session[:apps] = permission && permission.apps
@@ -49,6 +51,7 @@ module Sinatra
         suggestions_config = ExternalConfig.first(:config_type => 'suggestions_form')
         {
           :user_key => session[:user_key],
+          :user_image => session[:user_image],
           :suggestions => !!suggestions_config,
           :admin => session[:admin],
           :apps => session[:apps]
