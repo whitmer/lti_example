@@ -88,7 +88,7 @@ module Sinatra
         if !suggestions_config
           redirect to("/index.html")
         else
-          redirect to("/suggestions.html?url=#{CGI.escape(suggestions_config.value)}")
+          redirect to("/app_suggestions.html?url=#{CGI.escape(suggestions_config.value)}")
         end
       end
       
